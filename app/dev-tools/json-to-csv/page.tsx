@@ -38,17 +38,10 @@ const toolConfig = createToolConfig({
       "JSON to CSV converter for JSON arrays or single objects. Builds a union of all object keys, flattens nested objects with dot notation, JSON-stringifies arrays, escapes CSV values, supports comma/semicolon/tab delimiters, copies CSV, and downloads data.csv with optional UTF-8 BOM.",
     alternateName: [
       "JSON to CSV",
-      "Convert JSON to Excel",
       "JSON Array to CSV",
-      "JSON Array to Spreadsheet",
-      "API Response to CSV",
-      "JSON to Google Sheets",
-      "JSON to TSV Converter",
       "Nested JSON to CSV",
-      "JSON Table Generator",
       "JSON to Excel Converter",
-      "Webhook JSON to CSV",
-      "Array to CSV",
+      "JSON to TSV Converter",
     ],
     featureList: [
       "Converts JSON arrays of objects to CSV rows",
@@ -80,7 +73,7 @@ const toolConfig = createToolConfig({
       "Can add a UTF-8 BOM to downloaded CSV files for Excel compatibility",
     ],
     overview:
-      "Use this JSON to CSV converter when you need to move API responses, webhook payloads, exported records, or sample JSON into a spreadsheet-friendly format. The converter parses the JSON, flattens nested objects with dot notation, builds a full header row from every key found across the data, and escapes values so commas, quotes, and line breaks do not break the CSV. Arrays are preserved as JSON strings in their cells. You can copy the CSV text or download a data.csv file.",
+      "Use this converter when you need to move API responses, webhook payloads, exported records, or sample JSON into a spreadsheet-friendly format. The converter parses the JSON, flattens nested objects with dot notation, builds a full header row from every key found across the data, and escapes values so commas, quotes, and line breaks do not break the CSV. Arrays are preserved as JSON strings in their cells. You can copy the CSV text or download a data.csv file.",
 
     howToSteps: [
       "Paste a JSON array of objects, a single object, or a top-level primitive value.",

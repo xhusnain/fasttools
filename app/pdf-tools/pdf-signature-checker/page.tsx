@@ -21,18 +21,8 @@ const toolConfig = createToolConfig({
       "PDF Signature Verifier",
       "Verify PDF Signature",
       "PDF Digital Signature Validator",
-      "PDF Authenticity Checker",
-      "PDF Tampering Detector",
-      "PDF Certificate Validator",
-      "Digital Signature Validity Checker",
-      "PDF e-Sign Verifier",
       "Signed PDF Checker",
-      "PDF Integrity Checker",
-      "PDF Signer Identity Lookup",
-      "Adobe PDF Sign Verify",
-      "DocuSign Verify",
       "PAdES Validator",
-      "PKCS#7 PDF Signature Validator",
     ],
     featureList: [
       "Digital signature detection and validation",
@@ -57,7 +47,7 @@ const toolConfig = createToolConfig({
   header: {
     title: "PDF Signature Checker",
     description:
-      "Verify digital signatures in signed PDF documents online for free. Inspect signer identity, certificate details, signing timestamps, and document integrity status to detect unauthorized modifications — all analysis runs locally in your browser.",
+      "Upload a signed PDF to verify its digital signatures for free. See who signed it, when, and whether the document was changed afterwards — all analysis runs locally in your browser.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "green",
@@ -70,9 +60,9 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A PDF Signature Checker is a free online tool that verifies digital signatures embedded in PDF documents by inspecting signer identity, certificate validity, signing timestamps, and document integrity — confirming whether a signed PDF is authentic and unmodified.",
+      "A PDF Signature Checker is a free online tool that verifies the digital signatures embedded in a PDF, confirming who signed the document and whether it has been modified since.",
     quickAnswer:
-      "Upload a digitally signed PDF to verify its signatures. The tool checks signature validity, extracts signer identity and certificate details, displays signing timestamps, and detects whether the document was modified after signing. Use it for quick document authentication before legal, compliance, or business review.",
+      "Upload a digitally signed PDF to verify its signatures. The tool checks signature validity, extracts signer identity and certificate details, displays signing timestamps, and detects whether the document was modified after signing.",
     keyTakeaways: [
       "Verifies digital signatures in PDF documents to confirm authenticity and signer identity",
       "Detects post-signing modifications that may indicate document tampering",
@@ -81,7 +71,7 @@ const toolConfig = createToolConfig({
       "All signature verification runs locally in your browser — your PDF is never uploaded to any server",
     ],
     overview:
-      "This free online PDF Signature Checker provides instant verification of digitally signed PDF documents. Whether you received a signed contract, notarized document, government filing, or certified report, this tool helps you quickly verify that the digital signature is valid and the document has not been tampered with after signing. The checker parses the PDF structure to detect signature blocks, extract signer identity fields and certificate information, validate signing timestamps, and check document integrity indicators. It supports standard PDF digital signatures based on PKI (Public Key Infrastructure) including PKCS#7 and CMS signature formats commonly used by Adobe Acrobat, DocuSign, and other signing platforms.",
+      "When you receive a signed contract, government filing, or certified report, this checker tells you in seconds whether the signature is valid and the file is untouched. It parses the PDF structure to detect signature blocks, extracts signer identity fields and certificate information, validates signing timestamps, and checks integrity indicators. It supports standard PKI-based signatures, including the PKCS#7 and CMS formats used by Adobe Acrobat, DocuSign, and other signing platforms.",
 
     howToSteps: [
       "Upload the digitally signed PDF file you want to verify.",

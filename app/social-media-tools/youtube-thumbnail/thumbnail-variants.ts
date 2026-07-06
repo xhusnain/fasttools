@@ -38,31 +38,30 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
     headerDescription:
       "Grab the highest-resolution thumbnail YouTube stores for any video. Paste a URL and download the full maxresdefault (1280×720) image in one click.",
     overviewText:
-      "This 4K YouTube thumbnail downloader pulls the largest thumbnail file YouTube serves for any public video — the maxresdefault image at 1280×720 — and lets you save it instantly. Paste a video URL or ID, preview every available size, and download the maximum resolution version with no signup, no watermark, and no software.",
+      "This 4K YouTube thumbnail downloader pulls the largest thumbnail file YouTube serves for any public video and lets you save it instantly. Paste a URL or video ID, preview every available size, and save the biggest one with a click. A quick honesty note before you start: the ceiling is 1280×720, because that is the largest file YouTube's servers keep for a video.",
     definition:
-      "A 4K YouTube thumbnail downloader is a free tool that fetches and saves the highest-resolution thumbnail YouTube stores for a video — the maxresdefault file at 1280×720 pixels — which most tools label as 'HD' or '4K'.",
+      "The '4K' in thumbnail tools refers to the maxresdefault file — the highest-resolution thumbnail YouTube actually stores for a video, at 1280×720 pixels. Most tools label this file 'HD' or '4K'.",
     quickAnswer:
-      "Paste the YouTube video URL, and the tool shows the maximum-resolution thumbnail (maxresdefault, 1280×720) alongside smaller sizes. Click download on the largest one. That 1280×720 file is the highest-quality thumbnail YouTube stores — there is no true 3840×2160 thumbnail on YouTube's servers.",
+      "Paste the video URL and the tool shows the maximum-resolution thumbnail alongside smaller sizes. Click download on the largest one. There is no true 3840×2160 thumbnail on YouTube's servers — maxresdefault is the genuine ceiling.",
     keywords: [
       "youtube thumbnail downloader 4k",
       "4k thumbnail download",
-      "youtube 4k thumbnail downloader",
       "download youtube thumbnail 4k",
       "high resolution youtube thumbnail",
-      "max resolution youtube thumbnail downloader",
+      "max resolution youtube thumbnail",
     ],
     keyTakeaways: [
-      "Downloads the maximum-resolution thumbnail YouTube stores: maxresdefault 1280×720",
-      "1280×720 is the true ceiling — YouTube does not store a real 3840×2160 thumbnail",
+      "Downloads maxresdefault, the largest thumbnail file YouTube stores (1280×720)",
+      "720p is the true ceiling — YouTube does not keep a real 3840×2160 thumbnail",
       "Falls back to the next-best size (640×480 or 480×360) when maxres is missing",
       "Works with any youtube.com URL, youtu.be link, Shorts link, or raw video ID",
-      "No upscaling, no watermark, no signup — the original file straight from YouTube's CDN",
+      "No upscaling and no watermark — the original file straight from YouTube's CDN",
     ],
     howToSteps: [
       "Copy the YouTube video URL from your browser or the share menu.",
-      "Paste it into the 4K thumbnail downloader above.",
-      "Preview the maxresdefault (1280×720) image plus all smaller sizes.",
-      "Click download on the maximum-resolution thumbnail to save the full-quality JPG.",
+      "Paste it into the tool above.",
+      "Preview the maxresdefault image plus all smaller sizes.",
+      "Click download on the largest thumbnail to save the full-quality JPG.",
     ],
     featureOverrides: [
       "Maximum-resolution download (maxresdefault 1280×720)",
@@ -70,7 +69,7 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
       "Honest resolution labelling — no fake upscaled '4K'",
       "Works with videos, Shorts, and raw video IDs",
       "No login, extension, or software required",
-      "One-click save as a high-quality JPG with no watermark",
+      "One-click save as a clean JPG",
     ],
     useCases: [
       "Download the sharpest available thumbnail for blog hero images and presentations",
@@ -81,7 +80,7 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
     aboutSections: [
       {
         heading: "Is There a Real 4K YouTube Thumbnail?",
-        body: "No — and any tool claiming a true 3840×2160 download is relabelling the same file. YouTube's image CDN stores a fixed set of thumbnail sizes, and the largest is maxresdefault.jpg at 1280×720 pixels (720p, 16:9). That is the genuine maximum. When you see '4K thumbnail downloader,' it almost always means 'the biggest file YouTube has,' which is this 1280×720 maxres image. We label sizes honestly so you always know exactly what you are saving rather than a fake upscale that adds no real detail.",
+        body: "No — and any tool claiming a true 3840×2160 download is relabelling the same file. YouTube's image CDN stores a fixed set of thumbnail sizes, and the largest is maxresdefault.jpg at 1280×720 (720p, 16:9). When you see '4K' advertised, it almost always means 'the biggest file YouTube has,' which is this maxres image. We label sizes honestly so you always know exactly what you are saving, rather than an upscale that invents pixels without adding detail.",
       },
       {
         heading: "When Maxresdefault Is Missing",
@@ -89,16 +88,16 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
       },
       {
         heading: "Why Maximum Resolution Matters",
-        body: "If you are using a thumbnail as a blog hero image, a slide, or a design reference, the 1280×720 maxres file is the only one that stays crisp at large sizes. The smaller default (120×90) and mqdefault (320×180) files pixelate the moment you scale them up. For CTR research — the most common reason creators download thumbnails — maxres lets you study fonts, face placement, and colour contrast at full clarity in Figma or Photoshop.",
+        body: "If you are using a thumbnail as a blog hero image, a slide, or a design reference, the maxres file is the only one that stays crisp at large sizes. The smaller default (120×90) and mqdefault (320×180) files pixelate the moment you scale them up. For CTR research — the most common reason creators save thumbnails — the full-size image lets you study fonts, face placement, and colour contrast at full clarity in Figma or Photoshop.",
       },
     ],
     proTip:
-      "Always download maxresdefault (1280×720) when it is available — it is the only large, crisp thumbnail YouTube stores. If a tool advertises '4K' or '8K' thumbnails, it is upscaling this same file; the extra pixels are invented and add no real detail. Save the honest 1280×720 original instead.",
+      "If a tool advertises '4K' or '8K' thumbnails, it is upscaling the same 1280×720 maxres file — the extra pixels are invented and add no real detail. Save the honest original instead.",
     faqOverrides: [
       {
         question: "Can I really download a YouTube thumbnail in 4K?",
         answer:
-          "Not a true 4K (3840×2160). YouTube's highest-stored thumbnail is maxresdefault at 1280×720 pixels. Tools that advertise '4K thumbnails' are serving this same 1280×720 file or upscaling it, which adds no real detail. This tool gives you the genuine maximum-resolution original so you always know exactly what you're saving.",
+          "Not a true 4K (3840×2160). YouTube's highest-stored thumbnail is maxresdefault at 1280×720 pixels. Tools that advertise '4K thumbnails' are serving this same file or upscaling it, which adds no real detail. This tool gives you the genuine maximum-resolution original.",
       },
       {
         question: "What is the highest resolution YouTube thumbnail I can get?",
@@ -123,31 +122,30 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
     headerDescription:
       "Download crisp HD YouTube thumbnails (up to 1280×720) for embeds, blogs, and design research. Paste a URL and save instantly.",
     overviewText:
-      "Use this HD YouTube thumbnail downloader when you need a sharp, high-quality cover image instead of the tiny preview YouTube shows in feeds. It extracts the full HD maxresdefault thumbnail (1280×720) plus every smaller size, so you can pick exactly the quality you need for blog embeds, slides, or thumbnail design analysis.",
+      "Use this HD YouTube thumbnail downloader when you need a sharp cover image instead of the tiny preview YouTube shows in feeds. Paste a video URL and the tool extracts the full 1280×720 maxresdefault image plus every smaller size, so you can pick exactly the quality you need for blog embeds, slides, or design analysis.",
     definition:
-      "An HD YouTube thumbnail downloader is a free tool that saves a video's thumbnail in high definition — up to 1280×720 (720p) — the largest, crispest size YouTube stores for that video.",
+      "The HD thumbnail of a YouTube video is the maxresdefault file — 1280×720 (720p), the largest, crispest size YouTube stores. This tool saves it for any public video.",
     quickAnswer:
-      "Paste a YouTube URL to load the HD thumbnail (1280×720 maxresdefault) along with smaller sizes. Click download on the HD version for a crisp image. People searching '1080p thumbnail' get this same file — YouTube tops out at 720p for thumbnails, which is the HD original.",
+      "Paste a YouTube URL, then click download on the largest image shown. People searching '1080p thumbnail' get this same file — YouTube tops out at 720p for thumbnails, and that 720p maxresdefault image is the HD original.",
     keywords: [
       "youtube thumbnail downloader hd",
       "hd youtube thumbnail",
       "youtube thumbnail 1080p",
       "1080p thumbnail download",
-      "full hd youtube thumbnail downloader",
       "download youtube thumbnail high quality",
     ],
     keyTakeaways: [
       "Downloads the HD thumbnail (maxresdefault, 1280×720) plus all smaller sizes",
-      "1280×720 (720p) is the largest thumbnail YouTube stores — there is no native 1080p file",
+      "720p is the largest thumbnail YouTube stores — there is no native 1080p file",
       "Ideal for blog hero images, slides, and high-clarity CTR research",
       "Works with standard videos, Shorts, youtu.be links, and raw IDs",
-      "No watermark, no signup — the original HD file from YouTube's CDN",
+      "No watermark and no signup — the original file from YouTube's CDN",
     ],
     howToSteps: [
-      "Copy the YouTube video URL you want the HD thumbnail for.",
-      "Paste it into the HD thumbnail downloader above.",
-      "Preview the HD 1280×720 image and every smaller size with their dimensions.",
-      "Click download on the HD version to save the high-quality JPG.",
+      "Copy the URL of the video you want the thumbnail from.",
+      "Paste it into the tool above.",
+      "Preview the 1280×720 image and every smaller size with their dimensions.",
+      "Click download on the HD version to save the JPG.",
     ],
     featureOverrides: [
       "Full HD thumbnail download (1280×720 maxresdefault)",
@@ -160,30 +158,30 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
     useCases: [
       "Embed HD thumbnails as featured images in video-related blog posts",
       "Add crisp video covers to newsletters and email previews",
-      "Use HD thumbnails as slides in educational or marketing presentations",
-      "Study HD competitor thumbnails for font, colour, and layout patterns",
+      "Use full-size thumbnails as slides in educational or marketing presentations",
+      "Study competitor thumbnails for font, colour, and layout patterns",
     ],
     aboutSections: [
       {
         heading: "Is There a 1080p YouTube Thumbnail?",
-        body: "Not a native one. YouTube's largest stored thumbnail is maxresdefault at 1280×720 — that is 720p, and it is the HD original. Searches for 'youtube thumbnail 1080p' or 'full HD thumbnail' resolve to this same file because YouTube does not generate a 1920×1080 thumbnail. Any '1080p' download is either this 720p image or an upscale that invents pixels without adding detail. We give you the real HD file and label it accurately.",
+        body: "Not a native one. YouTube's largest stored thumbnail is maxresdefault at 1280×720 — that is 720p, and it is the HD original. Searches for '1080p thumbnail' or 'full HD thumbnail' resolve to this same file because YouTube does not generate a 1920×1080 version. Any '1080p' download is either this 720p image or an upscale that invents pixels without adding detail. We give you the real file and label it accurately.",
       },
       {
         heading: "Best HD Size for Embeds",
-        body: "For blog and CMS embeds, maxresdefault (1280×720) is ideal when it exists, but it is missing on older or non-HD videos. The most reliable HD-ish fallback is hqdefault (480×360), which exists for essentially every video and looks clean in article bodies. This tool shows both so you can choose maximum quality or guaranteed availability depending on where the image will live.",
+        body: "For blog and CMS embeds, maxresdefault is ideal when it exists, but it is missing on older or non-HD videos. The most reliable fallback is hqdefault (480×360), which exists for essentially every video and looks clean in article bodies. This tool shows both so you can choose maximum quality or guaranteed availability depending on where the image will live.",
       },
       {
         heading: "Keeping Thumbnails Crisp",
-        body: "Thumbnails are JPGs, so each save is already compressed. To keep an HD thumbnail crisp, download the largest size and avoid re-exporting it through additional compression. If you need to overlay text or crop for a blog header, edit the 1280×720 maxres file directly rather than scaling up a smaller size — upscaling a 320×180 image to fill a hero slot produces visible blur and artefacts.",
+        body: "Thumbnails are JPGs, so each save is already compressed. To keep one crisp, download the largest size and avoid re-exporting it through additional compression. If you need to overlay text or crop for a blog header, edit the maxres file directly rather than scaling up a smaller size — upscaling a 320×180 image to fill a hero slot produces visible blur and artefacts.",
       },
     ],
     proTip:
-      "Download the 1280×720 maxresdefault for anything that will display large (blog heroes, slides, design references). Keep hqdefault (480×360) as your fallback for older videos — it's the most reliably available size and still looks clean in article bodies. Don't trust tools promising '1080p' or '4K' thumbnails; YouTube caps thumbnails at 720p.",
+      "Download the full 1280×720 file for anything that will display large (blog heroes, slides, design references). Keep hqdefault (480×360) as your fallback for older videos — it's the most reliably available size and still looks clean in article bodies.",
     faqOverrides: [
       {
         question: "Can I download a YouTube thumbnail in 1080p?",
         answer:
-          "YouTube doesn't store a 1080p thumbnail. Its highest-quality thumbnail is maxresdefault at 1280×720 (720p HD), and that's what '1080p thumbnail' searches actually return. This tool downloads that genuine HD original — anything larger would be an upscale that adds no real detail.",
+          "YouTube doesn't store a 1080p thumbnail. Its highest-quality thumbnail is maxresdefault at 1280×720 (720p HD), and that's what '1080p thumbnail' searches actually return. This tool downloads that genuine original — anything larger would be an upscale that adds no real detail.",
       },
       {
         question: "What's the difference between HD and SD thumbnails?",
@@ -208,34 +206,33 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
     headerDescription:
       "Grab the cover image of any YouTube Shorts video. Paste the Shorts link and download the thumbnail in every available size.",
     overviewText:
-      "This YouTube Shorts thumbnail downloader extracts the cover image from any Shorts video so you can save, study, or reuse it. Paste a youtube.com/shorts link and the tool fetches the same thumbnail set as regular videos — preview each size and download the one you need, with no login or watermark.",
+      "This YouTube Shorts thumbnail downloader extracts the cover image from any Short so you can save, study, or reuse it. Paste a youtube.com/shorts link and the tool fetches the same image set YouTube keeps for regular videos — preview each size and save the one you need, no login or watermark.",
     definition:
-      "A YouTube Shorts thumbnail downloader is a free tool that extracts the cover image of a short-form YouTube video from its /shorts/ URL and lets you download it in all available resolutions.",
+      "A Short's cover image is stored on YouTube's CDN exactly like a regular video thumbnail, keyed to the video ID. This tool extracts it from any /shorts/ URL in every available resolution.",
     quickAnswer:
-      "Paste the YouTube Shorts URL (youtube.com/shorts/VIDEO_ID) into the tool. It pulls the same thumbnail sizes as a normal video — including maxresdefault (1280×720) — and you click download on the one you want. Shorts use the standard 16:9 thumbnail files even though the video itself is vertical 9:16.",
+      "Paste the Shorts URL (youtube.com/shorts/VIDEO_ID) into the tool. It pulls the same sizes as a normal video — up to maxresdefault (1280×720) — and you click download on the one you want. Shorts covers are standard 16:9 files even though the video itself is vertical 9:16.",
     keywords: [
       "youtube shorts thumbnail downloader",
       "shorts thumbnail grabber",
       "download youtube shorts thumbnail",
-      "youtube short thumbnail download",
       "save youtube shorts cover image",
       "shorts thumbnail download hd",
     ],
     keyTakeaways: [
-      "Downloads the cover image of any YouTube Shorts video by its /shorts/ link",
-      "Shorts use the same thumbnail files (up to 1280×720) as regular videos",
-      "The vertical 9:16 video still has a 16:9 thumbnail set on YouTube's CDN",
+      "Downloads the cover image of any YouTube Short from its /shorts/ link",
+      "Shorts use the same stored image files (up to 1280×720) as regular videos",
+      "The vertical 9:16 video still has a 16:9 cover set on YouTube's CDN",
       "Works with /shorts/ URLs, normal watch URLs, and raw video IDs",
-      "No login, app, or watermark — the original cover straight from YouTube",
+      "No login, app, or watermark — the original file straight from YouTube",
     ],
     howToSteps: [
       "Open the Short and copy its URL (youtube.com/shorts/VIDEO_ID) from the share menu.",
-      "Paste the Shorts link into the downloader above.",
-      "Preview every available thumbnail size for that Short.",
-      "Click download on the size you need to save the cover image.",
+      "Paste the link into the tool above.",
+      "Preview every available cover size for that Short.",
+      "Click download on the size you need.",
     ],
     featureOverrides: [
-      "Extract the cover image from any YouTube Shorts video",
+      "Extract the cover image from any YouTube Short",
       "All standard sizes up to maxresdefault 1280×720",
       "Accepts /shorts/ URLs, watch URLs, and raw IDs",
       "Works on mobile and desktop browsers",
@@ -244,26 +241,26 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
     ],
     useCases: [
       "Save Shorts covers for content research and trend tracking",
-      "Study high-performing Shorts thumbnails for hook and text patterns",
+      "Study high-performing Shorts covers for hook and text patterns",
       "Reference Shorts in blog posts, recaps, and social roundups",
-      "Archive your own Shorts cover images for repurposing",
+      "Archive your own cover images for repurposing",
     ],
     aboutSections: [
       {
         heading: "How Shorts Thumbnails Work",
-        body: "A YouTube Short is a vertical 9:16 video, but YouTube still generates the same horizontal thumbnail files (default, mqdefault, hqdefault, sddefault, maxresdefault) for it, keyed to the video ID. So even though the Short plays full-screen vertical, its downloadable thumbnail is the standard 16:9 cover. If the creator did not upload a custom thumbnail, YouTube uses a frame from the Short — usually the first frame — as the cover image.",
+        body: "A YouTube Short is a vertical 9:16 video, but YouTube still generates the same horizontal image files (default, mqdefault, hqdefault, sddefault, maxresdefault) for it, keyed to the video ID. So even though the Short plays full-screen vertical, its downloadable cover is the standard 16:9 image. If the creator did not upload a custom cover, YouTube uses a frame from the Short — usually the first frame.",
       },
       {
         heading: "Getting the Right Shorts URL",
         body: "Shorts URLs look like youtube.com/shorts/VIDEO_ID. You can also paste a normal watch URL (youtube.com/watch?v=VIDEO_ID) for the same Short, or just the raw 11-character video ID — the tool extracts the ID from any of these formats. On mobile, use the Short's Share button and 'Copy link' to grab the correct URL.",
       },
       {
-        heading: "Why Download a Shorts Thumbnail",
-        body: "Shorts move fast, and the cover image is a big part of why a Short gets the first tap in the feed. Downloading covers from top-performing Shorts in your niche lets you reverse-engineer what works: bold faces, big text, high contrast, and a clear hook. It is also useful for archiving your own Shorts covers so you can repurpose them across platforms or recap roundups.",
+        heading: "Why Download a Shorts Cover",
+        body: "Shorts move fast, and the cover image is a big part of why a Short gets the first tap in the feed. Saving covers from top performers in your niche lets you reverse-engineer what works: bold faces, big text, high contrast, and a clear hook. It is also useful for archiving your own covers so you can repurpose them across platforms or recap roundups.",
       },
     ],
     proTip:
-      "Shorts thumbnails are 16:9 even though the video is vertical, so the visible cover is often a cropped frame. When studying Shorts covers for ideas, download the maxresdefault (1280×720) version to see the full frame the creator chose — the in-feed view crops it heavily, hiding text and detail that the full thumbnail reveals.",
+      "Shorts covers are 16:9 even though the video is vertical, so the visible cover is often a cropped frame. When studying covers for ideas, save the maxresdefault version to see the full frame the creator chose — the in-feed view crops it heavily, hiding text and detail the full image reveals.",
     faqOverrides: [
       {
         question: "How do I download a YouTube Shorts thumbnail?",
@@ -273,12 +270,12 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
       {
         question: "Do Shorts have the same thumbnails as normal videos?",
         answer:
-          "Yes. Even though a Short is vertical 9:16, YouTube generates the same horizontal thumbnail files (up to 1280×720) keyed to the video ID. So a Shorts thumbnail downloads exactly like a regular video thumbnail.",
+          "Yes. Even though a Short is vertical 9:16, YouTube generates the same horizontal image files (up to 1280×720) keyed to the video ID, so a Shorts cover downloads exactly like a regular video thumbnail.",
       },
       {
         question: "Why is the Shorts thumbnail horizontal when the video is vertical?",
         answer:
-          "YouTube stores thumbnails in 16:9 regardless of video orientation. For a Short, the cover is either a custom-uploaded image or a 16:9 frame pulled from the vertical video, so the downloaded thumbnail is horizontal.",
+          "YouTube stores thumbnails in 16:9 regardless of video orientation. For a Short, the cover is either a custom-uploaded image or a 16:9 frame pulled from the vertical video, so the downloaded file is horizontal.",
       },
     ],
   },
@@ -293,36 +290,33 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
     headerDescription:
       "Grab any YouTube video's thumbnail image in seconds. Paste a URL or video ID and extract every available size.",
     overviewText:
-      "This YouTube thumbnail grabber extracts the thumbnail image from any public video and lets you save it instantly. Paste a video URL, a youtu.be link, a Shorts link, or even just the raw video ID — the grabber pulls every available size from YouTube's CDN, from the small 120×90 default up to the full 1280×720 HD image.",
+      "This YouTube thumbnail grabber extracts the thumbnail image from any public video and lets you save it instantly. Paste a full URL, a youtu.be link, a Shorts link, or just the raw 11-character video ID — the tool pulls every size YouTube's CDN stores, from the small 120×90 default up to the full 1280×720 HD image.",
     definition:
-      "A YouTube thumbnail grabber is a free tool that extracts (grabs) the thumbnail image of any YouTube video directly from YouTube's image servers and lets you download it in any available size.",
+      "'Grabbing' a thumbnail means fetching the public image file YouTube stores for a video and saving a copy. This tool does it from any URL or video ID, in every available size.",
     quickAnswer:
-      "Paste a YouTube URL or video ID into the grabber. It instantly extracts all thumbnail sizes (120×90 up to 1280×720) straight from YouTube's CDN, and you click download on the one you want. 'Grabber' and 'downloader' do the same thing — fetch the public thumbnail by video ID.",
+      "Paste a YouTube URL or video ID, and every stored image size appears with a download button — click the one you want. Nothing is scraped or uploaded; the file comes straight from YouTube's CDN to your browser.",
     keywords: [
       "youtube thumbnail grabber",
       "yt thumbnail grabber",
-      "thumbnail image grabber",
       "grab youtube thumbnail",
-      "youtube image grabber",
       "extract youtube thumbnail",
       "youtube thumbnail extractor",
-      "youtube thumbnail saver",
     ],
     keyTakeaways: [
       "Grabs the thumbnail of any public YouTube video in every available size",
       "Accepts full URLs, youtu.be links, Shorts links, or just the raw video ID",
-      "Pulls images straight from YouTube's CDN — nothing is scraped or stored",
-      "Largest grab is maxresdefault (1280×720); smallest is default (120×90)",
+      "Images come straight from YouTube's CDN — nothing is scraped or stored",
+      "Largest size is maxresdefault (1280×720); smallest is default (120×90)",
       "No login, extension, or watermark — instant clean JPG output",
     ],
     howToSteps: [
       "Copy a YouTube video URL, or just the 11-character video ID.",
-      "Paste it into the thumbnail grabber above.",
-      "The grabber extracts and previews every available thumbnail size.",
-      "Click download on the size you want to grab the image.",
+      "Paste it into the tool above.",
+      "Preview every available thumbnail size.",
+      "Click download on the size you want.",
     ],
     featureOverrides: [
-      "Grabs every thumbnail size from one input",
+      "Every thumbnail size from one input",
       "Accepts URLs, youtu.be links, Shorts links, or raw video IDs",
       "Images pulled directly from YouTube's CDN",
       "Largest size: maxresdefault 1280×720 HD",
@@ -330,10 +324,10 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
       "Instant one-click JPG download",
     ],
     useCases: [
-      "Quickly grab a single thumbnail when you only have the video ID",
-      "Batch-research thumbnails by grabbing covers across a niche",
+      "Quickly save a single thumbnail when you only have the video ID",
+      "Batch-research covers across a niche for design analysis",
       "Extract a thumbnail for documentation, slides, or moodboards",
-      "Grab your own old thumbnails to refresh or redesign them",
+      "Pull your own old thumbnails to refresh or redesign them",
     ],
     aboutSections: [
       {
@@ -342,25 +336,25 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
       },
       {
         heading: "Grab With Just the Video ID",
-        body: "You do not need a full URL. Every YouTube video has an 11-character ID (the part after watch?v= or youtu.be/), and the grabber accepts that ID on its own. This is handy when you are working from a spreadsheet of IDs, an API response, or a list of videos — paste the ID and grab the thumbnail without reconstructing the full link.",
+        body: "You do not need a full URL. Every YouTube video has an 11-character ID (the part after watch?v= or youtu.be/), and the tool accepts that ID on its own. This is handy when you are working from a spreadsheet of IDs, an API response, or a list of videos — paste the ID and save the image without reconstructing the full link.",
       },
       {
         heading: "How the Grab Works Technically",
-        body: "YouTube serves thumbnails from img.youtube.com (and i.ytimg.com) at fixed paths like /vi/VIDEO_ID/maxresdefault.jpg. The grabber builds these paths from the ID you paste and checks which sizes exist, then shows you previews with download buttons. Because the images are public CDN assets, nothing is logged in to, scraped from your account, or stored on our side — the file is delivered straight from YouTube to your browser.",
+        body: "YouTube serves thumbnails from img.youtube.com (and i.ytimg.com) at fixed paths like /vi/VIDEO_ID/maxresdefault.jpg. The tool builds these paths from the ID you paste and checks which sizes exist, then shows you previews with download buttons. Because the images are public CDN assets, nothing is logged in to, scraped from your account, or stored on our side — the file is delivered straight from YouTube to your browser.",
       },
     ],
     proTip:
-      "If you work with lots of videos, grab thumbnails using the raw 11-character video ID instead of full URLs — it's faster and avoids URL-parsing issues. The CDN pattern is img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg, so once you know the ID you can predict the exact image path for any size.",
+      "If you work with lots of videos, use the raw 11-character video ID instead of full URLs — it's faster and avoids URL-parsing issues. The CDN pattern is img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg, so once you know the ID you can predict the exact image path for any size.",
     faqOverrides: [
       {
         question: "What is a YouTube thumbnail grabber?",
         answer:
-          "It's a tool that extracts (grabs) a video's thumbnail image directly from YouTube's image servers. You paste a URL or video ID and it returns every available thumbnail size with download buttons. 'Grabber' and 'downloader' mean the same thing.",
+          "It's a tool that fetches a video's thumbnail image directly from YouTube's image servers. You paste a URL or video ID and it returns every available size with download buttons — the same thing a 'downloader' does, under a different name.",
       },
       {
         question: "Can I grab a thumbnail using only the video ID?",
         answer:
-          "Yes. Paste just the 11-character video ID (the part after watch?v= or youtu.be/) and the grabber builds the CDN image URLs for every size. A full link isn't required.",
+          "Yes. Paste just the 11-character video ID (the part after watch?v= or youtu.be/) and the tool builds the CDN image URLs for every size. A full link isn't required.",
       },
       {
         question: "Does the grabber store the thumbnails I download?",
@@ -380,16 +374,15 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
     headerDescription:
       "Get the maxresdefault.jpg (1280×720) thumbnail for any YouTube video, with an automatic fallback when it doesn't exist.",
     overviewText:
-      "This maxresdefault downloader fetches the maxresdefault.jpg file — YouTube's highest-resolution thumbnail at 1280×720 — for any public video. Paste a URL or video ID and the tool retrieves the maxres image directly from YouTube's CDN, or automatically falls back to the next-best size (sddefault or hqdefault) when a video has no maxres file.",
+      "This maxresdefault downloader fetches maxresdefault.jpg — YouTube's highest-resolution thumbnail, 1280×720 — for any public video. Paste a URL or video ID and the tool retrieves the file directly from YouTube's CDN, or automatically falls back to the next-best size when a video has no maxres file.",
     definition:
-      "Maxresdefault is the filename of YouTube's highest-resolution thumbnail (maxresdefault.jpg, 1280×720). A maxresdefault downloader fetches that specific file for any video by its ID.",
+      "Maxresdefault is the filename of YouTube's highest-resolution thumbnail (maxresdefault.jpg, 1280×720). It only exists for HD uploads and custom thumbnails, which is why it sometimes 404s.",
     quickAnswer:
-      "Paste a YouTube URL or video ID and the tool builds the maxresdefault.jpg URL (img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg) and downloads it. If that video has no maxres file, it falls back to sddefault.jpg (640×480) or hqdefault.jpg (480×360) automatically.",
+      "Paste a YouTube URL or video ID and the tool builds the CDN path (img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg) and downloads the file. If that video has no maxres image, it falls back to sddefault (640×480) or hqdefault (480×360) automatically.",
     keywords: [
       "maxresdefault downloader",
       "maxresdefault.jpg",
       "download maxresdefault",
-      "maxresdefault url",
       "youtube maxresdefault thumbnail",
       "maxresdefault not available",
     ],
@@ -402,8 +395,8 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
     ],
     howToSteps: [
       "Copy a YouTube video URL or the 11-character video ID.",
-      "Paste it into the maxresdefault downloader above.",
-      "The tool fetches maxresdefault.jpg (1280×720) for that video.",
+      "Paste it into the tool above.",
+      "The tool fetches maxresdefault.jpg for that video.",
       "If maxres exists, download it; if not, grab the largest available fallback.",
     ],
     featureOverrides: [
@@ -423,15 +416,15 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
     aboutSections: [
       {
         heading: "What maxresdefault.jpg Is",
-        body: "maxresdefault.jpg is the filename YouTube uses for the maximum-resolution thumbnail of a video — 1280×720 pixels, 16:9. It lives at a predictable CDN path: img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg (i.ytimg.com works too). Because the path is predictable, you can fetch it for any video if you know the 11-character ID. This downloader builds that URL for you and saves the file.",
+        body: "maxresdefault.jpg is the filename YouTube uses for the maximum-resolution thumbnail of a video — 1280×720 pixels, 16:9. It lives at a predictable CDN path keyed to the 11-character video ID (i.ytimg.com works as an alternate host). Because the path is predictable, you can fetch it for any video if you know the ID. This tool builds that URL for you and saves the file.",
       },
       {
         heading: "Why maxresdefault Sometimes 404s",
-        body: "Not every video has a maxresdefault file. YouTube only generates it for videos uploaded in at least 720p or that have a custom-uploaded thumbnail. For older, low-resolution, or auto-thumbnailed videos, requesting maxresdefault.jpg returns a 404 or a blank grey placeholder. When that happens, this tool automatically requests the next-largest real files — sddefault.jpg (640×480), then hqdefault.jpg (480×360) — so you always get the best image that actually exists.",
+        body: "Not every video has a maxres file. YouTube only generates it for videos uploaded in at least 720p or that have a custom-uploaded thumbnail. For older, low-resolution, or auto-thumbnailed videos, the request returns a 404 or a blank grey placeholder. When that happens, this tool automatically requests the next-largest real files — sddefault.jpg (640×480), then hqdefault.jpg (480×360) — so you always get the best image that actually exists.",
       },
       {
         heading: "Maxresdefault for Developers",
-        body: "If you are building an app or script, you can hit the CDN path directly, but you should handle the missing-maxres case: check the returned image dimensions (YouTube's 404 placeholder is 120×90) or request hqdefault as a guaranteed fallback. The YouTube Data API also returns a 'maxres' thumbnail object only when one exists, which is a cleaner way to detect availability than parsing the image. This page is a quick manual way to verify what a given video actually has.",
+        body: "If you are building an app or script, you can hit the CDN path directly, but you should handle the missing-maxres case: check the returned image dimensions (YouTube's placeholder is 120×90) or request hqdefault as a guaranteed fallback. The YouTube Data API also returns a 'maxres' thumbnail object only when one exists, which is a cleaner way to detect availability than parsing the image. This page is a quick manual way to verify what a given video actually has.",
       },
     ],
     proTip:
@@ -440,12 +433,12 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
       {
         question: "What is maxresdefault.jpg?",
         answer:
-          "It's the filename of YouTube's highest-resolution thumbnail — 1280×720 pixels. It lives at img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg. This tool downloads that file for any video you paste.",
+          "It's the filename of YouTube's highest-resolution thumbnail — 1280×720 pixels, stored on YouTube's image CDN. This tool downloads that file for any video you paste.",
       },
       {
         question: "Why does maxresdefault return a 404 or blank image?",
         answer:
-          "Because that video has no maxres thumbnail. YouTube only creates maxresdefault for HD uploads or custom thumbnails. Older or low-res videos lack it, and the URL returns a small grey placeholder. This tool falls back to sddefault (640×480) or hqdefault (480×360) automatically.",
+          "Because that video has no maxres thumbnail. YouTube only creates one for HD uploads or custom thumbnails. Older or low-res videos lack it, and the URL returns a small grey placeholder. This tool falls back to sddefault (640×480) or hqdefault (480×360) automatically.",
       },
       {
         question: "What's the maxresdefault URL format?",
@@ -465,18 +458,17 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
     headerDescription:
       "Save YouTube thumbnails straight to your phone. Works on Android and iPhone browsers — no app to install.",
     overviewText:
-      "This mobile YouTube thumbnail downloader works right in your phone's browser — no app to install. Use the YouTube app's Share button to copy a video link, paste it here, and download the thumbnail straight to your Android gallery or iPhone Photos. Every size is available, up to the full 1280×720 HD image.",
+      "This mobile YouTube thumbnail downloader works right in your phone's browser — nothing to install. Use the YouTube app's Share button to copy a video link, paste it here, and save the thumbnail straight to your Android gallery or iPhone Photos. Every size is available, up to the full 1280×720 HD image.",
     definition:
-      "A mobile YouTube thumbnail downloader is a browser-based tool that lets you save a video's thumbnail image directly to an Android or iPhone device without installing any app.",
+      "Saving a YouTube thumbnail on a phone doesn't require an app — a browser-based tool can fetch the public image and save it directly to an Android or iPhone device.",
     quickAnswer:
-      "In the YouTube app, tap Share then Copy link. Open this page in your phone browser, paste the link, and tap download on the size you want. On Android it saves to your gallery; on iPhone, long-press the image and choose 'Add to Photos'. No app or signup needed.",
+      "In the YouTube app, tap Share then Copy link. Open this page in your phone browser, paste the link, and tap download on the size you want. On Android it saves to your gallery; on iPhone, long-press the image and choose 'Add to Photos'.",
     keywords: [
       "youtube thumbnail downloader mobile",
       "youtube thumbnail downloader android",
       "youtube thumbnail downloader iphone",
       "save youtube thumbnail on phone",
       "download youtube thumbnail mobile",
-      "youtube thumbnail download app free",
     ],
     keyTakeaways: [
       "Works in any phone browser — no Android or iOS app to install",
@@ -516,7 +508,7 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
       },
       {
         heading: "Why a Browser Tool Beats an App",
-        body: "Most 'YouTube thumbnail downloader' apps in the stores show ads, request broad permissions, and do exactly what a web page can do for free. A browser-based tool needs no install, no updates, and no permissions — you paste a link and save an image. It also works the same on Android, iPhone, tablets, and desktop, so you do not need a separate app per device.",
+        body: "Most thumbnail-saver apps in the stores show ads, request broad permissions, and do exactly what a web page can do for free. A browser-based tool needs no install, no updates, and no permissions — you paste a link and save an image. It also works the same on Android, iPhone, tablets, and desktop, so you do not need a separate app per device.",
       },
     ],
     proTip:
@@ -550,31 +542,30 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
     headerDescription:
       "Grab the cover image of any YouTube live stream or premiere. Paste the URL and download the thumbnail in every available size.",
     overviewText:
-      "This YouTube live thumbnail downloader extracts the cover image from live streams, premieres, and archived broadcasts. A live stream uses the same thumbnail files as a regular video — keyed to its video ID — so paste the stream URL, preview every size, and download the one you need, with no login or watermark.",
+      "This YouTube live thumbnail downloader extracts the cover image from live streams, premieres, and archived broadcasts. A live stream uses the same stored image files as a regular video, keyed to its video ID — so paste the stream URL, preview every size, and save the one you need, no login or watermark.",
     definition:
-      "A YouTube live thumbnail downloader is a free tool that extracts the cover image of a live stream, premiere, or archived broadcast from its video ID and downloads it in all available resolutions.",
+      "A YouTube live stream has a video ID like any upload, so its cover image is stored and downloadable exactly like a regular thumbnail — before, during, and after the broadcast.",
     quickAnswer:
-      "Paste the live stream or premiere URL (youtube.com/watch?v=VIDEO_ID or youtube.com/live/VIDEO_ID). The tool builds the CDN thumbnail URLs and shows every size up to maxresdefault (1280×720) for download. Live streams use the same thumbnail set as normal videos.",
+      "Paste the stream or premiere URL (youtube.com/watch?v=VIDEO_ID or youtube.com/live/VIDEO_ID). The tool builds the CDN image URLs and shows every size up to maxresdefault (1280×720) for download.",
     keywords: [
       "youtube live thumbnail downloader",
       "live stream thumbnail download",
       "youtube live thumbnail",
       "download livestream thumbnail",
       "youtube premiere thumbnail downloader",
-      "youtube live stream cover image",
     ],
     keyTakeaways: [
       "Downloads the cover image of any live stream, premiere, or archived broadcast",
-      "Live streams use the same thumbnail files (up to 1280×720) as regular videos",
+      "Live streams use the same stored image files (up to 1280×720) as regular videos",
       "Works with /watch?v=, /live/ URLs, and raw video IDs",
-      "Custom-uploaded live thumbnails return maxresdefault; auto ones use a frame",
-      "No login, app, or watermark — the original cover from YouTube's CDN",
+      "Custom-uploaded live covers get the full maxres size; auto ones use a stream frame",
+      "No login, app, or watermark — the original file from YouTube's CDN",
     ],
     howToSteps: [
       "Open the live stream or premiere and copy its URL from the share menu.",
-      "Paste the live URL into the downloader above.",
-      "Preview every available thumbnail size for that stream.",
-      "Click download on the size you need to save the cover image.",
+      "Paste the URL into the tool above.",
+      "Preview every available cover size for that stream.",
+      "Click download on the size you need.",
     ],
     featureOverrides: [
       "Extract the cover image from live streams and premieres",
@@ -586,18 +577,18 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
     ],
     useCases: [
       "Save live stream covers for recaps, clips, and highlight posts",
-      "Archive premiere thumbnails before a stream goes private",
+      "Archive premiere covers before a stream goes private",
       "Study how top streamers design live-event cover images",
       "Reference live broadcasts in articles and event roundups",
     ],
     aboutSections: [
       {
         heading: "How Live Stream Thumbnails Work",
-        body: "A YouTube live stream is just a video with a video ID, so it has the same thumbnail files as any upload: default, mqdefault, hqdefault, sddefault, and maxresdefault. Streamers who upload a custom thumbnail for the event get a full 1280×720 maxres image; otherwise YouTube uses a frame from the stream. Once a live stream ends, it becomes an archived video at the same URL, and the thumbnail stays downloadable exactly the same way.",
+        body: "A YouTube live stream is just a video with a video ID, so it has the same image files as any upload: default, mqdefault, hqdefault, sddefault, and maxresdefault. Streamers who upload a custom cover for the event get a full 1280×720 maxres image; otherwise YouTube uses a frame from the stream. Once a broadcast ends, it becomes an archived video at the same URL, and the cover stays downloadable exactly the same way.",
       },
       {
         heading: "Live vs Premiere vs Archived",
-        body: "Premieres and scheduled live streams often have a custom thumbnail set before the event even starts, which means you can grab the maxres cover ahead of time. During a live broadcast the thumbnail is already live too. After the broadcast, the video remains and keeps its thumbnail — so whether the stream is upcoming, live, or finished, this tool pulls the current cover image from YouTube's CDN.",
+        body: "Premieres and scheduled streams often have a custom cover set before the event even starts, which means you can grab the maxres image ahead of time. During a broadcast the cover is already live too. Afterwards, the video remains and keeps its image — so whether the stream is upcoming, live, or finished, this tool pulls the current cover from YouTube's CDN.",
       },
       {
         heading: "Getting the Live URL",
@@ -605,22 +596,22 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
       },
     ],
     proTip:
-      "For premieres, grab the thumbnail as soon as the premiere is scheduled — creators often set the custom cover early, so you can download the full maxresdefault before the event airs. After a stream ends it becomes a normal archived video, so the same URL keeps working indefinitely unless the creator removes or privates it.",
+      "For premieres, grab the cover as soon as the premiere is scheduled — creators often set the custom image early, so you can save the full maxresdefault before the event airs. After a stream ends it becomes a normal archived video, so the same URL keeps working unless the creator removes or privates it.",
     faqOverrides: [
       {
         question: "Can I download the thumbnail of a YouTube live stream?",
         answer:
-          "Yes. A live stream has a video ID just like any upload, so it has the same thumbnail set (up to 1280×720). Paste the live URL and the tool extracts every available size. This works for active streams, scheduled premieres, and archived broadcasts.",
+          "Yes. A live stream has a video ID just like any upload, so it has the same stored image set (up to 1280×720). Paste the URL and the tool extracts every available size. This works for active streams, scheduled premieres, and archived broadcasts.",
       },
       {
         question: "Does it work after the live stream ends?",
         answer:
-          "Yes. When a stream ends it becomes a regular archived video at the same URL, keeping its thumbnail. You can download the cover before, during, or after the broadcast, as long as the video still exists.",
+          "Yes. When a stream ends it becomes a regular archived video at the same URL, keeping its cover image. You can save it before, during, or after the broadcast, as long as the video still exists.",
       },
       {
         question: "Why doesn't a live stream have a maxresdefault thumbnail?",
         answer:
-          "If the streamer didn't upload a custom thumbnail, YouTube uses an auto-generated frame, which often lacks the 1280×720 maxres size. The tool then falls back to the largest available size — usually hqdefault (480×360) or sddefault (640×480).",
+          "If the streamer didn't upload a custom cover, YouTube uses an auto-generated frame, which often lacks the 1280×720 maxres size. The tool then falls back to the largest available size — usually hqdefault (480×360) or sddefault (640×480).",
       },
     ],
   },
@@ -635,30 +626,29 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
     headerDescription:
       "View any YouTube thumbnail at full size in your browser. Paste a URL or video ID to see every resolution clearly.",
     overviewText:
-      "This YouTube thumbnail viewer lets you see any video's full-size cover image instead of the small, cropped version YouTube shows in feeds and search. Paste a video URL or ID and view every available resolution — from the 120×90 default up to the full 1280×720 HD image — clearly in your browser, with a one-click save if you decide you want a copy.",
+      "This YouTube thumbnail viewer shows you any video's full-size cover image instead of the small, cropped version feeds and search results display. Paste a URL or video ID to see every available resolution — from the 120×90 default up to the full 1280×720 HD image — clearly in your browser, with an optional one-click save if you decide you want a copy.",
     definition:
-      "A YouTube thumbnail viewer is a free tool that displays a video's full-size thumbnail image in the browser at every available resolution, so you can inspect it clearly before deciding to download.",
+      "Feeds and search results never show the full frame a creator designed — they crop and shrink it. Viewing the original file at full size in the browser reveals the complete, uncropped image at every stored resolution.",
     quickAnswer:
-      "Paste a YouTube URL or video ID and the viewer shows the full-size thumbnail in every resolution (up to 1280×720) right in your browser. You see the complete, uncropped image — unlike feeds and search, which crop and shrink it — and can save any size with one click.",
+      "Paste a YouTube URL or video ID and the full-size image appears in every resolution, right in your browser. No download is required just to look — saving any size is an optional single click.",
     keywords: [
       "youtube thumbnail viewer",
       "view youtube thumbnail",
       "see youtube thumbnail full size",
       "youtube thumbnail preview",
       "check youtube video thumbnail",
-      "youtube thumbnail full size viewer",
     ],
     keyTakeaways: [
-      "View any video's full-size, uncropped thumbnail in your browser",
+      "View any video's full-size, uncropped cover image in your browser",
       "See every resolution from 120×90 up to 1280×720 HD",
-      "Useful for inspecting competitor thumbnails before downloading",
+      "Useful for inspecting competitor designs before downloading anything",
       "Works with any URL, youtu.be link, Shorts link, or raw video ID",
-      "View first, then download any size with one click if you want it",
+      "Look first — saving a copy is optional and one click",
     ],
     howToSteps: [
       "Copy a YouTube video URL or its 11-character video ID.",
-      "Paste it into the thumbnail viewer above.",
-      "View the full-size thumbnail in every available resolution.",
+      "Paste it into the tool above.",
+      "View the full-size image in every available resolution.",
       "Save any size with one click if you want to keep it.",
     ],
     featureOverrides: [
@@ -670,42 +660,42 @@ export const thumbnailVariants: Record<string, ThumbnailVariantConfig> = {
       "Optional one-click save in any size",
     ],
     useCases: [
-      "Inspect a competitor's full thumbnail that feeds crop and shrink",
-      "Preview your own thumbnail at full size before reusing it",
-      "Check thumbnail clarity and text legibility at each resolution",
-      "View a thumbnail quickly without committing to a download",
+      "Inspect a competitor's full cover image that feeds crop and shrink",
+      "Preview your own design at full size before reusing it",
+      "Check clarity and text legibility at each resolution",
+      "Look at a cover quickly without committing to a download",
     ],
     aboutSections: [
       {
         heading: "Viewing vs Downloading",
-        body: "Sometimes you just want to look. Feeds, search results, and the watch page all show a cropped, downscaled version of a thumbnail — you never see the full frame the creator designed. This viewer fetches the original image from YouTube's CDN and shows it at full size, so you can study the complete composition. If you decide you want a copy, every size still has a one-click download, but you are never forced to save a file just to see the image clearly.",
+        body: "Sometimes you just want to look. Feeds, search results, and the watch page all show a cropped, downscaled version of a thumbnail — you never see the full frame the creator designed. This page fetches the original image from YouTube's CDN and shows it at full size, so you can study the complete composition. If you decide you want a copy, every size still has a one-click download, but you are never forced to save a file just to see the image clearly.",
       },
       {
-        heading: "Why View the Full-Size Thumbnail",
-        body: "Thumbnails are designed to work at small sizes, but the full 1280×720 frame reveals everything: exact text, secondary elements, background detail, and how much was cropped out in the feed. For CTR research this matters — the in-feed crop can hide the very elements that make a thumbnail work. Viewing the full image lets you reverse-engineer layout, font choice, and focal point before you ever download anything.",
+        heading: "Why View the Full-Size Image",
+        body: "Thumbnails are designed to work at small sizes, but the full 1280×720 frame reveals everything: exact text, secondary elements, background detail, and how much was cropped out in the feed. For CTR research this matters — the in-feed crop can hide the very elements that make a design work. Seeing the full image lets you reverse-engineer layout, font choice, and focal point before you ever download anything.",
       },
       {
-        heading: "View Any Resolution",
-        body: "The viewer shows each stored size — default (120×90), mqdefault (320×180), hqdefault (480×360), sddefault (640×480), and maxresdefault (1280×720) — so you can compare how the thumbnail looks at each. This is handy for checking whether a video has a true HD maxres image or only smaller sizes, and for seeing how text legibility holds up as the thumbnail scales down to feed and search dimensions.",
+        heading: "Compare Every Resolution",
+        body: "The page shows each stored size — default (120×90), mqdefault (320×180), hqdefault (480×360), sddefault (640×480), and maxresdefault (1280×720) — so you can compare how the image looks at each. This is handy for checking whether a video has a true HD maxres file or only smaller sizes, and for seeing how text legibility holds up as the image scales down to feed and search dimensions.",
       },
     ],
     proTip:
-      "Use the viewer before downloading to confirm a video actually has a maxresdefault (1280×720) image — many older videos only have smaller sizes. Viewing each resolution side by side also shows how your text holds up when YouTube shrinks the thumbnail to feed size, which is where most clicks are won or lost.",
+      "Check a video here before downloading to confirm it actually has a maxresdefault (1280×720) image — many older videos only have smaller sizes. Comparing each resolution side by side also shows how your text holds up when YouTube shrinks the image to feed size, which is where most clicks are won or lost.",
     faqOverrides: [
       {
         question: "What does a YouTube thumbnail viewer do?",
         answer:
-          "It displays a video's full-size thumbnail in your browser at every available resolution, so you can see the complete, uncropped image that feeds and search results shrink and crop. You can then download any size if you want a copy.",
+          "It displays a video's full-size cover image in your browser at every available resolution, so you can see the complete, uncropped frame that feeds and search results shrink and crop. You can then download any size if you want a copy.",
       },
       {
         question: "Can I view a thumbnail without downloading it?",
         answer:
-          "Yes. The viewer shows the image full-size in the browser — no download needed just to look. A one-click save is there if you decide you want the file, but it's optional.",
+          "Yes. The image displays full-size in the browser — no download needed just to look. A one-click save is there if you decide you want the file, but it's optional.",
       },
       {
         question: "How do I see a YouTube thumbnail in full size?",
         answer:
-          "Paste the video URL or ID into the viewer above. It loads the original thumbnail from YouTube's CDN and displays it at full resolution (up to 1280×720), much larger and clearer than the cropped version shown in feeds.",
+          "Paste the video URL or ID into the tool above. It loads the original image from YouTube's CDN and displays it at full resolution (up to 1280×720), much larger and clearer than the cropped version shown in feeds.",
       },
     ],
   },

@@ -41,10 +41,7 @@ const toolConfig = createToolConfig({
       "Live Markdown Preview",
       "Markdown to HTML Preview",
       "GFM Previewer",
-      "GitHub README Preview",
-      "Markdown Live Editor",
       "README Previewer",
-      "Online Markdown Renderer",
     ],
     featureList: [
       "Side-by-side Markdown input and rendered preview",
@@ -74,7 +71,7 @@ const toolConfig = createToolConfig({
       "Includes basic sanitization for rendered HTML output",
     ],
     overview:
-      "Use this Markdown previewer to check README drafts, documentation snippets, notes, and Markdown-formatted content before publishing. The editor and preview sit side by side, so formatting issues are visible immediately. The renderer uses marked with GFM mode enabled, which supports common Markdown features plus GitHub-style tables, task lists, strikethrough, and fenced code blocks.",
+      "Use this page to check README drafts, documentation snippets, notes, and Markdown-formatted content before publishing. The editor and preview sit side by side, so formatting issues are visible immediately. The renderer uses marked with GFM mode enabled, which supports common Markdown features plus GitHub-style tables, task lists, strikethrough, and fenced code blocks.",
 
     howToSteps: [
       "Paste or type Markdown in the input panel.",

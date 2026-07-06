@@ -12,7 +12,7 @@ const AIParaphraser = dynamic(
 const toolConfig = createToolConfig({
   toolName: "AI Paraphraser",
   description:
-    "Rewrite any text instantly with 7 modes: Standard, Fluency, Formal, Creative, Academic, Shorten, Expand. Free AI-powered paraphrasing tool.",
+    "Rewrite any text instantly with 7 modes: Standard, Fluency, Formal, Creative, Academic, Shorten, Expand — free, with no signup.",
   metaTitle: "AI Paraphraser — Rewrite Text in 7 Modes",
   metaDescription:
     "Free AI paraphraser. Rewrite any text in 7 modes — Standard, Fluency, Formal, Creative, Academic, Shorten, Expand. Up to 5K chars, no signup.",
@@ -34,21 +34,11 @@ const toolConfig = createToolConfig({
     ],
     softwareRequirements: "Modern web browser with JavaScript enabled",
     alternateName: [
-      "Text Rewriter",
-      "Article Rewriter",
-      "Sentence Rephraser",
-      "Essay Rewriter",
       "Paraphrasing Tool",
+      "Text Rewriter",
+      "Sentence Rephraser",
       "AI Rewording Tool",
-      "Academic Paraphraser",
-      "Formal Tone Rewriter",
       "QuillBot Alternative",
-      "Grammarly Paraphraser Alternative",
-      "Spinbot Alternative",
-      "Plagiarism Avoider Tool",
-      "Content Rephraser",
-      "Smart Rewriter",
-      "Synonym Rewriter",
     ],
   },
 

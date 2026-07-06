@@ -39,11 +39,7 @@ const toolConfig = createToolConfig({
       "Headline Generator",
       "SEO Title Generator",
       "Article Title Creator",
-      "Listicle Title Generator",
-      "How-To Title Generator",
       "Blog Post Idea Generator",
-      "Content Title Brainstorm Tool",
-      "Article Headline Ideas",
       "Content Headline Generator",
     ],
     featureList: [
@@ -70,7 +66,7 @@ const toolConfig = createToolConfig({
       "Use generated ideas as drafts, not final claims you cannot support",
     ],
     overview:
-      "This free blog title generator creates 30 headline ideas from a keyword or topic using a broad set of editorial templates. It helps writers and SEO teams move from a blank page to workable title options for how-to guides, listicles, comparison posts, beginner guides, advanced tutorials, trend pieces, mistake posts, tool roundups, and practical articles. Use the output as a brainstorming list, then edit the title for search intent, accuracy, length, and the real value your article provides.",
+      "This free generator creates 30 headline ideas from a keyword or topic using a broad set of editorial templates. It helps writers and SEO teams move from a blank page to workable title options for how-to guides, listicles, comparison posts, beginner guides, advanced tutorials, trend pieces, mistake posts, tool roundups, and practical articles. Use the output as a brainstorming list, then edit the title for search intent, accuracy, length, and the real value your article provides.",
 
     howToSteps: [
       "Enter your primary keyword, topic, or subject matter (e.g., 'email marketing', 'React performance optimization', 'meal prep for beginners') into the generator input.",

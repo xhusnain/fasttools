@@ -6,7 +6,7 @@ const PayPalFeeCalculator = dynamic(() => import("@/components/finance/paypal-fe
 })
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { buildSchemas, createMetadata } from "@/lib/metadata-base"
-import { Calculator, DollarSign, Target, TrendingUp, BarChart3, Copy, HelpCircle, Lightbulb, Star, Info, FileText } from "lucide-react"
+import { DollarSign, Target, BarChart3, HelpCircle, Lightbulb, Star, Info } from "lucide-react"
 import { GImage } from "@/ui/gimage"
 import type { Metadata } from "next"
 
@@ -16,7 +16,7 @@ const TOOL_DEFINITION = "A PayPal fee calculator estimates transaction fees, sel
 
 const paypalMetadataOptions = {
   title: `PayPal Fee Calculator — Instant Fees & G&S`,
-  description: "Free PayPal fee calculator. Calculate PayPal G&S fee, PayPal credit card fee, and processing fees for any transaction. Domestic and international rates, micropayments, and reverse-fee gross-up — for sellers, freelancers, and businesses.",
+  description: "Free PayPal fee calculator for sellers and freelancers. See the fee, your net payout, and the gross amount to invoice — covering Goods & Services, credit card, international, micropayment, and QR rates.",
   path: "/finance-tools/paypal-fee",
   toolName: TOOL_NAME,
   definition: TOOL_DEFINITION,
@@ -28,20 +28,10 @@ const paypalMetadataOptions = {
     name: "PayPal Fee Calculator",
     alternateName: [
       "PayPal Fees Calculator",
-      "PayPal Calculator Fee",
-      "Calculate PayPal G&S Fee",
+      "PayPal Goods and Services Fee Calculator",
       "PayPal Credit Card Fee Calculator",
-      "PayPal Processing Fees Calculator",
       "PayPal Reverse Fee Calculator",
-      "PayPal Gross Up Calculator",
-      "Goods and Services Fee Calculator",
-      "PayPal Friends and Family Calculator",
-      "PayPal International Fee Tool",
-      "PayPal Seller Fee Tool",
-      "Freelancer PayPal Fee Tool",
-      "Etsy PayPal Fee Calculator",
-      "PayPal Micropayments Fee Tool",
-      "Net Revenue PayPal Calculator",
+      "PayPal International Fee Calculator",
     ],
     applicationCategory: "FinanceApplication",
     featureList: [
@@ -81,7 +71,7 @@ export default function PayPalFeeCalculatorPage() {
       "International commercial payments usually add a 1.50% cross-border fee plus any currency conversion spread",
       "Use the gross-up result when you need to receive an exact net amount after PayPal deducts fees",
     ],
-    overview: `Free PayPal calculator fee tool to calculate PayPal fees, net amounts, and required charges instantly. Whether you need to calculate PayPal G&S fee, PayPal credit card fee, or PayPal processing fees — this calculator covers all transaction types. Perfect for sellers, freelancers, and businesses to understand payment processing costs. Supports domestic, international, Goods & Services, Friends & Family, and credit card PayPal fee calculations.`,
+    overview: `Enter any amount and instantly see what PayPal deducts, what lands in your balance, and how much to invoice if you want the buyer to cover the cost. The calculator handles every transaction type — Goods & Services, credit and debit card payments, Friends & Family, micropayments, QR-code payments, and cross-border transfers with currency conversion — using the rates from PayPal's current merchant fee schedule. Built for sellers, freelancers, and small businesses that need to price work accurately instead of guessing.`,
 
     howToSteps: [
       "Enter Transaction Amount: Input the total amount you are sending or receiving.",
@@ -99,19 +89,14 @@ export default function PayPalFeeCalculatorPage() {
     ],
 
     useCases: [
-      "PayPal Domestic Fees: Standard US commercial rates vary by payment type, including 3.49% + fixed fee for PayPal Checkout and 2.99% + fixed fee for standard credit/debit card payments.",
-      "PayPal International Fees: Cross-border PayPal fee calculations (+1.5% international fee, 3-4% currency conversion fee).",
-      "PayPal Special Rates: Calculate separate fee models for micropayments, charity/donation payments, QR payments, and other special transaction types.",
-      "PayPal G&S Fee vs Friends & Family: Compare Goods and Services fees (seller protection) vs Friends & Family (no protection).",
-      "PayPal Fee Merchant & Business Accounts: Advanced features and fee structures for high-volume merchants.",
-      "PayPal vs Xoom Fee Comparison: Compare international transfer costs between PayPal and Xoom.",
-      "PayPal Fee India & International Rates: Specific fee structures for India, Australia, UK, Germany, and other regions.",
-      "PayPal Fee Structure: Updated rates for including percentage and fixed fee components.",
-      "PayPal Fee Withdraw & Transfer: Calculate costs for instant transfers (1.75%) vs standard bank transfers (Free).",
-      "PayPal Fee Calculator by Country: Country-specific calculations for US, Canada, Japan, Hong Kong, Korea, New Zealand, etc.",
-      "PayPal Fee Currency Conversions: Calculate fees for USD to EUR, USD to GBP, and other currency pairs.",
-      "PayPal Fee Optimization for Ecommerce: Strategies for micropayments, volume discounts, and account setup.",
-      "PayPal Fee Management for Freelancers: Accurate pricing for quotes, tax deductions, and client payments."
+      "Domestic US sales: standard commercial rates vary by payment type — 3.49% + fixed fee for PayPal Checkout, 2.99% + fixed fee for standard credit/debit card payments.",
+      "International sales: cross-border payments add a 1.5% surcharge, and currency conversion carries a 3-4% exchange-rate markup.",
+      "Special rate types: micropayments (4.99% + $0.09), charity/donation rates, and in-person QR payments (1.90% + $0.10).",
+      "Goods & Services vs Friends & Family: compare the commercial rate (with seller protection) against personal transfers (no protection).",
+      "Freelancer invoicing: work out the gross amount to bill so you still receive your full rate after the deduction.",
+      "Withdrawals: compare instant transfer (1.75%, max $25) against the free 1-3 day standard bank transfer.",
+      "Country-specific schedules: estimate seller costs for the US, UK, EU, Australia, Canada, and India.",
+      "Tax prep: total your transaction costs for the year — they're generally deductible as a business expense."
     ],
 
     faqs: [
@@ -153,7 +138,7 @@ export default function PayPalFeeCalculatorPage() {
       },
       {
         question: "What is the difference between Goods & Services and Friends & Family fees?",
-        answer: "'Goods & Services' payments are commercial payments and usually charge the seller a fee, while eligible domestic 'Friends & Family' bank or balance transfers can be free but do not provide buyer/seller protection. Do not use Friends & Family for business transactions just to avoid fees. If most of your payments are G&S, our dedicated PayPal Goods and Services fee calculator breaks that rate down in more detail."
+        answer: "'Goods & Services' payments are commercial payments and usually charge the seller a fee, while eligible domestic 'Friends & Family' bank or balance transfers can be free but do not provide buyer/seller protection. Do not use Friends & Family for business transactions just to avoid fees — it violates PayPal's terms and leaves both sides unprotected in a dispute."
       },
       {
         question: "Are PayPal fees tax deductible?",
@@ -203,12 +188,12 @@ export default function PayPalFeeCalculatorPage() {
             height={450}
             className="w-full h-auto rounded-lg shadow-md"
           />
-          <h2 className="text-2xl font-bold text-foreground">PayPal Calculator Fee — Maximize Your Profits with Our PayPal Fee Calculator</h2>
+          <h2 className="text-2xl font-bold text-foreground">Know Exactly What You&apos;ll Keep on Every Payment</h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            In the world of online business and freelancing, every cent counts. Understanding your transaction costs is essential for maintaining healthy profit margins. Our PayPal rates calculator is designed to demystify complex fee structures, giving you an instant, accurate breakdown of what you’ll pay and what you’ll keep.
+            In the world of online business and freelancing, every cent counts. Understanding your transaction costs is essential for maintaining healthy profit margins. This tool is designed to demystify PayPal&apos;s fee structure, giving you an instant, accurate breakdown of what you&apos;ll pay and what you&apos;ll keep.
           </p>
 
-          <h3 className="text-xl font-bold text-foreground mt-6 mb-4">Why Use a PayPal Fee Calculator?</h3>
+          <h3 className="text-xl font-bold text-foreground mt-6 mb-4">Why Estimate Fees Before You Invoice?</h3>
           <p className="text-base text-muted-foreground mb-4">
             PayPal’s seller fees change based on your location, the sender’s country, and the type of transaction, so the same sale can carry a different transaction fee depending on how the buyer pays. Calculating these manually is prone to error. Our tool helps you:
           </p>
@@ -375,7 +360,7 @@ export default function PayPalFeeCalculatorPage() {
         <article className="space-y-6">
           <h3 className="text-xl font-bold text-heading-accent flex items-center gap-2">
             <Lightbulb className="h-5 w-5 text-primary" />
-            Strategies to Minimize Curve Fees
+            Strategies to Minimize Conversion Costs
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-4 rounded-lg bg-card border border-border">
@@ -384,7 +369,7 @@ export default function PayPalFeeCalculatorPage() {
             </div>
             <div className="p-4 rounded-lg bg-card border border-border">
               <h4 className="font-semibold text-heading-accent mb-2">2. Use Alternatives like Wise</h4>
-              <p className="text-sm text-muted-foreground">For large transfers, consider dedicated remix services which offer mid-market rates.</p>
+              <p className="text-sm text-muted-foreground">For large transfers, consider dedicated money-transfer services like Wise, which offer mid-market exchange rates.</p>
             </div>
             <div className="p-4 rounded-lg bg-card border border-border">
               <h4 className="font-semibold text-heading-accent mb-2">3. Hold Multiple Currencies</h4>
@@ -491,27 +476,6 @@ export default function PayPalFeeCalculatorPage() {
           </div>
         </article>
 
-        <article className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
-            <FileText className="h-6 w-6 text-primary" />
-            The Same Tool, Many Names
-          </h2>
-          <p className="text-base text-muted-foreground leading-relaxed">
-            This calculator answers every PayPal fee question — whether you call it a fee, charge, processing cost, or commission:
-          </p>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-muted-foreground">
-            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>paypal fee calculator / paypal fees calculator</span></li>
-            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>paypal calculator fee / paypal calculator fees</span></li>
-            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>paypal g&amp;s fee calculator / paypal goods and service fee calculator</span></li>
-            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>paypal credit card fee calculator</span></li>
-            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>paypal processing fee calculator</span></li>
-            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>paypal fees calculator uk / paypal calculator uk</span></li>
-            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>paypal fee calculator india / australia / canada</span></li>
-            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>calculate paypal fees / how much does paypal charge</span></li>
-            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>paypal cost calculator / paypal commission calculator</span></li>
-            <li className="flex items-start gap-2"><Lightbulb className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" /><span>paypal micropayment calculator / paypal QR fee</span></li>
-          </ul>
-        </article>
       </div>
     ),
 
@@ -526,7 +490,7 @@ export default function PayPalFeeCalculatorPage() {
     <ToolPageLayout
       header={{
         title: `PayPal Fee Calculator — Calculate PayPal G&S, Credit Card & Processing Fees`,
-        description: "Free PayPal calculator fee tool. Calculate PayPal G&S fee, PayPal credit card fee calculator, and PayPal processing fees calculator. Instant results for sellers, freelancers & businesses.",
+        description: "Enter an amount to see the fee, what you'll actually receive, and what to invoice so the buyer covers the cost. Handles Goods & Services, credit card, international, micropayment, and QR rates.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -544,7 +508,7 @@ export default function PayPalFeeCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free PayPal calculator fee tool. Calculate PayPal G&S fee, PayPal credit card fee, and PayPal processing fees instantly. Know exactly how much you'll receive or need to send.",
+        description: "Free PayPal fee calculator for sellers and freelancers. See the fee, your net payout, and the gross amount to invoice — covering Goods & Services, credit card, international, micropayment, and QR rates.",
         path: "/finance-tools/paypal-fee"
       }}
     />

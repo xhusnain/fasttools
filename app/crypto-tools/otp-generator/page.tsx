@@ -34,30 +34,17 @@ const toolConfig = createToolConfig({
       "TOTP Generator",
       "OTP Code Generator",
       "2FA Code Generator",
-      "Google Authenticator Generator",
-      "Authy Code Generator",
-      "RFC 6238 TOTP Generator",
-      "Time-based One-Time Password Generator",
       "HOTP Generator",
       "otpauth URI Generator",
-      "2FA QR Code Generator",
-      "Authenticator Secret Generator",
-      "MFA Code Generator",
-      "OATH TOTP Tester",
-      "Two-Factor Auth Tester",
-      "TOTP Debugger",
     ],
     featureList: [
       "RFC 6238 TOTP generation with live 30-second countdown timer",
       "Configurable hash algorithm: SHA-1 (default), SHA-256, or SHA-512",
-      "Configurable digit count: 6 (standard) or 8 (high-precision)",
-      "Configurable period: 15 / 30 / 60 seconds (most services use 30s)",
+      "Configurable digit count (6 or 8) and period (15 / 30 / 60 seconds)",
       "Previous, current, and next time-window codes shown for clock-drift debugging",
-      "otpauth:// URI generation in standard issuer:account format",
-      "QR code rendering compatible with Google Authenticator, Authy, Microsoft Authenticator, 1Password, Bitwarden, FreeOTP, Aegis",
-      "Generate cryptographically secure Base32 secret in-browser via crypto.getRandomValues()",
+      "otpauth:// URI and QR code generation compatible with any RFC 6238 authenticator app",
+      "Cryptographically secure Base32 secret generation in-browser via crypto.getRandomValues()",
       "RFC 4226 HOTP (counter-based) mode for hardware-token testing",
-      "Side-by-side: scan once into Authy/Google Authenticator, watch codes match in real-time",
       "100% client-side — secret never sent to a server, verifiable in DevTools Network tab",
       "Free, no signup, no rate limits, no ads",
     ],
@@ -78,7 +65,7 @@ const toolConfig = createToolConfig({
       "Useful for developers testing 2FA integration in their applications",
     ],
     overview:
-      "Generate TOTP (Time-based One-Time Password) codes and 2FA setup QR codes with this free online tool. Enter or generate a Base32 secret key, configure the time period (default 30 seconds), digit count (6 or 8), and hash algorithm (SHA-1, SHA-256, SHA-512), then see the current OTP code with a live countdown timer. Create otpauth:// setup URIs and QR codes compatible with Google Authenticator, Authy, Microsoft Authenticator, 1Password, and other TOTP apps. Essential for developers building two-factor authentication into web and mobile applications, QA teams testing 2FA login flows, and support teams debugging OTP mismatch issues.",
+      "Generate TOTP codes and 2FA setup QR codes with this free online tool. Enter or generate a Base32 secret key, configure the time period (default 30 seconds), digit count (6 or 8), and hash algorithm (SHA-1, SHA-256, SHA-512), then watch the current code refresh with a live countdown. The otpauth:// setup URI and QR output work with Google Authenticator, Authy, and any RFC 6238 app. Built for developers wiring two-factor authentication into their apps, QA teams testing login flows, and support engineers debugging code-mismatch issues.",
 
     howToSteps: [
       "Enter an existing Base32 secret key, or click Generate to create a new one.",
@@ -92,7 +79,7 @@ const toolConfig = createToolConfig({
       "QR code and otpauth:// URI generation for authenticator app setup",
       "Configurable secret key, time period, digit count, and hash algorithm",
       "Current, previous, and next time window code display for drift debugging",
-      "Compatible with Google Authenticator, Authy, Microsoft Authenticator, and 1Password",
+      "Compatible with any RFC 6238 authenticator app",
     ],
 
     useCases: [
@@ -174,11 +161,6 @@ const toolConfig = createToolConfig({
           "Common causes: clock drift (sync your device time via NTP), wrong secret key encoding, algorithm mismatch (SHA-1 vs SHA-256), different time period (30s vs 60s), or digit count mismatch (6 vs 8 digits).",
       },
       {
-        question: "What is the difference between TOTP and HOTP?",
-        answer:
-          "TOTP is time-based — codes change every 30 seconds. HOTP is counter-based — codes change only when the counter increments. TOTP is more common because it doesn't require counter synchronization between devices.",
-      },
-      {
         question: "Can I use this to set up 2FA for my own application?",
         answer:
           "Yes. Generate a Base32 secret, create a QR code with the otpauth:// URI, let users scan it with their authenticator app, and verify codes on your server using a TOTP library (speakeasy for Node.js, pyotp for Python).",
@@ -189,14 +171,9 @@ const toolConfig = createToolConfig({
           "Yes. TOTP is a proven standard used by Google, GitHub, AWS, and most major services. For highest security, combine TOTP with phishing-resistant methods like WebAuthn/passkeys as a primary factor.",
       },
       {
-        question: "How do I generate an OTP QR code?",
+        question: "How do I generate a 2FA setup QR code?",
         answer:
-          "Enter your service name and secret (or click 'generate random secret') above. The tool produces a QR code following the standard otpauth://totp/Issuer:account?secret=BASE32SECRET&issuer=Issuer URI format. Scan it with Google Authenticator, Authy, 1Password, Bitwarden, or any RFC 6238 TOTP authenticator. The same code can be entered manually if scanning isn't possible — useful for cross-device setup."
-      },
-      {
-        question: "Can I generate a TOTP QR code for Google Authenticator?",
-        answer:
-          "Yes. The QR code uses the otpauth:// URI scheme that Google Authenticator, Authy, Microsoft Authenticator, 1Password, Bitwarden, and Aegis all support. Just scan and the account is added. The tool defaults to 6-digit codes with a 30-second period (the standard Google uses), but you can change to 8 digits or 60-second period for compatibility with services that require those settings."
+          "Enter your service name and secret (or click 'generate random secret') above. The tool produces a QR code following the standard otpauth://totp/Issuer:account?secret=BASE32SECRET&issuer=Issuer URI format that Google Authenticator, Authy, and other RFC 6238 apps understand. It defaults to 6-digit codes with a 30-second period; switch to 8 digits or a 60-second period if the target service requires it. The secret can also be entered manually if scanning isn't possible."
       },
       {
         question: "What's the difference between HOTP and TOTP?",
@@ -235,7 +212,7 @@ const toolConfig = createToolConfig({
       { name: "HMAC Generator", href: "/crypto-tools/hmac-generator" },
       { name: "Bcrypt Generator", href: "/crypto-tools/bcrypt" },
       { name: "AI QR Code Generator", href: "/ai-tools/qr-generator" },
-      { name: "BIP39 Passphrase Generator", href: "/crypto-tools/bip39-generator" },
+      { name: "BIP39 Generator", href: "/crypto-tools/bip39-generator" },
       { name: "All Crypto Tools", href: "/crypto-tools" },
     ],
   },

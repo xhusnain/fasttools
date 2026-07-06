@@ -35,11 +35,7 @@ const toolConfig = createToolConfig({
       "MIME Type Reference",
       "File Extension to MIME",
       "MIME Type Finder",
-      "Content-Type Header Lookup",
       "Media Type Database",
-      "HTTP Content-Type Helper",
-      "File Type Lookup",
-      "Upload Validation Helper",
     ],
     featureList: [
       "MIME type to extension lookup",

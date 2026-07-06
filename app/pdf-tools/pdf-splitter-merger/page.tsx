@@ -26,18 +26,8 @@ const toolConfig = createToolConfig({
       "Split PDF Online",
       "Merge PDF Online",
       "Combine PDFs",
-      "Join PDFs",
       "Extract PDF Pages",
-      "Separate PDF Pages",
-      "PDF Page Extractor",
-      "PDF Page Remover",
-      "PDF Combiner",
-      "Concatenate PDFs",
       "PDF Joiner",
-      "Rearrange PDF Pages",
-      "PDF Page Organizer",
-      "ilovepdf Alternative",
-      "Smallpdf Alternative",
     ],
     featureList: [
       "Split PDF into individual one-page files",
@@ -47,8 +37,6 @@ const toolConfig = createToolConfig({
       "Drag-and-drop file and page reordering",
       "Visual page thumbnails for clarity",
       "Preserve original PDF quality (no recompression)",
-      "Preserve hyperlinks and bookmarks",
-      "Handle password-protected PDFs (prompts for password)",
       "Batch process up to 20 PDFs at once",
       "Output a ZIP for split results",
       "100% client-side via pdf-lib — your PDFs never uploaded to any server",
@@ -72,9 +60,9 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A PDF Splitter & Merger is a free online tool that splits PDF files into individual pages, custom page ranges, or selected page sets — and merges multiple PDF documents into a single combined file with customizable page order.",
+      "A PDF Splitter & Merger is a free online tool that splits a PDF into individual pages or page ranges, and combines multiple PDFs into a single file in whatever order you choose.",
     quickAnswer:
-      "Upload PDFs to split them into individual pages or extract specific page ranges (e.g., pages 1-5, 8, 12-15). Or upload multiple PDF files and merge them into a single document with drag-and-drop reordering. Download the result instantly. All processing happens locally in your browser.",
+      "Upload a PDF to split it into individual pages or extract specific page ranges (e.g., pages 1-5, 8, 12-15). Or upload several files and merge them into one document with drag-and-drop reordering. All processing happens locally in your browser.",
     keyTakeaways: [
       "Split PDFs into individual pages, page ranges (e.g., 1-5), or specific pages (e.g., 2, 4, 7)",
       "Merge multiple PDF files into a single combined document with custom page order",
@@ -83,7 +71,7 @@ const toolConfig = createToolConfig({
       "100% browser-based processing — files are never uploaded to external servers",
     ],
     overview:
-      "This free online PDF Splitter and Merger handles the two most common PDF page management tasks: splitting one document into smaller parts and combining multiple documents into one. In split mode, you can export every page as a separate PDF, extract a continuous page range for section-level splitting, or pick specific pages by number for surgical extraction. In merge mode, upload multiple PDF files from different sources and arrange them in your desired order using drag-and-drop controls before generating the combined output. Whether you need to extract a chapter from a book PDF, pull specific pages from a report, combine multiple scanned documents, or assemble a final document package from various source files, this tool handles it in seconds with no software installation, no account creation, and complete file privacy.",
+      "This tool handles the two most common PDF page tasks: splitting one document into smaller parts and combining several documents into one. In split mode, export every page as a separate PDF, extract a continuous page range, or pick specific pages by number. In merge mode, upload files from different sources and arrange them with drag-and-drop before generating the combined output. Either way it takes seconds, with nothing to install, no account, and no file ever leaving your browser.",
 
     howToSteps: [
       "Select your operation mode: Split PDF or Merge PDFs.",

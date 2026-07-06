@@ -26,16 +26,8 @@ const toolConfig = createToolConfig({
       "Photo Compressor",
       "JPG Compressor",
       "PNG Compressor",
-      "WebP Compressor",
-      "Reduce Image File Size",
       "Compress Image to KB",
-      "Compress Image to MB",
-      "Compress Image to 50KB / 100KB / 200KB / 500KB / 1MB",
-      "Batch Image Compressor",
-      "Bulk Image Compressor",
       "Image Optimizer",
-      "JPEG Optimizer",
-      "Photo Size Reducer",
     ],
     featureList: [
       "Compress JPG, PNG, and WebP images",
@@ -74,13 +66,13 @@ const toolConfig = createToolConfig({
       "Upload JPG, PNG, or WebP images, then adjust quality, max file size, and max resolution to reduce file size. Compare the before/after size and download each compressed image or all results as a ZIP.",
     keyTakeaways: [
       "Compresses JPG, PNG, and WebP images with quality and size controls",
-      "Max file size slider can target small outputs such as 50KB, 100KB, 200KB, 500KB, or 1MB",
+      "Max file size slider can target upload limits like 100KB or 1MB",
       "Max resolution control helps when quality compression alone is not enough",
       "Batch processing supports up to 100 images with ZIP download",
       "Compression runs in your browser session without an account",
     ],
     overview:
-      "Image Compressor helps reduce JPG, PNG, and WebP file size before publishing to websites, submitting forms, sending email attachments, or uploading to social platforms. Use the quality slider for visual compression, the max file size slider for KB/MB targets, and the max resolution slider when dimensions are too large. After compression, compare original and output sizes, download individual images, or export all compressed files together as a ZIP.",
+      "Use this tool to shrink JPG, PNG, and WebP files before publishing to a website, submitting a form, or sending an email attachment. The quality slider handles visual compression, the max file size slider hits KB/MB targets, and the max resolution slider helps when dimensions are too large. Afterwards, compare original and output sizes, download individual images, or export everything together as a ZIP.",
 
     howToSteps: [
       "Upload one or more JPG, PNG, or WebP images.",
@@ -130,7 +122,7 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">Compress Image to KB or MB Targets</h3>
           <p>
-            The max file size slider lets you aim for common upload targets like 50KB, 100KB, 200KB, 500KB, or 1MB. Exact output can vary because image content matters: flat graphics, screenshots, photos, gradients, and transparent PNGs compress differently. If a target is not reached, lower quality slightly or reduce the max resolution.
+            The max file size slider lets you aim for a specific upload target, such as 100KB or 500KB. Exact output can vary because image content matters: a flat graphic, a screenshot, and a detailed photo each compress differently. If a target is not reached, lower quality slightly or reduce the max resolution.
           </p>
         </div>
 
@@ -181,7 +173,7 @@ const toolConfig = createToolConfig({
           "No. The tool is free to use with no sign-up requirement.",
       },
       {
-        question: "Is this image compressor mobile friendly?",
+        question: "Does it work on mobile?",
         answer:
           "Yes. The interface works in modern iPhone, Android, tablet, and desktop browsers.",
       },

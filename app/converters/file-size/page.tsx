@@ -56,7 +56,7 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A File Size Converter is a free online tool that converts between digital storage units including bytes, kilobytes (KB), megabytes (MB), gigabytes (GB), terabytes (TB), and petabytes (PB) in both decimal (SI, base-1000) and binary (IEC, base-1024) standards.",
+      "A file size converter translates values between digital storage units — bytes, kilobytes (KB), megabytes (MB), gigabytes (GB), terabytes (TB), and petabytes (PB) — in both the decimal (SI, base-1000) and binary (IEC, base-1024) standards.",
     quickAnswer:
       "Enter a value and select the source unit to instantly see conversions across all storage units from bytes to petabytes. Toggle between decimal units (KB = 1,000 bytes, MB = 1,000,000 bytes) and binary units (KiB = 1,024 bytes, MiB = 1,048,576 bytes). Drag and drop a file to analyze its actual size in all units. Estimate upload and download transfer times based on connection speeds from 3G to fiber.",
     keyTakeaways: [
@@ -179,7 +179,7 @@ const toolConfig = createToolConfig({
       {
         question: "Is this file size converter free to use?",
         answer:
-          "Yes. This file size converter is 100% free with no signup, no account required, and no usage limits. All calculations run in your browser. The file analyzer inspects files locally without uploading them. Safe for personal and professional storage planning.",
+          "Yes — 100% free with no signup, no account, and no usage limits. All calculations run in your browser, and the file analyzer inspects files locally without uploading them, so it's safe for personal and professional storage planning.",
       },
     ],
 

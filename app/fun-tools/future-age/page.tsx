@@ -8,7 +8,7 @@ const FutureAgePredictor = dynamic(
   () => import("@/components/calculators/future-age-predictor").then(mod => mod.FutureAgePredictor),
   { loading: () => <ToolLoader /> }
 )
-import { Calendar, Globe, Calculator, ArrowRight, CheckCircle, HelpCircle, Star, Clock, Sigma, Table as TableIcon, BookOpen, GitCompare } from "lucide-react"
+import { Calendar, Globe, Calculator, Star, Clock, Sigma, Table as TableIcon, GitCompare } from "lucide-react"
 import { GTable } from "@/ui/gtable"
 
 const toolConfig = createToolConfig({
@@ -36,30 +36,19 @@ const toolConfig = createToolConfig({
       "Future age calculator: calculate exactly how old you'll be on any future date. Years, months, days output plus total elapsed days / weeks / months. Leap-year aware. 100% client-side.",
     alternateName: [
       "How Old Will I Be Calculator",
-      "Future Age Calculation",
-      "Future Age Estimator",
-      "Age in 2030 Calculator",
-      "Age in 2040 Calculator",
       "Age in 2050 Calculator",
-      "Age in 2100 Calculator",
       "Retirement Age Calculator",
       "Age on Specific Date",
-      "Date to Age Calculator",
       "Age Predictor",
-      "Future Self Age Tool",
-      "Anniversary Age Calculator",
-      "Kids Future Age Tool",
-      "Age Time Travel Calculator",
-      "Birthday in X Years",
     ],
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
 
   content: {
     definition:
-      "A future age calculator is a free tool that performs future age calculation — taking your birth date and a future target date, then computing exactly how old you will be on that future date in years, months, and days.",
+      "A future age calculator is a free tool that takes your birth date and a future target date, then computes exactly how old you will be on that date in years, months, and days.",
     quickAnswer:
-      "Enter your birth date and any future date to see exactly how old you will be. The future age calculator handles leap years, varying month lengths, and gives results in years, months, and days. Works for any year — 2030, 2050, 2100, or your retirement date.",
+      "Enter your birth date and any future date to see exactly how old you will be. The tool handles leap years, varying month lengths, and gives results in years, months, and days. Works for any year — 2030, 2050, 2100, or your retirement date.",
     keyTakeaways: [
       "Future age = future date − birth date, with leap-year and month-length normalization",
       "Output in years, months, days — plus total elapsed days, weeks, and months",
@@ -68,7 +57,7 @@ const toolConfig = createToolConfig({
       "100% client-side — your birth date never leaves your browser, no signup",
       "Bidirectional: works for past dates too, so it doubles as a date-difference age tool",
     ],
-    overview: "This future age calculator answers the simple question: how old will I be on a future date? Enter your birth date and a target date — the tool returns your exact future age in years, months, and days, plus the total elapsed days, weeks, and months. Future age calculation uses precise calendar arithmetic, accounting for leap years and varying month lengths, so the result is accurate whether you're checking your age in 2030, on your 50th wedding anniversary, on your retirement date, or in the year 3000. All math happens in your browser — nothing is sent to a server.",
+    overview: "This tool answers the simple question: how old will I be on a future date? Enter your birth date and a target date — it returns your exact age on that date in years, months, and days, plus the total elapsed days, weeks, and months. The math uses precise calendar arithmetic, accounting for leap years and varying month lengths, so the result is accurate whether you're checking your age in 2030, on your 50th wedding anniversary, on your retirement date, or in the year 3000. Everything happens in your browser — nothing is sent to a server.",
 
     howToSteps: [
       "Enter Birth Date: Select your birth date using the simple date picker.",
@@ -156,24 +145,6 @@ const toolConfig = createToolConfig({
           <p className="text-base text-muted-foreground leading-relaxed">
             A few quick worked examples: a 10-year-old in 2026 turns 14 in 2030 and 34 in 2050. A 12-year-old today will be 16 in 2030 and 36 in 2050, while an 11-year-old will be about 35 in 2050 and 85 in 2100. The method is always the same — add the gap between the current year and the target year to your current age, then subtract one if your birthday hasn't happened yet in the target year.
           </p>
-        </article>
-
-        <article className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
-            <BookOpen className="h-6 w-6 text-primary" />
-            The Same Tool, Many Names
-          </h2>
-          <p className="text-base text-muted-foreground leading-relaxed">
-            Different people search for this exact tool using different phrasings — they all mean the same thing. This calculator answers all of them:
-          </p>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span><em>future age calculator</em> / <em>future age calculation</em></span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span><em>how old will I be?</em> / <em>how old will I be in [year]?</em></span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span><em>age in 2030 / 2040 / 2050 calculator</em></span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span><em>age future</em> / <em>age of future</em> / <em>future age prediction</em></span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span><em>retirement age calculator</em> (use your retirement date as target)</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span><em>milestone birthday calculator</em> (50th, 100th, etc.)</span></li>
-          </ul>
         </article>
 
         <article className="space-y-4">

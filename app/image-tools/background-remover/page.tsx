@@ -40,19 +40,9 @@ const toolConfig = createToolConfig({
     alternateName: [
       "BG Remover",
       "Image Background Eraser",
-      "Photo Background Removal Tool",
       "Transparent PNG Maker",
       "AI Background Remover",
       "Remove.bg Alternative",
-      "Erase Background from Photo",
-      "Cut Out Background Tool",
-      "Product Photo Background Remover",
-      "Portrait Background Remover",
-      "Logo Background Eraser",
-      "Profile Photo Background Tool",
-      "AutoCut Alternative",
-      "PhotoRoom Alternative",
-      "Adobe Express BG Remover Alternative",
     ],
   },
 
@@ -71,7 +61,7 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A Background Remover is a free online tool that uses AI (deep learning segmentation) to automatically detect the foreground subject in a photo and remove everything else, producing a transparent PNG or replacing the background with a solid color or custom image — all processed in your browser for complete privacy.",
+      "A Background Remover is a free online tool that uses AI segmentation to detect the subject in a photo and remove everything else, producing a transparent PNG — processed entirely in your browser for privacy.",
 
     quickAnswer:
       "Upload any image (JPG, PNG, WebP), click 'Remove Background', and download the result as a transparent PNG in seconds. You can also replace the background with a solid color or your own image. Everything runs locally in your browser — no server upload, no signup required.",
@@ -195,7 +185,7 @@ const toolConfig = createToolConfig({
       {
         question: "How does this compare to remove.bg?",
         answer:
-          "Remove.bg uploads your images to their servers and limits free usage to 3 images. This tool processes everything locally in your browser — your images never leave your device, there are no limits, and there are no watermarks. The AI quality is comparable for most use cases.",
+          "Remove.bg processes images on its servers, limits the free tier, and caps free output resolution. This tool runs the entire AI model in your browser — your image never leaves your device, and there is no limit, signup, or resolution cap. The tradeoff: remove.bg's larger paid model is slightly more accurate on difficult hair and fur edges, while this tool is more than good enough for product photos, profile pictures, and most everyday use.",
       },
       {
         question: "Can I remove the background from a product photo?",
@@ -232,21 +222,6 @@ const toolConfig = createToolConfig({
         answer:
           "Yes, the tool works on modern mobile browsers (Chrome, Safari, Firefox). However, background removal is computationally intensive, so processing may be slower on older mobile devices compared to desktop. For best performance, use a recent smartphone or a desktop/laptop computer.",
       },
-      {
-        question: "Is this a free alternative to remove.bg?",
-        answer:
-          "Yes — and a privacy-respecting one. Remove.bg processes images on their servers (your image leaves your device) and has a 50-image-per-month limit on the free tier with a 0.25 MP output cap. This tool runs the entire AI model in your browser using ONNX/WebAssembly — your image never leaves your device, there's no monthly limit, no signup, and full-resolution output. The tradeoff: remove.bg uses a larger paid model that's slightly more accurate on hair/fur edges; this tool is good enough for product photos, profile pictures, and most use cases."
-      },
-      {
-        question: "Is this a free bgremover / background removal tool?",
-        answer:
-          "Yes. 'bgremover' or 'bg remover' is a common shortened search for background remover tools — this is one. Free, unlimited use, no signup, no watermarks, output as transparent PNG. Drag and drop an image to start."
-      },
-      {
-        question: "Can I add a solid color or custom background after removing the original?",
-        answer:
-          "Yes. After removing the background you can set a solid color (white for product photos, transparent for layered design, gradient for social-media backgrounds) or upload a custom background image. Output downloads as PNG with transparent or composited background."
-      }
     ],
 
     relatedTools: [

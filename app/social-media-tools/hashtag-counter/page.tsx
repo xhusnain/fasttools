@@ -36,21 +36,11 @@ const toolConfig = createToolConfig({
     description:
       "Hashtag counter and extractor. Paste any social media caption to instantly count hashtags and extract the list. Platform-specific limit warnings for Instagram (30), TikTok (100 chars), X, LinkedIn, Facebook.",
     alternateName: [
-      "Hashtag Count Tool",
       "Tag Counter",
-      "# Counter",
+      "Hashtag Count Tool",
       "Instagram Hashtag Counter",
-      "TikTok Hashtag Counter",
-      "Twitter Tag Counter",
       "Hashtag Extractor",
-      "Caption Tag Reader",
-      "Social Tag Counter",
-      "Hashtag Validator",
-      "Caption Cleaner",
       "Hashtag Limit Checker",
-      "Instagram 30-Tag Limit Tool",
-      "Hashtag Audit Tool",
-      "Social Media Caption Analyzer",
     ],
     featureList: [
       "Real-time hashtag counting as you type",
@@ -68,7 +58,7 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A Hashtag Counter is a free tag counter that counts and extracts hashtags from social media captions, bios, comments, and bulk text.",
+      "A Hashtag Counter is a free tool that counts and extracts the hashtags in social media captions, bios, comments, and bulk text.",
     quickAnswer:
       "Paste any caption or text to count hashtags and extract the full tag list. Instagram allows up to 30 hashtags per post, LinkedIn works best with 3-5, and X usually works best with 1-2.",
     keyTakeaways: [
@@ -178,22 +168,6 @@ const toolConfig = createToolConfig({
           </div>
         </article>
 
-        <article className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground">The Same Tool, Many Names</h2>
-          <p>This counter handles every related search:</p>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
-            <li>· hashtag counter / hashtags counter</li>
-            <li>· instagram hashtag counter</li>
-            <li>· tiktok hashtag counter</li>
-            <li>· facebook hashtag counter</li>
-            <li>· tag counter / count hashtags</li>
-            <li>· hashtag extractor / tag extractor</li>
-            <li>· hashtag finder in caption</li>
-            <li>· count tags in instagram caption</li>
-            <li>· how many hashtags in this post</li>
-            <li>· keyword frequency analysis (for hashtag overlap)</li>
-          </ul>
-        </article>
       </div>
     ),
 

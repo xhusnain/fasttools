@@ -42,18 +42,8 @@ const toolConfig = createToolConfig({
       "Pet Naming Tool",
       "Dog Name Generator",
       "Cat Name Generator",
-      "Bird Name Generator",
-      "Puppy Name Maker",
+      "Puppy Name Generator",
       "Kitten Name Finder",
-      "Rabbit Name Generator",
-      "Hamster Name Tool",
-      "Fish Name Generator",
-      "Reptile Name Generator",
-      "Funny Pet Names",
-      "Cute Pet Names",
-      "Unique Pet Name Tool",
-      "AI Animal Name Generator",
-      "Custom Pet Name Maker",
     ],
     featureList: [
       "Multi-species support: dogs, cats, birds, fish, reptiles, hamsters, rabbits, guinea pigs, ferrets",
@@ -124,8 +114,8 @@ const toolConfig = createToolConfig({
           owners make. Research shows that pets respond best to names with 1-2
           syllables that end in a vowel sound — names like &quot;Bella,&quot; &quot;Milo,&quot;
           and &quot;Luna&quot; are consistently among the most popular because they are
-          easy for animals to distinguish from background noise. This AI pet
-          name generator factors in these phonetic principles along with your
+          easy for animals to distinguish from background noise. This tool
+          factors in these phonetic principles along with your
           pet&apos;s specific characteristics to suggest names that are both
           meaningful and practical for daily use and training.
         </p>
@@ -148,7 +138,7 @@ const toolConfig = createToolConfig({
 
     faqs: [
       {
-        question: "What animals does the AI pet name generator support?",
+        question: "What animals does the generator support?",
         answer:
           "The generator creates names for dogs, cats, birds (parakeets, cockatiels, parrots), fish (Betta, goldfish, tropical), reptiles (geckos, bearded dragons, snakes), hamsters, rabbits, guinea pigs, and other small pets. Each species category produces contextually appropriate suggestions — a Betta fish gets different name styles than a German Shepherd.",
       },

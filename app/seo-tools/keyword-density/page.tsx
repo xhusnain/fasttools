@@ -41,8 +41,6 @@ const toolConfig = createToolConfig({
       "Word Frequency Checker",
       "Content Keyword Analyzer",
       "On-Page SEO Density Tool",
-      "Article Keyword Analyzer",
-      "Content Optimization Tool",
     ],
     featureList: [
       "Paste text and calculate total word count",
@@ -68,7 +66,7 @@ const toolConfig = createToolConfig({
       "Useful for draft review, content refreshes, and SEO copy QA",
     ],
     overview:
-      "This free keyword density checker analyzes pasted content and ranks the most repeated words by count and percentage. It helps writers, editors, and SEO teams catch copy that repeats the same term too often, verify that the main topic is visible in the draft, and review older pages before a content refresh. The tool focuses on single words longer than three characters and returns the top 10 results, so it is best for a quick first-pass audit rather than a full semantic SEO platform.",
+      "This free checker analyzes pasted content and ranks the most repeated words by count and percentage. It helps writers, editors, and SEO teams catch copy that repeats the same term too often, verify that the main topic is visible in the draft, and review older pages before a content refresh. The tool focuses on single words longer than three characters and returns the top 10 results, so it is best for a quick first-pass audit rather than a full semantic SEO platform.",
 
     howToSteps: [
       "Paste your article text, blog post content, landing page copy, or product description into the input.",

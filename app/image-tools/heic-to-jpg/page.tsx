@@ -24,23 +24,10 @@ const toolConfig = createToolConfig({
       "Browser-based HEIC to JPG converter for iPhone and iPad photos with batch processing, quality control, optional PNG output, and ZIP download. No upload required.",
     alternateName: [
       "HEIC to JPEG Converter",
-      "Convert HEIC to JPG",
-      "Convert HEIC to JPG Online Free",
-      "HEIC to JPG Converter Free Online",
-      "HEIC File Converter",
-      "iPhone Photo to JPG Converter",
-      "Convert iPhone HEIC to JPG",
       "HEIF to JPG Converter",
-      "HEIC to JPG Online",
-      "HEIC to JPEG Converter Online",
-      "Change HEIC to JPG",
+      "iPhone Photo to JPG Converter",
+      "HEIC File Converter",
       "Batch HEIC to JPG Converter",
-      "Open HEIC Files on Windows",
-      "HEIC to JPG on Windows",
-      "HEIC to JPG on Mac",
-      "HEIC Converter",
-      "Apple Photo Converter",
-      "HEIC to JPG Free No Watermark",
     ],
     featureList: [
       "Convert HEIC and HEIF photos to JPG",
@@ -206,7 +193,7 @@ const toolConfig = createToolConfig({
       {
         question: "Is HEIC to JPG the same as HEIC to JPEG?",
         answer:
-          "Yes. JPG and JPEG are two names for the same image format — the only difference is the file extension. Converting HEIC to JPG and HEIC to JPEG produce the identical result.",
+          "Yes. JPG and JPEG are two names for the same image format — the only difference is the file extension, so both conversions produce the identical result.",
       },
       {
         question: "Can I get a PNG instead of a JPG?",

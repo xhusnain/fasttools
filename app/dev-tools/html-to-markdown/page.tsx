@@ -38,11 +38,8 @@ const toolConfig = createToolConfig({
       "HTML to Markdown converter for pasted HTML. Converts headings, paragraphs, links, images, lists, blockquotes, inline code, code blocks, horizontal rules, strikethrough, and simple tables into Markdown output.",
     alternateName: [
       "HTML to MD Converter",
-      "HTML to Markdown",
       "HTML to CommonMark",
-      "Web Page HTML to Markdown",
       "Article to Markdown",
-      "Blog Post to Markdown",
       "CMS HTML to Markdown",
       "README Markdown Converter",
     ],
@@ -77,7 +74,7 @@ const toolConfig = createToolConfig({
       "Output should be reviewed before publishing",
     ],
     overview:
-      "Use this HTML to Markdown converter for quick content migration and document cleanup. Paste HTML from a CMS block, article body, documentation page, or exported snippet and convert it into copyable Markdown. The converter uses the browser's HTML parser, walks the document structure, and maps common tags to Markdown syntax. Complex layouts, custom widgets, iframes, and styled components may need manual cleanup after conversion.",
+      "Use this tool for quick content migration and document cleanup. Paste HTML from a CMS block, article body, documentation page, or exported snippet and convert it into copyable Markdown. The converter uses the browser's HTML parser, walks the document structure, and maps common tags to Markdown syntax. Complex layouts, custom widgets, iframes, and styled components may need manual cleanup after conversion.",
 
     howToSteps: [
       "Paste HTML into the input box.",

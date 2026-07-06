@@ -23,22 +23,11 @@ const toolConfig = createToolConfig({
     applicationCategory: "LifestyleApplication",
     description: "Relationship anniversary calculator with precise duration in years, months, days, hours, minutes, seconds. Next anniversary countdown, milestone tracking (silver, golden, diamond), monthsary support.",
     alternateName: [
-      "Relationship Calculator",
       "Relationship Anniversary Calculator",
-      "How Long Together Calculator",
       "Wedding Anniversary Calculator",
-      "Dating Anniversary Tool",
-      "Friendship Anniversary",
+      "How Long Together Calculator",
       "Monthsary Calculator",
-      "Months Together Counter",
-      "Years Together Calculator",
-      "Couple Years Tracker",
       "Work Anniversary Calculator",
-      "Marriage Duration Tool",
-      "Silver Anniversary Tool",
-      "Golden Anniversary Tool",
-      "Days Together Tracker",
-      "Love Counter",
     ],
     featureList: [
       "Precise duration calculation (years, months, days, hours, minutes, seconds)",
@@ -76,7 +65,7 @@ const toolConfig = createToolConfig({
       "Works for dating, wedding, friendship, and work anniversaries",
       "All calculations happen locally — no personal data stored",
     ],
-    overview: "Our **Love Days Counter** (also known as a **Dating Calculator**) is the ultimate relationship tracker. Accurately calculate exactly how long you've been together in years, months, and days. Whether you need a wedding anniversary calculator or simply want to check your **love days count**, this free tool does it all. It works just as well for marriage milestones — see exactly how many years you've been married — and it can count friendship anniversaries too. Track upcoming 'monthsaries' with the total-months count, find your next big milestone, and celebrate every moment with our precise **relationship counter**.",
+    overview: "Enter the date your relationship started and see exactly how long you've been together — in years, months, days, and even seconds. The tool works just as well for wedding dates, friendships, and work start dates. It tracks 'monthsaries' with a total-months count, counts down to your next anniversary, and flags upcoming milestones like 1,000 days, silver (25 years), and golden (50 years).",
 
     howToSteps: [
       "Enter Start Date: Select the date your relationship started (dating, wedding, or any other milestone) using the date picker.",
@@ -112,10 +101,10 @@ const toolConfig = createToolConfig({
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Heart className="h-6 w-6 text-primary" />
-            Celebrate Your Love: How to Use Our Relationship Anniversary Calculator
+            Celebrate Your Love: Every Second Counts
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Every day spent with your partner is a milestone, but keeping track of the exact time can be a challenge. Whether you are nearing your first month or your 50th year, our relationship anniversary calculator is designed to help you celebrate every second of your journey together.
+            Every day spent with your partner is a milestone, but keeping track of the exact time can be a challenge. Whether you are nearing your first month or your 50th year, this tool is designed to help you celebrate every second of your journey together.
           </p>
         </article>
 
@@ -181,10 +170,10 @@ const toolConfig = createToolConfig({
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Heart className="h-6 w-6 text-primary" />
-            When Was Your First Date? Use Our Dating Anniversary Calculator
+            When Was Your First Date? Tracking Dating Milestones
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            How long has it been since that magic first spark? Whether you’ve been official for three months or three years, our dating anniversary calculator helps you track the exact age of your love story. Instead of guessing the weeks, let our tool do the math so you can focus on the celebration.
+            How long has it been since that magic first spark? Whether you’ve been official for three months or three years, this tool tracks the exact age of your love story. Instead of guessing the weeks, let it do the math so you can focus on the celebration.
           </p>
 
           <h3 className="text-xl font-bold text-foreground mt-6 mb-4">Track Every Romantic Milestone</h3>
@@ -206,22 +195,22 @@ const toolConfig = createToolConfig({
             </li>
           </ul>
 
-          <h3 className="text-xl font-bold text-foreground mt-6 mb-4">Why Use a Dating Calculator?</h3>
+          <h3 className="text-xl font-bold text-foreground mt-6 mb-4">Why Bother Tracking It?</h3>
           <p className="text-base text-muted-foreground">
-            In a new relationship, time flies. You might remember the month you met, but do you know the exact day you became "official"? Using a dating anniversary tracker ensures you never miss a chance to be romantic. It’s the ultimate tool for planning surprises, ordering personalized gifts, or simply reminiscing about your first kiss.
+            In a new relationship, time flies. You might remember the month you met, but do you know the exact day you became "official"? Keeping the count ensures you never miss a chance to be romantic — it makes planning surprises, ordering personalized gifts, or reminiscing about your first kiss that much easier.
           </p>
         </article>
 
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Gift className="h-6 w-6 text-primary" />
-            Celebrate Your Forever: The Ultimate Marriage Anniversary Calculator
+            Celebrate Your Forever: Wedding &amp; Marriage Milestones
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Your wedding day was just the beginning. Whether you are approaching your first year of marriage or your fiftieth, our marriage anniversary calculator provides an instant, accurate breakdown of every moment you’ve spent as a married couple.
+            Your wedding day was just the beginning. Whether you are approaching your first year of marriage or your fiftieth, enter your wedding date for an instant, accurate breakdown of every moment you’ve spent as a married couple.
           </p>
 
-          <h3 className="text-xl font-bold text-foreground mt-6 mb-4">Why Use a Marriage Anniversary Tracker?</h3>
+          <h3 className="text-xl font-bold text-foreground mt-6 mb-4">Why Track Your Marriage Milestones?</h3>
           <p className="text-base text-muted-foreground mb-4">
             As years pass, it becomes harder to keep track of the exact time elapsed. Our tool does the heavy lifting, calculating your time together down to the very day. It is the perfect resource for:
           </p>
@@ -240,9 +229,9 @@ const toolConfig = createToolConfig({
             </li>
           </ul>
 
-          <h3 className="text-xl font-bold text-foreground mt-6 mb-4">How Our Calculator Works</h3>
+          <h3 className="text-xl font-bold text-foreground mt-6 mb-4">Getting Your Marriage Timeline</h3>
           <p className="text-base text-muted-foreground leading-relaxed">
-            To get your results, simply input the date of your wedding ceremony. Our marriage calculator accounts for leap years and different month lengths to ensure 100% accuracy. Within seconds, you’ll have a complete timeline of your marital journey.
+            To get your results, simply input the date of your wedding ceremony. The math accounts for leap years and different month lengths to ensure 100% accuracy. Within seconds, you’ll have a complete timeline of your marital journey.
           </p>
 
           <h3 className="text-xl font-bold text-foreground mt-6 mb-4">Honor Your Commitment</h3>
@@ -394,38 +383,17 @@ const toolConfig = createToolConfig({
           </div>
         </article>
 
-        <article className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
-            <Heart className="h-6 w-6 text-primary" />
-            The Same Tool, Many Names
-          </h2>
-          <p className="text-base text-muted-foreground leading-relaxed">
-            People search for this exact tool many different ways. The calculator above handles every one:
-          </p>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>anniversary calculator / anniversary counter</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>anniversary calculator months / years / days</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>love anniversary calculator / love days counter</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>relationship anniversary calculator / dating calculator</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>how to count anniversary in relationship</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>how long have we / I been together calculator</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>how long have I been married calculator</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>work anniversary calculator / service anniversary</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>monthsary calculator / 100 days calculator</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>silver / golden / diamond anniversary year calculator</span></li>
-          </ul>
-        </article>
       </div>
     ),
 
     faqs: [
       {
         question: "How accurate is the anniversary calculator?",
-        answer: "Our anniversary calculator provides precise accuracy by calculating relationship duration in years, months, days, hours, minutes, and seconds. It also provides a 'Total Months' count for monthly celebrations. The calculation accounts for different month lengths, leap years, and handles edge cases like February 29th birthdays to ensure complete accuracy."
+        answer: "It calculates your relationship duration in years, months, days, hours, minutes, and seconds, plus a 'Total Months' count for monthly celebrations. The math accounts for different month lengths, leap years, and edge cases like February 29 start dates."
       },
       {
         question: "Does this work for dating and friendship anniversaries too?",
-        answer: "Absolutely! Our anniversary calculator is designed to work for any type of relationship milestone. Whether you're celebrating a dating anniversary, engagement anniversary, wedding anniversary, friendship anniversary, or any other significant relationship milestone, the tool will calculate your time together accurately."
+        answer: "Absolutely! The tool works for any type of milestone — dating, engagement, wedding, friendship, or anything else with a start date. Whatever the occasion, it will calculate your time together accurately."
       },
       {
         question: "What is a monthsary and how do I calculate it?",
@@ -441,35 +409,35 @@ const toolConfig = createToolConfig({
       },
       {
         question: "How does the calculator handle leap years and different month lengths?",
-        answer: "Our anniversary calculator intelligently handles leap years and varying month lengths to ensure accurate calculations. The system automatically detects leap years and adjusts calculations accordingly, properly accounting for February 29th in leap years and February 28th in non-leap years."
+        answer: "Leap years and varying month lengths are handled automatically. The system detects leap years and adjusts accordingly, properly accounting for February 29th in leap years and February 28th in non-leap years."
       },
       {
         question: "Is my relationship information secure and private?",
-        answer: "Your privacy and data security are our top priorities. All relationship information entered into our anniversary calculator is processed locally in your browser and is never stored on our servers or shared with third parties."
+        answer: "Yes. All dates you enter are processed locally in your browser and are never stored on our servers or shared with third parties."
       },
       {
         question: "Can I share my anniversary results with friends and family?",
-        answer: "Yes! Our anniversary calculator includes built-in sharing features that allow you to easily share your relationship milestone with friends and family. You can copy the anniversary text to share via text message, email, or social media platforms."
+        answer: "Yes! Built-in sharing lets you send your relationship milestone to friends and family — copy the text to share via message, email, or social media."
       },
       {
         question: "What happens if I enter a future start date by mistake?",
-        answer: "Our anniversary calculator includes built-in validation to prevent future start dates from being entered. The date input field automatically restricts selection to dates up to today, ensuring you can only enter valid relationship start dates from the past."
+        answer: "Built-in validation prevents future start dates from being entered. The date input restricts selection to dates up to today, so you can only enter valid start dates from the past."
       },
       {
         question: "Can I use this tool on mobile devices and tablets?",
-        answer: "Yes! Our anniversary calculator is fully responsive and optimized for all devices, including smartphones, tablets, and desktop computers. The interface automatically adapts to different screen sizes, ensuring optimal viewing and functionality across all platforms."
+        answer: "Yes! The page is fully responsive and works on smartphones, tablets, and desktops. The interface adapts to different screen sizes automatically."
       },
       {
         question: "How does the calculator determine the next anniversary date?",
-        answer: "Our anniversary calculator intelligently determines your next anniversary by calculating the next occurrence of your relationship start date. The system looks at the current year and determines whether your anniversary date has already passed this year."
+        answer: "The next anniversary is the next occurrence of your start date. The system checks whether that date has already passed this year — if it has, it counts down to next year's date instead."
       },
       {
         question: "What time zone does the anniversary calculator use?",
-        answer: "The anniversary calculator uses your local device time zone for all calculations, ensuring the anniversary calculations are accurate for your specific location. This means the relationship duration and next anniversary calculations will reflect the correct time based on where you are located."
+        answer: "Your local device time zone is used for all calculations, so the relationship duration and next-anniversary countdown reflect the correct time for where you are located."
       },
       {
-        question: "How can I use the anniversary calculator for celebration planning?",
-        answer: "Our anniversary calculator is an excellent resource for anniversary celebration planning. Use it to track how much time you have left to plan decorations, book venues, order gifts, and coordinate with family and friends."
+        question: "How can I use this for celebration planning?",
+        answer: "The next-anniversary countdown tells you exactly how much time you have left to plan decorations, book venues, order gifts, and coordinate with family and friends."
       },
       {
         question: "Is there a limit to how far back I can calculate an anniversary?",

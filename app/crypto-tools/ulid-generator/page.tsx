@@ -21,7 +21,7 @@ const toolConfig = createToolConfig({
   header: {
     title: "ULID Generator — Sortable Unique Identifiers",
     description:
-      "Generate ULIDs (Universally Unique Lexicographically Sortable Identifiers) for database primary keys and distributed systems. 26-character Crockford Base32 strings with millisecond timestamp prefix for natural time ordering. Drop-in UUID replacement with better sort performance.",
+      "Create sortable 128-bit identifiers for database primary keys and distributed systems: 26-character Crockford Base32 strings whose millisecond timestamp prefix gives natural time ordering. A drop-in UUID replacement with better sort performance.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "green",
@@ -38,20 +38,10 @@ const toolConfig = createToolConfig({
       "ULID (Universally Unique Lexicographically Sortable Identifier) generator. 128-bit IDs as 26-char Crockford Base32 — millisecond timestamp + 80 bits random. UUID v4 alternative for sortable database primary keys.",
     alternateName: [
       "Sortable ID Generator",
-      "Lexicographic UUID",
       "Time-Ordered ID Generator",
-      "Crockford Base32 ID",
-      "Database Primary Key Generator",
-      "Event Stream ID Generator",
-      "Distributed System ID",
-      "ULID Online",
-      "UUID Alternative",
+      "Crockford Base32 ID Generator",
       "ULID to UUID Converter",
-      "Timestamp ID Generator",
-      "Monotonic ID Generator",
-      "26 Character ID Generator",
-      "Snowflake Alternative",
-      "Sortable GUID Generator",
+      "Monotonic ULID Generator",
     ],
     featureList: [
       "128-bit ULIDs in 26-char Crockford Base32 (timestamp prefix + random suffix)",
@@ -84,7 +74,7 @@ const toolConfig = createToolConfig({
       "No special characters — safe for URLs, filenames, and databases",
     ],
     overview:
-      "Generate ULIDs (Universally Unique Lexicographically Sortable Identifiers) with this free online tool. ULIDs are 128-bit identifiers encoded as 26-character Crockford Base32 strings. The first 10 characters encode a millisecond-precision timestamp, and the remaining 16 characters are cryptographically random — giving you time-ordered unique IDs that sort naturally in databases. ULIDs are a popular UUID alternative for applications that need sortable primary keys, event stream IDs, and distributed system identifiers. No hyphens, no special characters — safe for URLs, filenames, and database indexes. Generate single or bulk ULIDs instantly in your browser.",
+      "Generate ULIDs (Universally Unique Lexicographically Sortable Identifiers) with this free online tool. Each is a 128-bit value encoded as 26 characters of Crockford Base32: the first 10 encode a millisecond-precision timestamp, the remaining 16 are cryptographically random. That structure makes the IDs sort naturally by creation time — a popular UUID alternative for primary keys, event streams, and distributed systems. No hyphens or special characters, so they drop straight into URLs, filenames, and database indexes. Create one or a bulk batch instantly in your browser.",
 
     howToSteps: [
       "Click Generate to create a new ULID with the current millisecond timestamp.",
@@ -249,11 +239,6 @@ const toolConfig = createToolConfig({
         question: "Are ULIDs unique enough for production?",
         answer:
           "Yes. Each millisecond has 80 bits of randomness (2^80 possible values), making collisions practically impossible even in high-throughput distributed systems.",
-      },
-      {
-        question: "Can I extract the timestamp from a ULID?",
-        answer:
-          "Yes. The first 10 characters encode a 48-bit millisecond timestamp. Most ULID libraries provide a function to extract the creation timestamp from any ULID.",
       },
       {
         question: "Should I replace all UUIDs with ULIDs?",

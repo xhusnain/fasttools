@@ -15,13 +15,13 @@ const toolConfig = createToolConfig({
     "Generate Open Graph, Twitter Card, and essential SEO meta tags for better search snippets and social previews.",
   metaTitle: "Meta Tag Generator — SEO, Open Graph & Twitter",
   metaDescription:
-    "Free meta tag generator. Build SEO title / meta-description, Open Graph (og:title, og:image, og:description for Facebook + LinkedIn + Slack + Discord), Twitter Card tags, canonical, robots, viewport. Live character validation, copy-ready HTML.",
+    "Free meta tag generator that builds SEO, Open Graph, and Twitter Card tags for your pages, with live character-count validation and copy-ready HTML output.",
   path: "/seo-tools/meta-tags",
 
   header: {
     title: "Open Graph Meta Tag Generator",
     description:
-      "Generate complete HTML meta tags for SEO (title, description, canonical, robots, viewport), Open Graph properties (og:title, og:description, og:image, og:url, og:type) for Facebook and LinkedIn previews, and Twitter Card tags (twitter:card, twitter:title, twitter:image) for rich tweet previews — with real-time character count validation and copy-ready HTML output.",
+      "Generate complete HTML metadata for search and social sharing: core SEO tags, Open Graph properties for Facebook and LinkedIn previews, and Twitter Card tags — with real-time character count validation and copy-ready output.",
     titleSize: "large",
     descriptionSize: "small",
   },
@@ -40,17 +40,7 @@ const toolConfig = createToolConfig({
       "Open Graph Generator",
       "Twitter Card Generator",
       "Social Meta Tag Builder",
-      "Facebook Meta Generator",
-      "LinkedIn Preview Tag Generator",
-      "Slack Unfurl Tag Generator",
-      "Discord Embed Tag Tool",
-      "SEO Head Tag Builder",
       "HTML Meta Tag Maker",
-      "Next.js Metadata Helper",
-      "WordPress Meta Tag Builder",
-      "Yoast Meta Tag Alternative",
-      "Rank Math Meta Generator",
-      "Schema-friendly Meta Maker",
     ],
     featureList: [
       "Complete SEO meta tags: title, description, canonical, robots, viewport, charset",
@@ -80,7 +70,7 @@ const toolConfig = createToolConfig({
       "Meta description: keep under 160 characters for optimal SERP display",
     ],
     overview:
-      "This free meta tag generator creates complete, copy-ready HTML metadata for search engine optimization and social media sharing in one unified interface. Generate essential SEO meta tags including title tags (optimized under 60 characters for full Google SERP display), meta descriptions (under 160 characters for optimal snippet length), canonical URLs for duplicate content prevention, robots directives (index/noindex, follow/nofollow), and viewport meta tags for mobile responsiveness. Build Open Graph (OG) protocol tags — og:title, og:description, og:image, og:url, og:type, og:site_name, og:locale — that control how your pages appear when shared on Facebook, LinkedIn, Pinterest, Slack, Discord, and WhatsApp. Create Twitter Card meta tags (twitter:card, twitter:title, twitter:description, twitter:image, twitter:site) for rich preview cards in tweets and X posts. Real-time character counters help you stay within Google's title and description display limits. The generated HTML is ready to paste into your page's head section, Next.js metadata exports, WordPress theme headers, or any CMS template system.",
+      "This free meta tag generator creates copy-ready HTML metadata for search and social sharing in one interface. Fill in your page details to produce the core SEO tags (title, description, canonical URL, robots directives, viewport), the Open Graph properties that control how the page previews on Facebook, LinkedIn, Slack, Discord, and WhatsApp, and Twitter Card tags for rich previews on X. Real-time character counters keep titles under the ~60-character and descriptions under the ~160-character limits Google displays in search results, and the image field follows the 1200×630 px standard social platforms expect. The generated HTML is ready to paste into a page's head section, a Next.js metadata export, a WordPress theme header, or any CMS template.",
 
     howToSteps: [
       "Enter your page title (keep under 60 characters), meta description (keep under 160 characters), and canonical URL for the core SEO meta tags.",
@@ -91,12 +81,12 @@ const toolConfig = createToolConfig({
     ],
 
     features: [
-      "Complete Open Graph (og:) property generation including og:title, og:description, og:image, og:url, og:type, og:site_name, and og:locale",
-      "Twitter Card meta tag generation with summary and summary_large_image card types and full twitter:* property support",
-      "Real-time character count validation for title tags (60 char limit) and meta descriptions (160 char limit) per Google SERP guidelines",
-      "SEO essentials: canonical URL, robots meta (index/noindex, follow/nofollow), and viewport meta tag generation",
-      "Structured, copy-ready HTML output compatible with static HTML, Next.js, Nuxt.js, WordPress, Shopify, and any CMS",
-      "Live preview of how your page will appear in search results and social media shares",
+      "Complete Open Graph property generation, from og:title and og:image through og:site_name and og:locale",
+      "Twitter Card tags with summary and summary_large_image card types",
+      "Real-time character count validation against Google's 60-character title and 160-character description display limits",
+      "SEO essentials: canonical URL, robots directives, and viewport tag generation",
+      "Copy-ready HTML output that drops into static HTML, Next.js, Nuxt, WordPress, Shopify, or any CMS",
+      "Live preview of how your page will appear in search results and social shares",
     ],
 
     useCases: [

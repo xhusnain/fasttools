@@ -25,17 +25,8 @@ const toolConfig = createToolConfig({
     alternateName: [
       "PNG to JPEG Converter",
       "Convert PNG to JPG",
-      "Convert PNG to JPG Online Free",
-      "Change PNG to JPG",
-      "PNG to JPG Online",
-      "PNG to JPG Free",
-      "PNG to JPG Batch Converter",
-      "Bulk PNG to JPG Converter",
+      "Batch PNG to JPG Converter",
       "Transparent PNG to JPG",
-      "PNG to JPG No Upload",
-      "PNG to JPG Without Losing Quality",
-      "PNG Image to JPG",
-      "PNG to JPG Converter Online",
       "Turn PNG into JPG",
     ],
     featureList: [
@@ -117,7 +108,7 @@ const toolConfig = createToolConfig({
             PNG is a lossless format that preserves every pixel and supports transparency, which makes
             it great for graphics and screenshots but often results in large files. JPG uses lossy
             compression to produce much smaller files, at the cost of transparency support. Converting
-            PNG to JPG is the right move when you want a smaller, universally accepted image.
+            is the right move when you want a smaller, universally accepted image.
           </p>
         </div>
 
@@ -202,9 +193,9 @@ const toolConfig = createToolConfig({
           "Yes. The converter is completely free with no signup, no watermark, and no usage limits.",
       },
       {
-        question: "Can I convert PNG to JPG on iPhone, Mac, or Windows?",
+        question: "Can I use this on iPhone, Mac, or Windows?",
         answer:
-          "Yes. It runs in any modern browser, so you can convert PNG to JPG on Windows, Mac, iPhone, Android, or a Chromebook with nothing to install.",
+          "Yes. It runs in any modern browser on Windows, Mac, iPhone, Android, or a Chromebook, with nothing to install.",
       },
     ],
 

@@ -21,7 +21,7 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "UtilitiesApplication",
     description:
-      "Free online readability analyzer and readability score checker using 7 proven algorithms: Flesch-Kincaid Grade Level, Flesch Reading Ease, Gunning Fog Index, Coleman-Liau Index, SMOG Index, Automated Readability Index (ARI), and Dale-Chall Readability Score. Calculates US grade level, reading time, audience fit, vocabulary density, sentence complexity, and provides actionable suggestions. Used by writers, marketers, educators, UX writers, and SEO professionals. 100% client-side — text never leaves your browser.",
+      "Free online readability analyzer using 7 proven algorithms: Flesch-Kincaid Grade Level, Flesch Reading Ease, Gunning Fog Index, Coleman-Liau Index, SMOG Index, Automated Readability Index (ARI), and Dale-Chall. Calculates US grade level, reading time, audience fit, vocabulary density, and sentence complexity, with actionable suggestions. 100% client-side — text never leaves your browser.",
     featureList: [
       "Flesch-Kincaid Grade Level and Reading Ease scoring",
       "Gunning Fog Index for business and technical writing",
@@ -42,17 +42,7 @@ const toolConfig = createToolConfig({
       "Flesch-Kincaid Calculator",
       "Reading Level Analyzer",
       "Grade Level Checker",
-      "Text Difficulty Analyzer",
-      "Reading Ease Calculator",
-      "SMOG Index Calculator",
-      "Gunning Fog Calculator",
-      "Hemingway Editor Alternative",
-      "Yoast Readability Alternative",
-      "Plain Language Checker",
-      "Audience Match Tool",
-      "Content Readability Tester",
-      "ESL Reading Level Checker",
-      "WCAG Readability Helper",
+      "Readability Score Calculator",
     ],
   },
 
@@ -209,7 +199,7 @@ const toolConfig = createToolConfig({
             one algorithm (its own proprietary formula). Grammarly provides a readability score in its
             premium tier but doesn&apos;t break down individual algorithms. Yoast SEO shows Flesch Reading
             Ease only. Readable.com offers multiple formulas but requires a paid subscription. This
-            readability analyzer provides all 7 standard formulas free, with no signup, no word limits,
+            tool provides all 7 standard formulas free, with no signup, no word limits,
             and complete privacy. It also adds audience matching and actionable suggestions that
             Hemingway and Yoast lack.
           </p>
@@ -239,7 +229,7 @@ const toolConfig = createToolConfig({
           "Flesch-Kincaid Grade Level and similar formulas output a US school grade level (1-16+). Grade 5 means a 5th grader can understand the text. Grade 8 means 8th grade reading level. Grade 13+ means college level. The average American reads at 7th-8th grade level. Most successful web content targets grade 6-9. The New York Times writes at grade 10. Academic journals average grade 14-16. Trump's 2016 campaign speeches scored grade 4. Obama's scored grade 8. Amazon product descriptions average grade 7. Google's documentation averages grade 10. Knowing these benchmarks helps you calibrate your writing for your audience. This tool calculates grade levels from 5 independent algorithms so you get a reliable consensus rather than depending on a single formula.",
       },
       {
-        heading: "Readability Analyzer for Different Content Types",
+        heading: "Target Scores for Different Content Types",
         content:
           "Blog posts and web content: aim for Flesch-Kincaid grade 6-8 and Flesch Reading Ease 60-70. Email marketing: grade 5-7 for highest open and click rates. Social media posts: grade 3-5 for maximum engagement. Patient education and healthcare: SMOG Index 6 or below per AMA guidelines. Legal documents (plain language): Gunning Fog 8-10. Academic papers: grade 12-16 is acceptable. Technical documentation: grade 10-12 balances accuracy with accessibility. Children's content: match grade to target age. Business proposals: Gunning Fog 10-12. Press releases: Flesch Reading Ease 50-60. Government communications: grade 6-8 per Plain Writing Act. Each audience has different expectations — this tool helps you measure and match.",
       },
@@ -317,7 +307,7 @@ const toolConfig = createToolConfig({
       {
         question: "Is this tool free?",
         answer:
-          "Yes. The readability analyzer is completely free with no usage limits, no signup required, and no word count restrictions. Since all processing happens locally in your browser, there are no server costs. It will remain free.",
+          "Yes — completely free with no usage limits, no signup required, and no word count restrictions. Since all processing happens locally in your browser, there are no server costs. It will remain free.",
       },
       {
         question: "What is a good Flesch Reading Ease score?",

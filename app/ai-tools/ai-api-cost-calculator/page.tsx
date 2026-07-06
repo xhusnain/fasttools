@@ -39,21 +39,11 @@ const toolConfig = createToolConfig({
     description:
       "Free AI API cost calculator and comparison tool. Compare per-request, monthly, and annual API spend across 25+ LLMs from OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta Llama, xAI, Groq, Together AI, and Cohere. Use-case presets for chatbot, RAG, agent, summarization, code generation, and batch workloads. Cached-input pricing, shareable comparison links, 100% client-side calculation.",
     alternateName: [
-      "LLM API Pricing Comparator",
-      "GPT vs Claude Cost Calculator",
-      "OpenAI vs Anthropic Pricing",
-      "AI API Cost Estimator",
+      "LLM API Pricing Calculator",
       "LLM Cost Calculator",
       "ChatGPT API Cost Calculator",
       "Claude API Cost Calculator",
-      "Gemini API Pricing Calculator",
-      "DeepSeek Cost Comparison",
-      "AI Inference Cost Tool",
       "AI Token Cost Calculator",
-      "LLM Budget Estimator",
-      "AI Per-Request Cost Tool",
-      "Cheapest LLM API Finder",
-      "AI Provider Pricing Comparison",
     ],
     featureList: [
       "Compare 25+ LLMs across 10 providers in a single view",

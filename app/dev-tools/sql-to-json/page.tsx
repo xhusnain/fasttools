@@ -38,13 +38,10 @@ const toolConfig = createToolConfig({
       "Browser-based SQL INSERT to JSON converter for simple INSERT INTO table (columns) VALUES (...) statements. Converts rows into a formatted JSON array with basic literal type detection.",
     alternateName: [
       "SQL to JSON",
-      "SQL INSERT to JSON",
       "INSERT Statement to JSON",
       "SQL Values to JSON",
-      "SQL Seed Data to JSON",
       "SQL Fixture Converter",
       "Database Insert to JSON",
-      "SQL to API Mock JSON",
     ],
     featureList: [
       "Converts INSERT INTO table (columns) VALUES (...) statements",
@@ -74,7 +71,7 @@ const toolConfig = createToolConfig({
       "Best for API mocks, test fixtures, seed data, and small table handoffs",
     ],
     overview:
-      "Use this SQL INSERT to JSON converter when you have a small INSERT statement and need JSON quickly. The tool reads statements in the form INSERT INTO table (column1, column2) VALUES (...), (...); and converts each VALUES tuple into one JSON object. It is useful for turning seed data into fixtures, preparing mock API responses, sharing small database examples with a frontend team, or cleaning up example records for documentation. It does not execute SQL and it is not a full database dump parser.",
+      "Use this converter when you have a small INSERT statement and need JSON quickly. The tool reads statements in the form INSERT INTO table (column1, column2) VALUES (...), (...); and converts each VALUES tuple into one JSON object. It is useful for turning seed data into fixtures, preparing mock API responses, sharing small database examples with a frontend team, or cleaning up example records for documentation. It does not execute SQL and it is not a full database dump parser.",
 
     howToSteps: [
       "Paste an INSERT INTO statement with a column list and VALUES rows.",

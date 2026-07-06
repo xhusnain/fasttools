@@ -57,8 +57,8 @@ export default async function ChannelCheckerVariantPage(props: Props) {
       applicationCategory: "WebApplication",
       description: `${variant.headerTitle} — focused YouTube handle and channel name availability checker.`,
       featureList: [
-        `${variant.headerTitle} workflow`,
         "Handle and channel name availability check",
+        "Handle format validation (length, characters)",
         "Instant browser-based lookup",
         "No login required",
       ],
@@ -100,8 +100,8 @@ export default async function ChannelCheckerVariantPage(props: Props) {
       ],
 
       features: variant.featureOverrides || [
-        `${variant.headerTitle} intent targeting`,
         "Handle and channel name validation",
+        "Format check against YouTube's handle rules",
         "Fast check-and-iterate workflow",
         "No login or account required",
         "Desktop and mobile support",
@@ -144,11 +144,6 @@ export default async function ChannelCheckerVariantPage(props: Props) {
 
       faqs: [
         ...(variant.faqOverrides || []),
-        {
-          question: "How is this different from the main YouTube Handle Checker?",
-          answer:
-            "This page targets a specific search intent while using the same underlying checker tool. The content and metadata are optimized for a narrower keyword cluster.",
-        },
         {
           question: "Is this tool free to use?",
           answer: "Yes. All handle checks are free with no registration or login required.",

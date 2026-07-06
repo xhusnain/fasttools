@@ -21,7 +21,7 @@ const toolConfig = createToolConfig({
   header: {
     title: "UUID / GUID Generator — v1, v4, v6, v7 & Namespace",
     description:
-      "Generate universally unique identifiers (UUIDs) in all standard versions. UUID v4 (cryptographically random), v1 (timestamp + MAC), v7 (sortable timestamp, RFC 9562), and v3/v5 (namespace-based deterministic). Also known as GUIDs. Standard 128-bit format: 8-4-4-4-12 hex characters. Bulk generation supported for database seeding and test fixtures.",
+      "Create universally unique identifiers in every standard version: v4 (cryptographically random), v7 (sortable timestamp, RFC 9562), v1 (timestamp + MAC), and v3/v5 (namespace-based deterministic). Bulk mode supports up to 1000 at once for database seeding and test fixtures.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "green",
@@ -40,18 +40,8 @@ const toolConfig = createToolConfig({
       "GUID Generator",
       "UUID v4 Generator",
       "UUID v7 Generator",
-      "UUID v1 Generator",
-      "Random UUID Generator",
-      "Sortable UUID Generator",
-      "RFC 9562 UUID Generator",
-      "Namespace UUID Generator",
       "Bulk UUID Generator",
-      "UUID Tool",
-      "Microsoft GUID Generator",
-      ".NET GUID Generator",
-      "MySQL UUID Generator",
-      "PostgreSQL UUID Generator",
-      "Identifier Generator",
+      "Random UUID Generator",
     ],
     featureList: [
       "All RFC 4122 / RFC 9562 versions: v1, v3, v4, v5, v6, v7",
@@ -84,7 +74,7 @@ const toolConfig = createToolConfig({
       "Supported by all major databases and programming languages",
     ],
     overview:
-      "Generate UUIDs (Universally Unique Identifiers) and GUIDs with this free online tool. Supports all major UUID versions: v4 (cryptographically random — most common), v1 (timestamp + MAC address), v7 (sortable timestamp per RFC 9562 — recommended for new database keys), v3 (MD5 namespace), v5 (SHA-1 namespace), and v6 (reordered timestamp). UUIDs are 128-bit identifiers in the standard 8-4-4-4-12 hexadecimal format (e.g., 550e8400-e29b-41d4-a716-446655440000). Generate single or bulk UUIDs for database primary keys, API resource IDs, distributed system correlation IDs, and test fixture data. Supported by every major database (PostgreSQL, MySQL, MongoDB) and programming language.",
+      "Generate UUIDs (Universally Unique Identifiers) in every major version with this free online tool: v4 (cryptographically random — the most common), v7 (sortable timestamp per RFC 9562 — recommended for new database keys), v1 (timestamp + MAC address), v3/v5 (deterministic namespace hashing), and v6. Each is a 128-bit value in the standard 8-4-4-4-12 hexadecimal format, e.g. 550e8400-e29b-41d4-a716-446655440000. Create one at a time or up to 1000 in bulk for primary keys, API resource IDs, correlation IDs, and test fixtures — every major database and language accepts the format.",
 
     howToSteps: [
       "Select the UUID version — v4 for random IDs, v7 for sortable database keys, v3/v5 for deterministic IDs.",
@@ -295,7 +285,7 @@ const toolConfig = createToolConfig({
       { name: "ULID Generator", href: "/crypto-tools/ulid-generator" },
       { name: "Token Generator", href: "/crypto-tools/token-generator" },
       { name: "RSA Key Generator", href: "/crypto-tools/rsa-generator" },
-      { name: "BIP39 Passphrase Generator", href: "/crypto-tools/bip39-generator" },
+      { name: "BIP39 Generator", href: "/crypto-tools/bip39-generator" },
       { name: "All Crypto Tools", href: "/crypto-tools" },
     ],
   },

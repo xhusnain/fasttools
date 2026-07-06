@@ -40,12 +40,8 @@ const toolConfig = createToolConfig({
       "Color Converter",
       "RGB to HEX",
       "HEX to HSL",
-      "HSL to RGB",
-      "HSL to HEX",
       "RGB Color Converter",
       "CSS Color Tool",
-      "Color Picker",
-      "Color Code Translator",
     ],
     featureList: [
       "Convert 6-digit HEX to RGB and HSL",

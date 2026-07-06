@@ -38,19 +38,9 @@ const toolConfig = createToolConfig({
     alternateName: [
       "Channel Name Generator",
       "YouTube Username Generator",
-      "Creator Name Maker",
       "Channel Name Ideas Generator",
-      "Brandable YouTube Names",
       "YouTube Handle Generator",
-      "@Handle Suggestion Tool",
-      "Gaming Channel Name Generator",
-      "Vlog Channel Name Maker",
-      "YouTube Brand Name Tool",
-      "Channel Branding Generator",
-      "TikTok Username Generator",
-      "Social Handle Generator",
-      "Twitch Name Generator",
-      "Channel Identity Builder",
+      "Creator Name Maker",
     ],
     featureList: [
       "Generate unique YouTube channel name ideas from niche keywords",
@@ -111,11 +101,6 @@ const toolConfig = createToolConfig({
 
     faqs: [
       {
-        question: "How do I choose a good YouTube channel name?",
-        answer:
-          "A good YouTube channel name is short (under 20 characters), easy to spell and pronounce, memorable, and relevant to your niche. Avoid numbers and special characters unless they are part of your brand. Check that the name is available as an @handle before committing.",
-      },
-      {
         question: "Can this generator create niche-specific channel names?",
         answer:
           "Yes. Enter your specific niche (e.g., 'vegan cooking', 'Minecraft gameplay', 'personal finance') and the generator creates names relevant to that topic. The more specific your input, the more targeted the suggestions.",
@@ -153,7 +138,7 @@ const toolConfig = createToolConfig({
       {
         question: "What makes a good YouTube channel name?",
         answer:
-          "A good YouTube channel name is short (1-3 words, 6-15 characters), pronounceable when spoken aloud, descriptive of your niche, available as an @handle on YouTube + IG + TikTok + X for cross-platform consistency, and free of trademark conflicts (search uspto.gov for US trademarks). Avoid numbers unless they're part of your brand (@2pac yes, @gamer123 no), and avoid year suffixes like @cookingsince they age badly."
+          "A good YouTube channel name is short (1-3 words, 6-15 characters), pronounceable when spoken aloud, descriptive of your niche, available as an @handle on YouTube + IG + TikTok + X for cross-platform consistency, and free of trademark conflicts (search uspto.gov for US trademarks). Avoid numbers unless they're part of your brand (@2pac yes, @gamer123 no), and avoid year suffixes (like @cooking2026) since they age badly."
       },
       {
         question: "Should I match my YouTube channel name to my Instagram or TikTok handle?",

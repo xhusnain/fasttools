@@ -25,18 +25,9 @@ const toolConfig = createToolConfig({
     alternateName: [
       "JPEG to PNG Converter",
       "Convert JPG to PNG",
-      "Convert JPG to PNG Online Free",
-      "Change JPG to PNG",
-      "JPG to PNG Online",
-      "JPG to PNG Free",
-      "JPEG to PNG Free",
-      "JPG to PNG Batch Converter",
-      "Bulk JPG to PNG Converter",
       "Lossless JPG to PNG",
-      "JPG to PNG No Upload",
-      "JPEG to PNG Online",
+      "Batch JPG to PNG Converter",
       "Turn JPG into PNG",
-      "JPG Image to PNG",
     ],
     featureList: [
       "Convert JPG and JPEG images to PNG",
@@ -116,7 +107,7 @@ const toolConfig = createToolConfig({
           <p>
             JPG is a lossy, compressed format with no transparency — great for small photo files. PNG
             is lossless and supports transparency, which makes it ideal for graphics, editing, and any
-            workflow that demands a PNG. Converting JPG to PNG gives you a lossless container around
+            workflow that demands that format. Converting gives you a lossless container around
             your existing image.
           </p>
         </div>
@@ -203,9 +194,9 @@ const toolConfig = createToolConfig({
           "Yes. The converter is completely free with no signup, no watermark, and no usage limits.",
       },
       {
-        question: "Can I convert JPG to PNG on Mac, Windows, or iPhone?",
+        question: "Can I use this on Mac, Windows, or iPhone?",
         answer:
-          "Yes. It runs in any modern browser, so you can convert JPG to PNG on Windows, Mac, iPhone, Android, or a Chromebook with nothing to install.",
+          "Yes. It runs in any modern browser on Windows, Mac, iPhone, Android, or a Chromebook, with nothing to install.",
       },
     ],
 

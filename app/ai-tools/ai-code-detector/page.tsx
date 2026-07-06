@@ -21,9 +21,9 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "DeveloperApplication",
     description:
-      "Free online AI code detector and AI-generated code checker using multi-signal heuristic analysis. Detects code written by GitHub Copilot, ChatGPT, GPT-4, Claude, Gemini, Amazon CodeWhisperer, and other AI coding assistants. Analyzes cyclomatic complexity, error handling density, comment patterns, variable naming, and style uniformity. Supports JavaScript, TypeScript, Python, Java, C++, Go, Rust, C#, PHP, Ruby, Swift, and Kotlin. 100% client-side — code never leaves your browser.",
+      "Free online AI code detector using multi-signal heuristic analysis. Identifies code written by GitHub Copilot, ChatGPT, Claude, Gemini, and other coding assistants by analyzing cyclomatic complexity, error handling density, comment patterns, variable naming, and style uniformity. Supports JavaScript, TypeScript, Python, Java, C++, Go, Rust, C#, PHP, Ruby, Swift, and Kotlin. 100% client-side — code never leaves your browser.",
     featureList: [
-      "Detect AI-generated code from GitHub Copilot ChatGPT Claude Gemini CodeWhisperer",
+      "Detects AI-generated code from GitHub Copilot, ChatGPT, Claude, and Gemini",
       "Cyclomatic complexity and nesting depth analysis",
       "Error handling and defensive coding pattern detection",
       "Comment density and generic AI comment detection",
@@ -41,18 +41,8 @@ const toolConfig = createToolConfig({
       "AI Generated Code Checker",
       "GitHub Copilot Detector",
       "ChatGPT Code Detector",
-      "AI Code Verifier",
+      "AI Code Checker",
       "Code Origin Checker",
-      "Plagiarism Code Checker",
-      "AI Code Auditor",
-      "Cyclomatic Complexity Analyzer",
-      "Code Smell Detector",
-      "GPTZero for Code Alternative",
-      "Originality Code Detector",
-      "AI Code Forensics",
-      "Code Author Analyzer",
-      "Copilot Code Verifier",
-      "Human vs AI Code Tool",
     ],
   },
 
@@ -225,7 +215,7 @@ const toolConfig = createToolConfig({
             short snippets, heavily edited AI code, boilerplate/config files, and code following
             strict linting rules (Prettier, Black, gofmt) may produce less accurate results.
             Clean-code advocates who write short functions with consistent naming may trigger AI
-            signals. This tool provides a probability score, not a definitive judgment — no AI code
+            signals. This tool provides a probability score, not a definitive judgment — no automated
             detector is 100% accurate. Always use results alongside human code review and context.
           </p>
         </div>
@@ -244,7 +234,7 @@ const toolConfig = createToolConfig({
           "With GitHub Copilot, ChatGPT, Claude, and other AI coding assistants now used by 75%+ of developers, organizations need visibility into AI code in their codebase. Security concerns — AI code has 24.2% JavaScript security weaknesses and 1.7x more bugs than human code. Code quality — AI code has 3x more readability problems and 2x more naming inconsistencies. Compliance — regulated industries (finance, healthcare, defense) may require disclosure of AI-generated code. IP and licensing — AI-generated code may have training data provenance concerns. Technical debt — AI code optimized for 'most probable' rather than 'most robust' can accumulate maintenance burden. This detector helps teams establish awareness without requiring developers to upload code to external services.",
       },
       {
-        heading: "AI Code Detector vs Manual Code Review",
+        heading: "Automated Screening vs Manual Code Review",
         content:
           "Manual code review remains the gold standard for assessing code quality and authorship, but it doesn't scale. This automated detector provides instant screening across 12+ languages, analyzing patterns that are tedious to check manually: counting decision points for cyclomatic complexity, measuring line length coefficients of variation, calculating naming genericness ratios, and checking defensive coding density. Use it as a first-pass screening tool — flag code that scores high for AI patterns, then review those sections manually. The detector also educates reviewers about what specific AI code patterns to look for, improving the quality of manual review over time.",
       },
@@ -302,7 +292,7 @@ const toolConfig = createToolConfig({
       {
         question: "How is this different from other AI code detectors?",
         answer:
-          "Most AI code detectors require uploading your code to their servers and use proprietary ML models. This tool uses pure heuristic analysis running 100% in your browser. Your code is never uploaded. It's completely free, unlimited, and private. The trade-off is that ML-based tools trained on specific AI model outputs may catch model-specific patterns, but this tool detects fundamental structural differences that apply across all AI generators.",
+          "Most competing services require uploading your code to their servers and use proprietary ML models. This tool uses pure heuristic analysis running 100% in your browser. Your code is never uploaded. It's completely free, unlimited, and private. The trade-off is that ML-based tools trained on specific AI model outputs may catch model-specific patterns, but this tool detects fundamental structural differences that apply across all AI generators.",
       },
       {
         question: "What does cyclomatic complexity mean in code detection?",
@@ -312,12 +302,12 @@ const toolConfig = createToolConfig({
       {
         question: "Is this tool free to use?",
         answer:
-          "Yes. The AI code detector is completely free with no usage limits, no signup required, and no watermarks. Since all processing happens locally in your browser, there are no server costs. It will remain free.",
+          "Yes — completely free with no usage limits, no signup required, and no watermarks. Since all processing happens locally in your browser, there are no server costs. It will remain free.",
       },
       {
-        question: "Can students use AI code detectors to check before submitting?",
+        question: "Can students check their own code before submitting?",
         answer:
-          "Yes. Students can paste their code into this detector before submitting assignments to check if their writing patterns resemble AI-generated code. If your code scores high for AI patterns, consider adding more comments explaining your thought process, using domain-specific variable names instead of generic ones like 'result' or 'data', and adding error handling. This self-check helps ensure your authentic work doesn't get flagged by institutional AI detection tools.",
+          "Yes. Students can paste their code into the detector before submitting assignments to check if their writing patterns resemble AI-generated code. If your code scores high for AI patterns, consider adding more comments explaining your thought process, using domain-specific variable names instead of generic ones like 'result' or 'data', and adding error handling. This self-check helps ensure your authentic work doesn't get flagged by institutional AI detection tools.",
       },
       {
         question: "Does the detector work on React, Next.js, and frontend components?",

@@ -23,7 +23,7 @@ export const checkerVariants: Record<string, CheckerVariantConfig> = {
     headerDescription:
       "Verify if a YouTube @handle is available right now. Updated for the latest handle rules and requirements.",
     overviewText:
-      "YouTube handles are the unique @usernames that identify every channel. With over 100 million channels on the platform, finding an available handle gets harder every year. This tool checks real-time availability so you can claim your preferred @handle before someone else does. Updated for the latest YouTube handle policies and character requirements.",
+      "YouTube handles are the unique @usernames that identify every channel. With over 100 million channels on the platform, finding an available handle gets harder every year. This tool checks real-time availability so you can claim your preferred @handle before someone else does.",
     keywords: [
       "youtube handle availability checker",
       "youtube handle availability",

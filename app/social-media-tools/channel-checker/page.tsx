@@ -4,7 +4,7 @@ import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { ToolLoader } from "@/components/common/tool-loader"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GTable } from "@/ui/gtable"
-import { CheckCircle, XCircle } from "lucide-react"
+import { CheckCircle } from "lucide-react"
 
 const YoutubeChannelChecker = dynamic(
   () => import("@/components/social-media/youtube-channel-checker").then((mod) => mod.YoutubeChannelChecker),
@@ -40,19 +40,9 @@ const toolConfig = createToolConfig({
     alternateName: [
       "YouTube Name Checker",
       "YouTube Username Checker",
-      "YouTube Channel Name Availability Checker",
-      "Check If YouTube Channel Name Is Available",
-      "Available YouTube Channel Names",
       "YouTube Handle Availability Checker",
-      "@Handle Availability Tool",
-      "Channel Name Search Tool",
-      "YouTube Brand Name Checker",
-      "Channel URL Availability",
-      "YouTube ID Availability",
+      "YouTube Channel Name Availability Checker",
       "Channel Handle Validator",
-      "Custom URL Checker",
-      "YouTube Vanity URL Checker",
-      "Reserve YouTube Handle Tool",
     ],
     featureList: [
       "YouTube handle availability check",
@@ -67,9 +57,9 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A YouTube Channel Name Availability Checker is a free tool that helps you check if a YouTube channel name is available or taken before you create or rename your channel. Also checks @handle availability.",
+      "A YouTube channel name checker tells you whether a name — specifically its unique @handle — is already taken before you create or rename a channel. Display names don't have to be unique on YouTube; handles do, so the handle is what gets checked.",
     quickAnswer:
-      "How to check if a YouTube channel name is available? Enter any channel name or handle to instantly check availability. This tool helps you find available YouTube channel names and verify if a name is already taken. No YouTube account needed.",
+      "Type the name or @handle into the checker above and press check. You'll see instantly whether it's taken, plus validation against YouTube's handle format rules. No YouTube account is needed, and you can test as many variations as you like.",
     keyTakeaways: [
       "YouTube handles are unique @usernames (e.g., @YourBrand) that appear in your channel URL",
       "Handles must be 3-30 characters: letters, numbers, underscores, hyphens, periods only",
@@ -78,7 +68,7 @@ const toolConfig = createToolConfig({
       "Check availability on YouTube, Instagram, TikTok, and X for brand consistency",
     ],
     overview:
-      "Want to know how to check if a YouTube channel name is available? Use this free checker to validate YouTube channel name availability before you commit. Check if a YouTube channel name is taken, find available YouTube channel names, and verify @handle availability instantly. A YouTube handle is your unique @username (e.g., @YourBrand) that appears in your channel URL and comments. Our tool helps creators, agencies, and brands check YouTube channel name availability and avoid naming conflicts — no YouTube account needed.",
+      "Before you commit to a channel name, find out whether anyone already has it. Enter a name or @handle above and the tool tells you in seconds if it's taken, so you can run through variations until one comes up free. The handle is your unique @username (e.g., @YourBrand) — it appears in your channel URL, comments, and mentions, and no two channels can share one. Display names, by contrast, can repeat, which is why the handle is the part worth checking. Creators, agencies, and brands use this before a launch or rebrand to avoid naming conflicts — no YouTube login required.",
 
     howToSteps: [
       "Enter a YouTube handle or channel name you want to check (with or without the @ symbol).",
@@ -264,24 +254,6 @@ const toolConfig = createToolConfig({
           </div>
         </article>
 
-        <article className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground">The Same Tool, Many Names</h2>
-          <p>
-            This checker answers all of these phrasings — they all describe the same thing:
-          </p>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>youtube channel name availability checker</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>youtube username availability checker</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>youtube handle availability check</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>how to check if youtube channel name is available</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>how to check if a youtube handle is taken</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>youtube name checker / yt name checker</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>check youtube channel name uniqueness</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>available youtube channel names / handles</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>is my youtube name taken</span></li>
-            <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span>youtube custom URL availability</span></li>
-          </ul>
-        </article>
       </div>
     ),
 
@@ -292,12 +264,12 @@ const toolConfig = createToolConfig({
       {
         question: "How to check if a YouTube channel name is available?",
         answer:
-          "Enter the channel name you want in our checker tool above and click check. The tool instantly verifies whether the YouTube channel name is available or already taken. You can also check directly on YouTube by going to youtube.com/@desiredname — if it shows 'This page isn't available', the name may be free.",
+          "Enter the name you want in the checker above and click check — it instantly verifies whether it's available or already taken. You can also check directly on YouTube by going to youtube.com/@desiredname; if it shows 'This page isn't available', the name may be free.",
       },
       {
         question: "How to check if a YouTube channel name is taken?",
         answer:
-          "Use this YouTube channel name availability checker — enter any name and it will tell you if it's already in use. This is the fastest way to check if a YouTube channel name is taken before you create your channel.",
+          "Enter the name above and the tool tells you if it's already in use. Because display names don't have to be unique, what actually gets checked is the matching @handle — the only part of a channel name with real availability.",
       },
       {
         question: "How can I tell if a YouTube name is already taken?",
@@ -307,7 +279,7 @@ const toolConfig = createToolConfig({
       {
         question: "How do I find available YouTube channel names?",
         answer:
-          "Enter your desired name in the checker. If it's taken, try variations by adding your niche, location, or descriptive words. Our tool lets you quickly iterate through alternatives to find available YouTube channel names.",
+          "Enter your desired name in the checker. If it's taken, try variations by adding your niche, location, or a descriptive word, and check again — most people land on a free handle within a handful of attempts.",
       },
       {
         question: "What is the difference between a YouTube handle and channel name?",

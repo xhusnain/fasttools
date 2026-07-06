@@ -20,23 +20,13 @@ const conceptionMetadataOptions = {
     { label: "Pregnancy Conception Calculator", href: "/calculator/pregnancy-conception-calculator" }
   ],
   schemaOptions: {
-    name: "Pregnancy Conception Calculator | Free Online Pregnancy Tool",
+    name: "Pregnancy Conception Calculator",
     alternateName: [
       "Conception Calculator",
       "Date of Conception Calculator",
-      "Estimated Conception Date",
       "When Did I Conceive Calculator",
-      "Reverse Pregnancy Calculator",
       "Conception From Due Date",
-      "Conception From LMP",
-      "Conception From Ultrasound",
-      "Implantation Date Calculator",
-      "Pregnancy Week to Conception",
-      "DOC Calculator",
-      "Trimester Calculator",
-      "Fertility Date Estimator",
-      "Pregnancy Conception Tracker",
-      "Naegele Rule Conception Reverse",
+      "Reverse Pregnancy Calculator",
     ],
     applicationCategory: "HealthApplication",
     featureList: [
@@ -221,21 +211,6 @@ export default function PregnancyConceptionCalculatorPage() {
           <p className="text-sm text-muted-foreground italic">Use the calculator above for your exact due date — these are reference values.</p>
         </section>
 
-        <section className="space-y-4">
-          <h2 className="text-2xl font-bold">The Same Tool, Many Names</h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-muted-foreground">
-            <li>· conception calculator / conceive calculator</li>
-            <li>· conception date calculator</li>
-            <li>· date of conception calculator</li>
-            <li>· estimated conception date</li>
-            <li>· accurate conception calculator</li>
-            <li>· conception calendar</li>
-            <li>· determine conception date</li>
-            <li>· when did I conceive calculator</li>
-            <li>· conception date based on due date</li>
-            <li>· pregnancy conception calculator</li>
-          </ul>
-        </section>
       </div>
     ),
 

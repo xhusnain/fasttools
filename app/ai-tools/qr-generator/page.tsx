@@ -36,21 +36,11 @@ const toolConfig = createToolConfig({
     description:
       "Generate and customize QR codes for links, WiFi credentials, contacts, and messaging actions.",
     alternateName: [
-      "QR Maker",
-      "QR Code Creator",
-      "WiFi QR Generator",
-      "vCard QR Generator",
-      "URL QR Code Maker",
+      "QR Code Maker",
       "Static QR Code Generator",
-      "Permanent QR Code Tool",
+      "WiFi QR Code Generator",
+      "vCard QR Code Generator",
       "QR Code with Logo",
-      "WhatsApp QR Generator",
-      "SMS QR Generator",
-      "Email QR Generator",
-      "Bulk QR Generator",
-      "QR Tiger Alternative",
-      "QR Code Monkey Alternative",
-      "Custom QR Code Designer",
     ],
     featureList: [
       "9 QR content types: URL, plain text, WiFi, vCard, email, SMS, WhatsApp, phone call, GPS coordinates",
@@ -75,11 +65,11 @@ const toolConfig = createToolConfig({
 
   content: {
     definition:
-      "A QR code generator that never expires creates permanent, static QR codes that work forever without any server dependency or subscription. Unlike dynamic QR services, these free QR codes never expire and need no ongoing payment.",
+      "A QR code generator converts data — a URL, WiFi login, contact card, or message — into a scannable square barcode. This one produces static codes: the data is encoded directly in the pattern, so the code works permanently with no server dependency, subscription, or expiration date.",
     quickAnswer:
-      "This is a free QR code generator that never expires. Choose a QR type (URL, WiFi, vCard, etc.), enter your data, customize colors and logo, then download as PNG or SVG. The generated QR code is static — it works permanently and never expires. No account, no subscription, no expiration date.",
+      "Choose a code type (URL, WiFi, vCard, etc.), enter your data, customize colors and logo, then download as PNG or SVG. Every code is static — it encodes the data directly, works permanently, and never expires. No account, no subscription.",
     keyTakeaways: [
-      "Free QR code generator that never expires — creates permanent static QR codes",
+      "Creates permanent static codes that never expire — no subscription or server dependency",
       "Supports 9 QR types: URL, WiFi, vCard, email, SMS, WhatsApp, phone, location, text",
       "Minimum print size: 2cm x 2cm for reliable scanning",
       "Use high error correction (H) when adding a logo to maintain scannability",
@@ -297,12 +287,12 @@ END:VCARD`}</code>
       {
         question: "Do QR codes from this generator ever expire?",
         answer:
-          "No — this is a QR code generator that never expires. Static QR codes encode data directly into the code pattern with no server dependency. They work permanently and never expire, unlike dynamic QR codes from paid services that stop working if you cancel your subscription.",
+          "No. Static codes encode data directly into the pattern with no server dependency, so they work permanently — unlike dynamic codes from paid services, which stop working if you cancel the subscription or the redirect service shuts down.",
       },
       {
         question: "Why should I use a QR code generator that never expires?",
         answer:
-          "Many QR code services create dynamic codes that expire when your subscription ends. This free QR code generator creates static codes that never expire — once generated, they work forever with no ongoing cost. Perfect for business cards, product packaging, and permanent signage.",
+          "Many services create dynamic codes that expire when your subscription ends — every printed copy goes dead at once. Static codes have no ongoing cost and no shutdown risk, which makes them the safe choice for business cards, product packaging, and permanent signage.",
       },
       {
         question: "What's the difference between static and dynamic QR codes?",

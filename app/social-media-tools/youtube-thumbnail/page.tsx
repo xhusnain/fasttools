@@ -39,18 +39,8 @@ const toolConfig = createToolConfig({
       "YouTube Thumbnail Grabber",
       "YT Thumbnail Downloader",
       "YouTube Thumbnail Saver",
-      "HD Thumbnail Extractor",
       "Maxresdefault Downloader",
-      "YouTube Video Image Downloader",
-      "Thumbnail Image Grabber",
-      "YouTube Shorts Thumbnail Tool",
-      "YouTube Live Thumbnail Downloader",
-      "Custom Thumbnail Inspector",
-      "YouTube Preview Image Tool",
-      "ThumbnailFinder Alternative",
-      "Thumbnail Save Alternative",
       "Get YouTube Thumbnail",
-      "YouTube Video Cover Image",
     ],
     featureList: [
       "Download thumbnails in all sizes: 120×90, 320×180, 480×360, 640×480, 1280×720",
@@ -77,7 +67,7 @@ const toolConfig = createToolConfig({
       "Useful for thumbnail design research, A/B testing analysis, and content planning",
     ],
     overview:
-      "Download YouTube video thumbnails in all available sizes with this free thumbnail grabber. Every YouTube video has multiple thumbnail resolutions generated automatically. This tool extracts all of them — from the small 120×90 default up to the full 1280×720 maxresdefault HD image. Simply paste the YouTube video URL, preview all available thumbnail sizes, and download the one you need. Works with standard youtube.com URLs, youtu.be short links, and raw video IDs. Thumbnails are commonly used for content research, thumbnail design inspiration, presentations, blog posts, and social media sharing.",
+      "Paste a YouTube video URL, preview every size the video has, and download the one you need — from the small 120×90 default up to the full 1280×720 maxresdefault HD image. YouTube generates these sizes automatically for every upload, and the tool accepts youtube.com URLs, youtu.be short links, Shorts links, and raw video IDs. Two things worth knowing up front: only public videos work (private, unlisted, and deleted videos aren't accessible to any third-party tool), and files save as JPG, the original format YouTube stores. Most people use this for design research, blog embeds, presentations, and content planning.",
 
     howToSteps: [
       "Copy the YouTube video URL from your browser or the YouTube app share menu.",
@@ -241,7 +231,7 @@ const toolConfig = createToolConfig({
       {
         question: "Does this work with YouTube Shorts thumbnails?",
         answer:
-          "Yes. Paste a YouTube Shorts URL to extract its thumbnail. Shorts thumbnails follow the same size format as regular video thumbnails.",
+          "Yes. Paste a YouTube Shorts URL (youtube.com/shorts/VIDEO_ID) to extract its cover in the same sizes as regular videos. Unless the creator uploaded a custom image, a Short's thumbnail is typically its first frame.",
       },
       {
         question: "Do I need a YouTube account to download thumbnails?",
@@ -254,15 +244,10 @@ const toolConfig = createToolConfig({
           "Yes. 100% free with no limits on downloads, no registration, and no watermarks added to thumbnail images.",
       },
       {
-        question: "What thumbnail resolutions does YouTube provide?",
+        question: "Does it work with private or deleted videos?",
         answer:
-          "YouTube auto-generates 6 thumbnail sizes for every video: maxresdefault (1280×720 HD), sddefault (640×480 SD), hqdefault (480×360), mqdefault (320×180), default (120×90), and 3 storyboard variants. Not every video has maxresdefault — only HD-uploaded videos do. The tool downloads the largest available size automatically and lets you pick smaller versions if needed."
+          "No. Thumbnails are only accessible for public videos. Private, unlisted, age-restricted, and deleted videos can't be fetched by any third-party tool because YouTube doesn't serve their images publicly.",
       },
-      {
-        question: "How do I download a Shorts thumbnail?",
-        answer:
-          "Paste the YouTube Shorts URL (youtube.com/shorts/VIDEO_ID) — the tool extracts the same thumbnail set as regular videos. Shorts thumbnails are typically the first frame of the video unless the creator uploaded a custom thumbnail."
-      }
     ],
 
     relatedTools: [

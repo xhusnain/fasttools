@@ -66,9 +66,9 @@ export default async function InstagramDpVariantPage(props: Props) {
 
     schemaOptions: {
       applicationCategory: "UtilitiesApplication",
-      description: `${variant.headerTitle} variant page for focused Instagram profile-picture workflows.`,
+      description: "Free browser tool that loads the full-size Instagram profile picture for any username, with zoom and save options. No login required.",
       featureList: [
-        `${variant.headerTitle} workflow`,
+        "Full-size profile picture preview",
         "Username-based profile-picture lookup",
         "Save to device option",
         "Browser-based utility",
@@ -100,7 +100,7 @@ export default async function InstagramDpVariantPage(props: Props) {
       ],
 
       features: variant.featureOverrides || [
-        `${variant.headerTitle} intent targeting`,
+        "Full-size profile picture preview",
         "Username-based lookup",
         "Fast preview and save workflow",
         "No-login browser utility",
@@ -108,32 +108,25 @@ export default async function InstagramDpVariantPage(props: Props) {
       ],
 
       useCases: [
-        "Long-tail keyword intent matching",
-        "Creator and brand profile checks",
-        "Editorial and design reference workflows",
-        "Team operations with variant-specific routing",
+        "Check who is behind an unfamiliar follow request or DM before responding",
+        "Review a creator's or brand's avatar at full size for research or audits",
+        "Save a reference copy of a profile photo for design or editorial work",
+        "Check how your own profile picture looks before and after Instagram's circular crop",
       ],
 
       aboutTool: (
         <div className="space-y-6 text-muted-foreground">
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">Variant Intent</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-2">How It Works</h3>
             <p>
-              This page targets users searching for {variant.headerTitle.toLowerCase()} and related query variants. It keeps the same core viewer functionality while narrowing copy and metadata to a specific intent cluster.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">Keyword Focus</h3>
-            <p>
-              Primary terms for this route include: {(variant.keywords || ["instagram dp viewer", "insta dp viewer", "instagram profile picture viewer"]).slice(0, 3).join(", ")}. This helps avoid duplicate intent across DP pages and improves long-tail topical coverage.
+              Enter a username and the tool requests the profile image directly from Instagram&apos;s servers, where the original is stored at up to 1080&times;1080 pixels — far larger than the small circle shown in the app. The full-size photo loads in your browser, where you can zoom in or save a copy. Nothing is installed and no Instagram login is involved.
             </p>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-2">Scope and Limits</h3>
             <p>
-              This page is limited to profile-picture workflows and does not provide access to private posts, stories, or restricted account content.
+              This page is limited to profile pictures and does not provide access to private posts, stories, or restricted account content. Profile photos themselves are publicly visible on Instagram regardless of an account&apos;s privacy settings, which is why they can be shown here.
             </p>
           </div>
         </div>
@@ -145,26 +138,26 @@ export default async function InstagramDpVariantPage(props: Props) {
       faqs: [
         ...(variant.faqOverrides || []),
         {
-          question: "What makes this variant different from the main DP page?",
+          question: "Is this a different tool from the main Instagram DP viewer?",
           answer:
-            "It targets a narrower query cluster while using the same underlying viewer workflow.",
+            "No — it is the same viewer. This page just focuses on one specific way people use it, with instructions written for that situation.",
         },
         {
-          question: "Can I use this variant on mobile browsers?",
-          answer: "Yes. Mobile and desktop browsers are supported.",
+          question: "Can I use this on mobile browsers?",
+          answer: "Yes. It works in mobile and desktop browsers with no app install.",
         },
         {
-          question: "Do I need to login to use this page?",
-          answer: "No. It is designed for no-login usage.",
+          question: "Do I need to log in to use this page?",
+          answer: "No. You never enter your Instagram credentials, and you don't need an Instagram account at all.",
         },
         {
-          question: "Will every username return output?",
+          question: "Will every username return a picture?",
           answer:
-            "Output depends on source availability and account visibility.",
+            "Almost always, yes. A lookup can fail if the username is misspelled, the account was deleted or deactivated, or Instagram temporarily rate-limits requests — retrying after a short wait usually resolves it.",
         },
         {
           question: "Is this free?",
-          answer: "Yes. This variant page is free to use.",
+          answer: "Yes. It is free to use, with no signup and no daily limit.",
         },
       ],
 

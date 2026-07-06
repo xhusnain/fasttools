@@ -42,18 +42,8 @@ const toolConfig = createToolConfig({
       "Instagram Caption Generator",
       "TikTok Caption Maker",
       "LinkedIn Post Generator",
-      "Social Media Caption AI",
-      "AI Post Caption Generator",
-      "Twitter / X Caption Generator",
-      "YouTube Description Generator",
-      "Facebook Post Generator",
-      "Pinterest Caption Tool",
-      "Hashtag Generator",
+      "Social Media Caption Writer",
       "Reel Caption Generator",
-      "Story Caption Generator",
-      "Carousel Caption Maker",
-      "Caption Writer AI",
-      "Copy.ai Caption Alternative",
     ],
     featureList: [
       "Platform-specific caption generation with correct character limits enforced",
@@ -253,7 +243,7 @@ const toolConfig = createToolConfig({
 
     faqs: [
       {
-        question: "What social media platforms does the AI caption generator support?",
+        question: "What social media platforms are supported?",
         answer:
           "The generator creates optimized captions for Instagram (up to 2,200 characters), TikTok (up to 4,000 characters), LinkedIn (up to 3,000 characters), X/Twitter (280 characters), Facebook (63,206 characters), Pinterest (500 characters for descriptions), and YouTube (5,000 characters for video descriptions). Each platform selection adjusts the AI's output length, tone, hashtag format, and engagement patterns.",
       },

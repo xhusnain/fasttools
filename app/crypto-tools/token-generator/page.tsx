@@ -15,7 +15,7 @@ const toolConfig = createToolConfig({
   header: {
     title: "Secure Random Token & API Key Generator",
     description:
-      "Generate cryptographically secure random tokens for API keys, session tokens, CSRF tokens, password reset links, and secret keys. Choose hex, Base64, Base64URL, or alphanumeric format with custom length from 16 to 256 characters. Uses the Web Crypto API for true randomness.",
+      "Generate cryptographically secure random tokens for API keys, session identifiers, and signing secrets. Choose hex, Base64, Base64URL, or alphanumeric format with custom length from 16 to 256 characters. Uses the Web Crypto API for true randomness.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "green",
@@ -32,21 +32,10 @@ const toolConfig = createToolConfig({
       "Cryptographically-secure random token generator. Output formats include hex, Base64, Base64URL, and alphanumeric. Length 16–256 chars. Optional prefix/suffix for Stripe-style API key naming. Bulk mode. 100% client-side via Web Crypto API.",
     alternateName: [
       "API Key Generator",
-      "API Token Generator",
       "Random Token Generator",
       "Secret Key Generator",
-      "Session Token Generator",
       "CSRF Token Generator",
       "Webhook Secret Generator",
-      "JWT Secret Generator",
-      "Bearer Token Generator",
-      ".env Secret Generator",
-      "Hex Token Generator",
-      "Base64 Token Generator",
-      "Base64URL Token Generator",
-      "Alphanumeric Key Generator",
-      "Stripe-style Key Generator",
-      "Random Hex String Generator",
     ],
     featureList: [
       "Cryptographically secure via window.crypto.getRandomValues() — never Math.random()",
@@ -75,11 +64,11 @@ const toolConfig = createToolConfig({
       "Generates cryptographically secure random tokens",
       "Multiple formats: hex, Base64, Base64URL, and alphanumeric",
       "Configurable token length from 16 to 256 characters",
-      "Suitable for API keys, session tokens, CSRF tokens, and secrets",
+      "Suitable for authentication credentials of any kind — keys, sessions, secrets",
       "Uses Web Crypto API — all generation runs securely in your browser",
     ],
     overview:
-      "Generate cryptographically secure random tokens with this free online tool. Create API keys, session tokens, CSRF tokens, password reset links, webhook secrets, and environment variable values. Choose from multiple formats: hexadecimal, Base64, Base64URL, and alphanumeric. Set custom token length from 16 to 256 characters, add prefixes (like sk_, pk_, api_), and generate in bulk. All tokens are created using the Web Crypto API (crypto.getRandomValues) for true cryptographic randomness — no pseudo-random fallback. Whether you need to generate a random API token online for a quick integration or produce a batch of secure random tokens for production services, there's nothing to install and no signup required. Perfect for developers setting up authentication, provisioning test credentials, or generating .env file secrets.",
+      "Generate cryptographically secure random tokens with this free online tool — API keys, session identifiers, CSRF values, webhook secrets, and .env entries. Choose hex, Base64, Base64URL, or alphanumeric output, set a length from 16 to 256 characters, add a prefix (sk_, pk_, api_), and create up to 100 at once in bulk mode. Everything comes from the Web Crypto API (crypto.getRandomValues) with no pseudo-random fallback, and nothing is sent to a server.",
 
     howToSteps: [
       "Select a token format: hex, Base64, Base64URL, or alphanumeric.",
@@ -156,20 +145,9 @@ const toolConfig = createToolConfig({
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">API Key Prefix Conventions</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Why Prefix Your API Keys</h3>
           <p>
-            Modern services prefix API keys so leaked tokens can be detected and revoked quickly. GitHub scans public commits, Stripe scans pastebin sites, and AWS scans cloud-storage buckets — all matching on these prefixes. Following the convention makes your keys discoverable by automated leak-detection systems:
-          </p>
-          <ul className="list-disc pl-6 mt-2 space-y-1">
-            <li><strong>Stripe:</strong> <code>sk_live_</code> (secret), <code>pk_live_</code> (publishable), <code>whsec_</code> (webhook)</li>
-            <li><strong>OpenAI:</strong> <code>sk-</code></li>
-            <li><strong>GitHub:</strong> <code>ghp_</code> (personal), <code>gho_</code> (OAuth), <code>ghs_</code> (server)</li>
-            <li><strong>AWS:</strong> <code>AKIA</code> (access key), <code>ASIA</code> (temp credential)</li>
-            <li><strong>Google Cloud:</strong> <code>AIza</code></li>
-            <li><strong>Slack:</strong> <code>xoxb-</code> (bot), <code>xoxp-</code> (user), <code>xoxa-</code> (workspace)</li>
-          </ul>
-          <p className="mt-3">
-            <strong>Best practice:</strong> use distinguishable prefixes for your service (e.g., <code>acme_sk_live_</code>, <code>acme_pk_test_</code>) so leaked keys are obviously yours and your scanning tools can find them.
+            Well-designed services prefix their API keys (Stripe&apos;s <code>sk_live_</code> / <code>pk_live_</code> pattern is the best-known example) so that a leaked key is instantly recognizable and automated secret-scanning tools can flag it in commits, logs, and issue trackers before an attacker finds it. If you&apos;re issuing keys for your own service, adopt a distinguishable prefix (e.g., <code>acme_sk_live_</code> vs <code>acme_pk_test_</code>) — it makes accidental leaks greppable and lets you tell secret keys from publishable ones at a glance. Note this only applies to tokens you generate for your own systems: keys for third-party services must always be issued by that service&apos;s own dashboard, never assembled by hand.
           </p>
         </div>
 

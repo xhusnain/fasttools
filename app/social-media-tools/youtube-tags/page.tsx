@@ -37,20 +37,10 @@ const toolConfig = createToolConfig({
       "YouTube tag extractor that reveals hidden video tags for keyword research, competitor analysis, and YouTube SEO. Paste any video URL or video ID to extract all tags.",
     alternateName: [
       "YouTube Tag Viewer",
-      "YouTube SEO Tag Tool",
       "Video Tag Extractor",
       "YouTube Keyword Extractor",
       "Hidden Tags Viewer",
-      "Competitor Tag Analyzer",
       "YT Tag Inspector",
-      "YouTube Metadata Viewer",
-      "Video SEO Audit Tool",
-      "YouTube Tag Generator Reverse",
-      "TubeBuddy Alternative",
-      "VidIQ Alternative",
-      "RapidTags Alternative",
-      "YouTube Tag Research Tool",
-      "Channel Tag Aggregator",
     ],
     featureList: [
       "Extract hidden tags from any public YouTube video",
@@ -77,11 +67,11 @@ const toolConfig = createToolConfig({
       "Tags are one factor in YouTube SEO alongside title, description, and engagement",
     ],
     overview:
-      "Reveal the hidden tags on any YouTube video with this free tag extractor. YouTube tags are metadata that creators add to help the algorithm understand what their video is about — but they are not visible to viewers. This tool extracts all tags from any public video URL so you can study competitor keyword strategies, discover trending tags in your niche, and optimize your own video metadata. Paste a YouTube URL, instantly see all tags used, and copy them with one click. Works with standard youtube.com URLs, youtu.be short links, and YouTube Shorts. No login or software needed.",
+      "Paste any public video URL and this tag extractor reveals the hidden tags the creator set, ready to copy with one click. Tags are metadata added at upload to help YouTube's algorithm understand what a video is about, but they're invisible to viewers — the only way to see another channel's tags is to parse the page metadata, which is exactly what this tool does. They also come back in the same order the creator entered them, which hints at which topics that channel considered most important. Works with youtube.com URLs, youtu.be short links, and Shorts. No login or software needed.",
 
     howToSteps: [
       "Copy the YouTube video URL of any video whose tags you want to see.",
-      "Paste the URL into the tag extractor input field above.",
+      "Paste the URL into the input field above.",
       "View all extracted tags displayed with tag count and total characters.",
       "Click 'Copy Tags' to copy the entire tag list for use in your own videos or research.",
     ],
@@ -134,11 +124,6 @@ const toolConfig = createToolConfig({
         question: "How many tags should a YouTube video have?",
         answer:
           "YouTube allows up to 500 characters for tags (not 500 tags). Most successful creators use 5-15 well-chosen tags. Focus on relevance over quantity — irrelevant tags can actually hurt your video's performance.",
-      },
-      {
-        question: "Does this work with YouTube Shorts?",
-        answer:
-          "Yes. Paste a YouTube Shorts URL to extract its tags. Shorts use the same tag system as regular videos.",
       },
       {
         question: "Is this YouTube tag extractor free?",

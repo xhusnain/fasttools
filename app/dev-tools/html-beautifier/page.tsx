@@ -39,13 +39,9 @@ const toolConfig = createToolConfig({
     alternateName: [
       "HTML Formatter",
       "HTML Pretty Print",
-      "HTML Indenter",
       "HTML Minifier",
-      "HTML Compressor",
       "Format HTML Online",
-      "Beautify HTML Code",
       "Unminify HTML",
-      "HTML Source Formatter",
     ],
     featureList: [
       "Beautify pasted HTML with line breaks and indentation",

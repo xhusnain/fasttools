@@ -33,32 +33,17 @@ const toolConfig = createToolConfig({
     alternateName: [
       "RSA Key Generator",
       "Public Private Key Generator",
-      "RSA 2048 Generator",
       "RSA 4096 Generator",
       "PEM Key Generator",
-      "PKCS#8 Key Generator",
       "JWT RS256 Key Generator",
-      "OpenSSL RSA Online",
-      "SSH RSA Key Generator",
-      "TLS Certificate Key Generator",
-      "RSA Keypair Online",
-      "Asymmetric Key Generator",
-      "Public Key Cryptography Tool",
-      "PEM Encoder",
-      "X.509 RSA Generator",
     ],
     featureList: [
       "Three key sizes: 2048-bit (standard), 3072-bit (NIST recommended), 4096-bit (high-security)",
-      "Standard PEM format output — PKCS#8 for private, SPKI (X.509 SubjectPublicKeyInfo) for public",
-      "Direct compatibility with OpenSSL, Node.js crypto, Python cryptography, Java JCA, Go crypto/rsa",
-      "Compatible with JWT RS256 / RS384 / RS512 (jsonwebtoken, PyJWT, jose, jsrsasign)",
-      "Web Crypto API generation — uses browser's CSPRNG and constant-time prime generation",
-      "Public exponent fixed to F4 (65537) — the universal standard for RSA",
-      "BEGIN/END markers included — paste directly into .pem files or env vars",
-      "One-click copy for public and private keys separately",
-      "Download as private.pem / public.pem for direct file use",
-      "Browser-only generation — private key is generated and stored in memory; never sent to server",
-      "Compatible with ssh-keygen import (after format conversion); see FAQ",
+      "Standard PEM output — PKCS#8 for private, SPKI (X.509 SubjectPublicKeyInfo) for public",
+      "Works with OpenSSL, Node.js crypto, Python cryptography, Java JCA, Go crypto/rsa, and JWT RS256 libraries",
+      "Web Crypto API generation with public exponent fixed to F4 (65537)",
+      "One-click copy and download as private.pem / public.pem",
+      "Browser-only generation — the private key never leaves memory or reaches a server",
       "Free, no signup, no rate limits, no tracking",
     ],
     softwareRequirements: "Modern web browser with Web Crypto API support (Chrome, Edge, Safari, Firefox)",
@@ -78,7 +63,7 @@ const toolConfig = createToolConfig({
       "Keys are generated in your browser — private key never leaves your machine",
     ],
     overview:
-      "Generate RSA public and private key pairs online with this free tool. Create 2048-bit or 4096-bit RSA keys in standard PEM format (PKCS#8) for JWT RS256/RS512 signing, SSH authentication, TLS/SSL certificate generation, S/MIME email encryption, and file encryption. The public key encrypts data and verifies signatures; the private key decrypts data and creates signatures. Both keys are generated entirely in your browser using the Web Crypto API — the private key is never transmitted to any server. Copy or download keys directly for use in Node.js, Python, Java, Go, or OpenSSL workflows.",
+      "Generate an RSA key pair online at 2048, 3072, or 4096-bit strength, output in standard PEM format (PKCS#8 private, SPKI public). Common uses include JWT RS256/RS512 signing, TLS certificates for development, and S/MIME. The public key encrypts and verifies; the private key decrypts and signs. Generation happens entirely in your browser through the Web Crypto API — the private key is never transmitted anywhere. Copy or download both halves for use with OpenSSL, Node.js, Python, Java, or Go.",
 
     howToSteps: [
       "Select key size: 2048-bit (standard) or 4096-bit (higher security, slower operations).",
@@ -218,11 +203,6 @@ const toolConfig = createToolConfig({
         question: "Should I use 2048-bit or 4096-bit RSA keys?",
         answer:
           "2048-bit is the minimum recommended by NIST and sufficient for most applications. Use 4096-bit for high-security requirements, long-lived certificates, or when compliance policy requires it. 4096-bit keys are ~4x slower for signing operations.",
-      },
-      {
-        question: "Can I use these RSA keys for JWT signing (RS256)?",
-        answer:
-          "Yes. Copy the private key to sign JWTs with RS256, RS384, or RS512 algorithms. Share the public key with services that need to verify the tokens. Standard PEM format works with jsonwebtoken (Node.js), PyJWT (Python), and all major JWT libraries.",
       },
       {
         question: "Is it safe to generate RSA keys in a browser?",

@@ -37,20 +37,10 @@ const toolConfig = createToolConfig({
       "Link-in-bio page generator and Linktree alternative for creators, influencers, and businesses. Build a multi-link landing page from one bio URL with custom colors, button styles, and mobile-first layout.",
     alternateName: [
       "Linktree Alternative",
-      "Beacons Alternative",
       "Bio Link Generator",
       "Multi-Link Bio Maker",
-      "Instagram Bio Link Tool",
-      "TikTok Bio Page Generator",
-      "Creator Landing Page Builder",
-      "Bio URL Generator",
-      "One Link Maker",
-      "Carrd Alternative",
-      "Solo.to Alternative",
-      "Lnk.Bio Alternative",
       "Bio Page Creator",
-      "Social Bio Link Page",
-      "Influencer Landing Page Tool",
+      "One Link Maker",
     ],
     featureList: [
       "Create multi-link bio landing pages",
@@ -77,7 +67,7 @@ const toolConfig = createToolConfig({
       "Add unlimited links: websites, products, social profiles, campaigns, music",
     ],
     overview:
-      "Create your link-in-bio page for free with this online generator. Social media platforms like Instagram and TikTok only allow one link in your profile bio — this tool solves that by creating a landing page with all your important links. Add links to your website, online store, other social profiles, latest content, music, merch, and more. Customize the look with your brand colors, choose button styles, and arrange links in priority order. The generated bio page is mobile-first and loads fast for social media visitors. No signup, no monthly subscription, no ads — a completely free alternative to Linktree, Beacons, and Lnk.Bio.",
+      "Create your link-in-bio page for free with this online generator. Social media platforms like Instagram and TikTok only allow one link in your profile bio — this tool solves that by creating a landing page with all your important links. Add links to your website, online store, other social profiles, latest content, music, merch, and more. Customize the look with your brand colors, choose button styles, and arrange links in priority order. The generated bio page is mobile-first and loads fast for visitors tapping through from social apps. No signup, no monthly subscription, no ads.",
 
     howToSteps: [
       "Enter your profile name, photo, and a short bio description.",
@@ -114,11 +104,6 @@ const toolConfig = createToolConfig({
         question: "What is a link-in-bio page?",
         answer:
           "A link-in-bio page is a simple landing page with multiple clickable links, designed to be the single URL in your Instagram, TikTok, or YouTube bio. It lets you share multiple destinations (website, store, social profiles, content) from one link.",
-      },
-      {
-        question: "Is this a free alternative to Linktree?",
-        answer:
-          "Yes. This generator creates the same type of multi-link bio page as Linktree, but it is completely free with no account required, no subscription fees, and full customization at no cost.",
       },
       {
         question: "Can I customize the colors and design?",

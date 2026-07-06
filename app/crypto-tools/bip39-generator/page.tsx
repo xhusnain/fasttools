@@ -15,7 +15,7 @@ const toolConfig = createToolConfig({
   header: {
     title: "BIP39 Mnemonic Seed Phrase Generator",
     description:
-      "Generate 12-word or 24-word BIP39 mnemonic seed phrases for Bitcoin, Ethereum, Solana, and other cryptocurrency wallets. Validate existing seed phrases with checksum verification. Words are drawn from the standard 2048-word BIP39 English wordlist. Generated entirely in your browser — seed phrases never leave your device.",
+      "Create a new 12 or 24-word mnemonic, or validate an existing one with checksum verification. Words are drawn from the standard 2048-word BIP39 English wordlist, generated entirely in your browser — nothing ever leaves your device.",
     titleSize: "medium",
     descriptionSize: "small",
     color: "green",
@@ -33,33 +33,20 @@ const toolConfig = createToolConfig({
     alternateName: [
       "BIP39 Mnemonic Generator",
       "Seed Phrase Generator",
-      "Crypto Recovery Phrase Generator",
-      "12 Word Seed Phrase Generator",
-      "24 Word Seed Phrase Generator",
-      "Bitcoin Seed Phrase Generator",
-      "Ethereum Mnemonic Generator",
-      "Solana Seed Phrase Generator",
-      "Wallet Recovery Phrase Generator",
+      "Recovery Phrase Generator",
       "BIP39 Validator",
-      "Seed Phrase Checksum Validator",
       "Mnemonic Checker",
-      "HD Wallet Seed Generator",
-      "Iancoleman BIP39 Alternative",
-      "Mnemonic Phrase Tool",
     ],
     featureList: [
-      "12 / 15 / 18 / 21 / 24 word BIP39 mnemonic generation (128 / 160 / 192 / 224 / 256-bit entropy)",
+      "12 / 15 / 18 / 21 / 24 word mnemonic generation (128–256-bit entropy)",
       "Standard 2048-word BIP39 English wordlist (matches every spec-compliant wallet)",
       "Checksum validation: detects typos and wrong word order before wallet recovery",
       "Cryptographically secure via window.crypto.getRandomValues() (CSPRNG)",
-      "Optional BIP39 passphrase (25th word) for plausible-deniability hidden wallet",
-      "View raw 128/256-bit entropy in hex (debug or restore from external entropy)",
-      "Compatible with MetaMask, Ledger, Trezor, Trust Wallet, Phantom, Exodus, Electrum, Sparrow",
-      "Works for Bitcoin (BTC), Ethereum (ETH), Solana (SOL), and every BIP39 / BIP44 chain",
-      "Validate existing mnemonics: catches incorrect word order, typos, or wrong checksum",
-      "100% client-side — your seed phrase never touches our servers or any network",
-      "Works offline once the page is loaded (verifiable in DevTools Network tab)",
-      "Free forever, no signup, no ads, no telemetry",
+      "Optional BIP39 passphrase (25th word) support",
+      "View raw entropy in hex (debug or restore from external entropy)",
+      "Works with any BIP39 / BIP44 wallet across Bitcoin, Ethereum, Solana, and other chains",
+      "100% client-side — nothing touches our servers; works offline once loaded",
+      "Free, no signup, no ads, no telemetry",
     ],
     softwareRequirements: "Modern web browser with Web Crypto API support",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -78,7 +65,7 @@ const toolConfig = createToolConfig({
       "Generated in your browser using cryptographic randomness — never transmitted",
     ],
     overview:
-      "Generate BIP39 mnemonic seed phrases with this free online tool. Create 12-word (128-bit entropy) or 24-word (256-bit entropy) recovery phrases compatible with Bitcoin (BTC), Ethereum (ETH), Solana (SOL), and all BIP39-compatible cryptocurrency wallets including MetaMask, Ledger, Trezor, and Trust Wallet. Words are selected from the standardized 2048-word BIP39 English wordlist with the last word serving as a checksum for error detection. Validate existing seed phrases to verify correct word order and checksum before wallet recovery. All generation uses cryptographic randomness in your browser — seed phrases are never transmitted to any server.",
+      "Generate a BIP39 mnemonic seed phrase in your browser, at 12-word (128-bit) or 24-word (256-bit) strength. The output follows the same standard used by MetaMask, Ledger, Trezor, Trust Wallet, and Phantom, so it works across Bitcoin, Ethereum, Solana, and every BIP39-compatible chain. The last word encodes a checksum, and the Validate tab recomputes it — useful for catching a transcription error before you attempt wallet recovery. Everything runs on cryptographic randomness (window.crypto.getRandomValues) with zero network requests. Important: a freshly generated phrase controls a brand-new, empty wallet. No tool can produce a phrase linked to existing funds, and any site claiming otherwise is a scam.",
 
     howToSteps: [
       "Select the word count: 12 words (128-bit entropy) or 24 words (256-bit entropy).",
@@ -88,25 +75,20 @@ const toolConfig = createToolConfig({
     ],
 
     features: [
-      "Five mnemonic lengths supported: 12, 15, 18, 21, or 24 words (128–256 bits of entropy)",
-      "Standard 2048-word BIP39 English wordlist used by every spec-compliant wallet",
+      "Five mnemonic lengths: 12, 15, 18, 21, or 24 words (128–256 bits of entropy)",
       "Cryptographically secure generation via window.crypto.getRandomValues() — never Math.random()",
-      "Checksum validation tab: paste an existing phrase to verify correct word order and detect typos",
-      "Optional BIP39 passphrase (25th word) support for hidden / plausible-deniability wallets",
-      "Compatible with MetaMask, Ledger, Trezor, Trust Wallet, Phantom, Exodus, Electrum, Sparrow",
-      "Works for Bitcoin, Ethereum, Solana, BSC, Polygon, Cosmos, and every BIP39 / BIP44 chain",
+      "Checksum validation tab: paste an existing phrase to verify word order and detect typos",
+      "Optional BIP39 passphrase (25th word) support",
       "Raw entropy view in hex for restoring from external sources or debugging derivation",
-      "100% client-side generation — seed phrase data never leaves your browser",
+      "100% client-side — nothing leaves your browser",
     ],
 
     useCases: [
-      "Setting up a fresh Bitcoin, Ethereum, or multi-chain wallet with a new backup seed phrase",
+      "Setting up a fresh multi-chain wallet with a new backup phrase",
       "Validating an existing mnemonic before importing into a hardware wallet (Ledger / Trezor)",
       "Generating throwaway test wallets for dApp development, smart contract testing, or QA",
-      "Creating a backup seed for a steel plate / metal seed storage device (Cryptosteel, Billfodl)",
-      "Testing BIP39 passphrase (25th word) workflows for plausible-deniability hidden wallets",
-      "Learning how HD wallets derive private keys from seed phrases (BIP32 / BIP44 derivation)",
-      "Migrating between wallet apps — generate elsewhere, validate checksum here before importing",
+      "Learning how HD wallets derive private keys (BIP32 / BIP44 derivation)",
+      "Migrating between wallet apps — validate the checksum here before importing",
     ],
 
     aboutTool: (
@@ -129,7 +111,7 @@ const toolConfig = createToolConfig({
         <div>
           <h3 className="text-lg font-semibold text-foreground mb-2">The Optional 25th Word (BIP39 Passphrase)</h3>
           <p>
-            BIP39 supports an optional passphrase — sometimes called the &quot;25th word&quot; or &quot;extension word&quot; — that combines with your seed phrase via PBKDF2-HMAC-SHA512 (2048 iterations) to produce a completely different master seed. Even if an attacker steals your physical 12 / 24-word phrase, they cannot access funds without also knowing the passphrase. This enables <strong>plausible deniability</strong>: your &quot;real&quot; wallet lives behind the passphrase; the seed phrase alone might unlock a decoy wallet with a small balance. Trade-off: lose the passphrase = lose all funds, with no recovery. Best practice: memorize a strong but rememberable passphrase, or write it on a separate sheet stored in a separate physical location.
+            BIP39 supports an optional passphrase — sometimes called the &quot;25th word&quot; or &quot;extension word&quot; — that combines with your seed phrase via PBKDF2-HMAC-SHA512 (2048 iterations) to produce a completely different master seed. Even if an attacker steals your physical 12 / 24-word phrase, they cannot access funds without also knowing the passphrase. Trade-off: lose the passphrase = lose all funds, with no recovery. Best practice: memorize a strong but rememberable passphrase, or write it on a separate sheet stored in a separate physical location.
           </p>
         </div>
 
@@ -148,9 +130,9 @@ const toolConfig = createToolConfig({
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-2">Same Tool, Many Names</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-2">A New Phrase Is Always an Empty Wallet</h3>
           <p>
-            People search for this with many different terms — they all mean the same thing: <em>BIP39 generator, mnemonic generator, seed phrase generator, recovery phrase generator, 12-word phrase generator, 24-word seed generator, wallet backup phrase generator, crypto recovery words, MetaMask seed generator, Bitcoin wallet seed generator.</em> All refer to the BIP39 standard — Bitcoin Improvement Proposal 39 — that nearly every modern cryptocurrency wallet uses to encode the master private key as a human-readable word sequence.
+            Generating a mnemonic creates the keys to a wallet that has never been used — it holds nothing until you send funds to one of its addresses. It is mathematically infeasible for any generator to land on a phrase that already controls someone else&apos;s funds (the odds are below 1 in 2<sup>128</sup>). Be wary of sites or videos promising phrases tied to funded wallets, and never type a phrase that someone else gave you into a wallet — both are common theft schemes. A real seed phrase should be created by you, seen only by you, and stored offline.
           </p>
         </div>
       </div>
@@ -169,11 +151,6 @@ const toolConfig = createToolConfig({
         question: "What is a BIP39 mnemonic seed phrase?",
         answer:
           "A BIP39 mnemonic is a set of 12, 15, 18, 21, or 24 English words that encodes the master seed for a cryptocurrency wallet. It is used to back up and restore all accounts and private keys derived from that seed. The same mnemonic works across any BIP39-compatible wallet — MetaMask, Ledger, Trezor, Trust Wallet, Phantom, and hundreds more.",
-      },
-      {
-        question: "Is 12 words or 24 words more secure?",
-        answer:
-          "24 words provides 256-bit entropy vs 128-bit for 12 words. Both are practically uncrackable, but 24 words offers a higher security margin for high-value wallets and long-term storage.",
       },
       {
         question: "Which wallets support BIP39 seed phrases?",
@@ -196,19 +173,14 @@ const toolConfig = createToolConfig({
           "They can restore your wallet and access all funds. If you suspect your seed phrase is compromised, immediately transfer all assets to a new wallet with a freshly generated seed phrase.",
       },
       {
-        question: "How do I generate a 12-word seed phrase?",
-        answer:
-          "Select 12 words from the strength dropdown above and click generate. The tool uses your browser's cryptographically-secure random number generator (window.crypto.getRandomValues()) to produce 128 bits of entropy, then encodes that entropy into 12 words from the standard BIP39 English wordlist. A 12-word phrase has ~128 bits of security — strong enough that brute-forcing it would take longer than the age of the universe."
-      },
-      {
         question: "Is a 24-word seed phrase more secure than 12 words?",
         answer:
           "Yes, mathematically — 24 words = 256 bits of entropy vs 12 words = 128 bits. But 128 bits is already infeasible to brute-force with any current or foreseeable technology. The practical difference: 24 words is required for some hardware wallets and post-quantum threat models; 12 words is fine for most Bitcoin and Ethereum use. Both protect against the same realistic attacks (theft of physical device, social engineering, malware) — those are mitigated by storage practices, not seed length."
       },
       {
-        question: "Is this a BIP39 mnemonic / mnemonic seed phrase generator?",
+        question: "Can this generate a seed phrase for a wallet that already has funds?",
         answer:
-          "Yes. The tool generates a BIP39-spec mnemonic phrase — also called a 'seed phrase', 'recovery phrase', 'mnemonic seed phrase', or '12/24 word phrase'. All these terms refer to the same standard (Bitcoin Improvement Proposal 39) used by Bitcoin, Ethereum, Solana, and most other cryptocurrency wallets to encode a master private key as human-readable words."
+          "No — and neither can any other tool. A generated phrase corresponds to a brand-new wallet with a zero balance. The keyspace is 2^128 or larger, so stumbling onto a funded wallet is mathematically impossible in practice. Sites advertising funded phrases, 'wallet cracking', or phrase lists are scams designed to steal from you (often by having you deposit funds into a wallet the scammer also controls). Never import a phrase you did not generate yourself."
       },
       {
         question: "Can I add a BIP39 passphrase for extra protection?",

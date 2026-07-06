@@ -26,17 +26,8 @@ const toolConfig = createToolConfig({
       "WebP to JPEG Converter",
       "WebP to PNG Converter",
       "Convert WebP to JPG",
-      "Convert WebP to JPG Online Free",
-      "Change WebP to JPG",
-      "WebP to JPG Online",
-      "WebP Converter Online",
-      "WebP to JPG Free",
-      "WebP to JPG Batch Converter",
-      "Bulk WebP to JPG Converter",
       "Save WebP as JPG",
-      "WebP to JPG No Upload",
-      "WebP Image Converter",
-      "Turn WebP into JPG",
+      "Batch WebP to JPG Converter",
     ],
     featureList: [
       "Convert WebP images to JPG",
@@ -202,7 +193,7 @@ const toolConfig = createToolConfig({
           "Choosing PNG preserves the WebP's pixels losslessly. Choosing JPG applies compression based on your quality setting, which at high settings is visually very close to the original.",
       },
       {
-        question: "Can I convert WebP to JPG on iPhone, Android, Mac, or Windows?",
+        question: "Can I use this on iPhone, Android, Mac, or Windows?",
         answer:
           "Yes. The converter runs in your browser, so it works on Windows, Mac, iPhone, Android, and Chromebook — handy for saving WebP images you downloaded on a phone.",
       },

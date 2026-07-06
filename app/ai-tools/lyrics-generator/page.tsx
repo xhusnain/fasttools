@@ -42,18 +42,8 @@ const toolConfig = createToolConfig({
       "Song Lyrics Generator",
       "AI Songwriter",
       "Lyric Writer",
-      "Song Idea Generator",
       "Rap Lyrics Generator",
-      "Pop Lyrics Writer",
-      "Country Song Generator",
-      "Rock Lyrics Maker",
-      "Hip Hop Lyrics AI",
-      "Indie Song Lyric Tool",
-      "EDM Lyrics Generator",
       "Songwriting Assistant",
-      "Lyric Draft Tool",
-      "Suno-style Lyric Helper",
-      "Songkick Songwriting Tool",
     ],
     featureList: [
       "Generate full song structure: verse 1, pre-chorus, chorus, verse 2, bridge, outro",
@@ -146,14 +136,14 @@ const toolConfig = createToolConfig({
 
     faqs: [
       {
-        question: "What genres does the AI lyrics generator support?",
+        question: "What music genres are supported?",
         answer:
           "The generator supports all major music genres including pop, rap, hip-hop, rock, country, R&B, EDM, jazz, folk, indie, metal, reggae, and blues. Each genre selection adjusts the AI's vocabulary, pacing, rhyme density, and structural conventions to match that style's lyrical norms.",
       },
       {
         question: "Can I generate song lyrics in languages other than English?",
         answer:
-          "Yes. The AI lyrics generator supports multilingual lyric creation in over 20 languages including Spanish, French, Portuguese, German, Italian, Hindi, Japanese, Korean, and Arabic. Select your target language before generating to ensure vocabulary, grammar, and cultural phrasing align with native songwriting conventions.",
+          "Yes — it supports lyric creation in over 20 languages including Spanish, French, Portuguese, German, Italian, Hindi, Japanese, Korean, and Arabic. Select your target language before generating to ensure vocabulary, grammar, and cultural phrasing align with native songwriting conventions.",
       },
       {
         question: "Are AI-generated lyrics ready to record and publish?",

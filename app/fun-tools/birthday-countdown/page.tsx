@@ -38,17 +38,7 @@ const toolConfig = createToolConfig({
       "Days Until My Birthday",
       "Next Birthday Countdown",
       "Live Birthday Timer",
-      "Real-Time Birthday Tracker",
-      "Birthday Date Calculator",
       "How Long Until My Birthday",
-      "Birthday Day of Week Finder",
-      "Birthday Eve Countdown",
-      "Personal Birthday Clock",
-      "Friends Birthday Countdown",
-      "Family Birthday Tracker",
-      "Birthday Party Countdown",
-      "Birthday Anniversary Tracker",
-      "Birthday Surprise Countdown",
     ],
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   },
@@ -65,7 +55,7 @@ const toolConfig = createToolConfig({
       "Automatically switches to next year after your birthday passes",
       "Handles leap year birthdays (Feb 29) correctly",
     ],
-    overview: "Our Birthday Countdown Timer is the ultimate way to build excitement for your special day. Whether you're counting down to your own birthday, a friend's, or a family member's, this tool provides a precise, real-time countdown. It handles leap years, time zones, and all the tricky date math automatically, so you can focus on the celebration. With instant sharing options, you can let everyone know exactly how long they have to get your gift ready!",
+    overview: "Build excitement for your special day with a precise, real-time timer. Whether you're counting down to your own birthday, a friend's, or a family member's, the tool handles leap years, time zones, and all the tricky date math automatically, so you can focus on the celebration. With instant sharing options, you can let everyone know exactly how long they have to get your gift ready!",
 
     howToSteps: [
       "Enter Birth Date: Select your birth date (day, month, and year) using the easy-to-use date picker.",
@@ -159,43 +149,43 @@ const toolConfig = createToolConfig({
     faqs: [
       {
         question: "How accurate is the birthday countdown timer?",
-        answer: "Our birthday countdown timer provides precise accuracy down to the second, updating in real-time to show exactly how much time remains until your next birthday. The calculation accounts for leap years, different month lengths, and time zone considerations to ensure complete accuracy."
+        answer: "It's precise down to the second, updating in real time to show exactly how much time remains until your next birthday. The calculation accounts for leap years, different month lengths, and time zone considerations."
       },
       {
-        question: "Can I share my birthday countdown with friends and family?",
-        answer: "Absolutely! Our birthday countdown tool includes built-in sharing features that allow you to easily share your countdown with friends and family. You can copy the countdown text to share via text message, email, or social media platforms."
+        question: "Can I share my countdown with friends and family?",
+        answer: "Absolutely! Built-in sharing lets you send your countdown to friends and family — copy the text to share via message, email, or social media."
       },
       {
         question: "How does the tool handle leap year birthdays?",
-        answer: "Our birthday countdown tool intelligently handles leap year birthdays (February 29th) by calculating the next occurrence of your birthday. If you were born on February 29th, the tool will count down to February 28th in non-leap years and February 29th in leap years."
+        answer: "Leap-day birthdays (February 29th) are handled by calculating the next real occurrence of your birthday. If you were born on February 29th, the timer counts down to February 28th in non-leap years and February 29th in leap years."
       },
       {
         question: "Is my birth date information secure and private?",
-        answer: "Your privacy and data security are our top priorities. All birth date information entered into our birthday countdown tool is processed locally in your browser and is never stored on our servers or shared with third parties."
+        answer: "Yes. All birth date information you enter is processed locally in your browser and is never stored on our servers or shared with third parties."
       },
       {
         question: "Can I use this tool on mobile devices and tablets?",
-        answer: "Yes! Our birthday countdown tool is fully responsive and optimized for all devices, including smartphones, tablets, and desktop computers. The interface automatically adapts to different screen sizes, ensuring optimal viewing and functionality across all platforms."
+        answer: "Yes! The page is fully responsive and works on smartphones, tablets, and desktops. The interface adapts to different screen sizes automatically."
       },
       {
         question: "What happens if I enter a future birth date by mistake?",
-        answer: "Our birthday countdown tool includes built-in validation to prevent future birth dates from being entered. The date input field automatically restricts selection to dates up to today, ensuring you can only enter valid birth dates from the past."
+        answer: "Built-in validation prevents future birth dates from being entered. The date input restricts selection to dates up to today, so you can only enter valid birth dates from the past."
       },
       {
         question: "How often does the countdown update?",
-        answer: "The birthday countdown timer updates every second in real-time, providing you with the most current and accurate countdown possible. You'll see the seconds tick down continuously, and the minutes, hours, and days will adjust automatically as time progresses."
+        answer: "The timer updates every second in real time. You'll see the seconds tick down continuously, and the minutes, hours, and days adjust automatically as time progresses."
       },
       {
-        question: "Can I use this tool for someone else's birthday countdown?",
-        answer: "Absolutely! Our birthday countdown tool can be used for anyone's birthday, not just your own. Simply enter the birth date of the person whose birthday you want to count down to, and the tool will calculate the exact time remaining until their next birthday."
+        question: "Can I use this tool for someone else's birthday?",
+        answer: "Absolutely! It works for anyone's birthday, not just your own. Simply enter the birth date of the person whose special day you want to count down to, and the timer calculates the exact time remaining."
       },
       {
         question: "What time zone does the countdown use?",
-        answer: "The birthday countdown timer uses your local device time zone for all calculations, ensuring the countdown is accurate for your specific location. This means the countdown will reflect the correct time remaining based on where you are located."
+        answer: "Your local device time zone is used for all calculations, so the time remaining reflects exactly where you are located."
       },
       {
         question: "How can I use the countdown for birthday party planning?",
-        answer: "Our birthday countdown tool is an excellent resource for birthday party planning and organization. Use it to track how much time you have left to plan decorations, send invitations, order cakes, and coordinate with guests."
+        answer: "The timer is an excellent party-planning aid. Use it to track how much time you have left to plan decorations, send invitations, order cakes, and coordinate with guests."
       },
       {
         question: "Is there a limit to how far in advance I can count down?",

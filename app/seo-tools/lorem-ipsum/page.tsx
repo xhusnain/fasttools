@@ -39,13 +39,8 @@ const toolConfig = createToolConfig({
       "Dummy Text Generator",
       "Placeholder Text Generator",
       "Filler Text Tool",
-      "Mock Content Generator",
       "Lipsum Generator",
-      "Mockup Text Tool",
-      "Wireframe Text Generator",
-      "Design Filler Generator",
       "Random Text Generator",
-      "Test Content Generator",
     ],
     featureList: [
       "Generate 1-10 Lorem Ipsum paragraphs",

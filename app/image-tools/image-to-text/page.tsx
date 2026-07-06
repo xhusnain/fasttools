@@ -15,7 +15,7 @@ const toolConfig = createToolConfig({
     "Extract editable text from images, screenshots, and scanned documents using browser-based OCR. Supports 100+ languages, all client-side.",
   metaTitle: "Image to Text Converter (OCR) — Extract Text from Photo Free",
   metaDescription:
-    "Free OCR tool. Convert image to text online — extract text from photos, screenshots, scanned PDFs, handwriting, receipts, and business cards. 100+ languages via Tesseract.js. 100% client-side, no upload.",
+    "Free OCR tool that turns photos, screenshots, and scans into editable text. Pick from 100+ languages and copy or download the result — processing runs entirely in your browser.",
   path: "/image-tools/image-to-text",
 
   schemaOptions: {
@@ -24,20 +24,10 @@ const toolConfig = createToolConfig({
       "Online image to text OCR tool with 100+ language selection, browser-based Tesseract.js processing, and copy-to-clipboard output.",
     alternateName: [
       "OCR Online",
-      "OCR Tool",
       "Photo to Text Converter",
-      "Picture to Text Converter",
       "Screenshot to Text",
-      "JPG to Text Converter",
-      "PNG to Text Converter",
-      "Handwriting to Text",
-      "Receipt OCR",
-      "Business Card OCR",
-      "Scanned Document to Text",
       "Extract Text from Image",
       "Copy Text from Image",
-      "Tesseract OCR Online",
-      "Free OCR Software Alternative",
     ],
     featureList: [
       "OCR from uploaded JPG, PNG, WebP, GIF, BMP images",
@@ -83,7 +73,7 @@ const toolConfig = createToolConfig({
       "Accuracy depends on image quality — higher resolution gives better results",
     ],
     overview:
-      "Image to Text (OCR) converts readable text inside an image into editable, copyable text. Use it for screenshots, photos of documents, scanned pages, receipts, invoices, business cards, notes, labels, UI mockups, and research images where retyping would be slow or error-prone. The tool is designed for quick browser-based extraction: choose the OCR language, upload the image, review the recognized text, then copy or download the result.",
+      "Image to Text (OCR) converts readable text inside an image into editable, copyable text. Use it for screenshots, scanned pages, receipts, and any document photo where retyping would be slow or error-prone. The workflow is quick and browser-based: choose the OCR language, upload the image, review the recognized text, then copy or download the result.",
 
     howToSteps: [
       "Choose the OCR language that best matches the text in your image.",
@@ -96,7 +86,7 @@ const toolConfig = createToolConfig({
 
     features: [
       "Image to editable text extraction using OCR",
-      "Works with screenshots, photos, scans, receipts, labels, and document images",
+      "Works with screenshots, photos, scans, and document images",
       "Language selection for multilingual OCR workflows",
       "Progress indicator while recognition runs",
       "One-click copy to clipboard",
