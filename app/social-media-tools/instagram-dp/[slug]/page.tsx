@@ -41,9 +41,10 @@ export default async function InstagramDpVariantPage(props: Props) {
     notFound()
   }
 
+  // Fully interlink the DP cluster: every variant (spoke) links to all sibling
+  // variants, not just the first two — completes the topic cluster for topical authority.
   const relatedVariantLinks = Object.values(dpVariants)
     .filter((item) => item.slug !== slug)
-    .slice(0, 2)
     .map((item) => ({ name: item.headerTitle, href: `/social-media-tools/instagram-dp/${item.slug}` }))
 
   // Pass authority from this high-traffic DP page out to related (page-2) social

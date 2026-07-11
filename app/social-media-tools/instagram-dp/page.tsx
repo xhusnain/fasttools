@@ -126,7 +126,7 @@ export const metadata: Metadata = {
 
 export default function InstagramDpPage() {
   const toolContent = {
-    toolName: "Instagram DP Viewer",
+    toolName: "Instagram DP Viewer — View & Download Full Size Profile Pictures",
     quickAnswer: "Instagram displays profile pictures at just 110x110 pixels in the app with no way to zoom in. This free tool lets you view any profile picture in full HD resolution (up to 1080x1080) by entering a username. No login, no app install, no notifications sent to the profile owner.",
     keyTakeaways: [
       "Instagram stores profile pictures at up to 1080x1080 pixels but only displays them at 110x110 — this tool shows the full-size version",
@@ -381,6 +381,9 @@ export default function InstagramDpPage() {
       { name: "Insta Zoom Profile Picture Viewer", href: "/social-media-tools/instagram-dp/zoom-profile-picture" },
       { name: "Instagram DP Viewer HD 1080p", href: "/social-media-tools/instagram-dp/hd-1080p" },
       { name: "Private Instagram DP Viewer", href: "/social-media-tools/instagram-dp/private-account" },
+      { name: "Insta DP Download — Full Size HD", href: "/social-media-tools/instagram-dp/download" },
+      { name: "Instagram DP Viewer for PC & Mac", href: "/social-media-tools/instagram-dp/pc-viewer" },
+      { name: "Anonymous Instagram DP Viewer", href: "/social-media-tools/instagram-dp/anonymous-viewer" },
       // Out-of-cluster links: push authority to page-2 social tools (same creator audience)
       { name: "Hashtag Counter — Instagram, TikTok & X", href: "/social-media-tools/hashtag-counter" },
       { name: "YouTube Channel Name & Handle Checker", href: "/social-media-tools/channel-checker" },
