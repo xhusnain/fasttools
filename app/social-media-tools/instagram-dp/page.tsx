@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import dynamic from "next/dynamic"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { ToolLoader } from "@/components/common/tool-loader"
-import { createMetadata } from "@/lib/metadata-base"
+import { buildSchemas, createMetadata } from "@/lib/metadata-base"
 import { GTable } from "@/ui/gtable"
 import {
   Camera, Eye, Download, Shield, Smartphone, Monitor,
@@ -14,7 +14,7 @@ const InstagramDpViewer = dynamic(
   { loading: () => <ToolLoader /> }
 )
 
-const baseMetadata = createMetadata({
+const igDpMetadataOptions = {
   title: "Instagram DP Viewer — View & Download Full Size Profile Picture Free",
   description:
     "Free Instagram DP viewer and profile picture downloader. View any Insta DP in full size HD by username. InstaDp viewer online — anonymous, no login required. Works for public and private account profile photos.",
@@ -116,7 +116,13 @@ const baseMetadata = createMetadata({
     "Download the image in HD or SD quality, or right-click to save"
   ],
   toolName: "Instagram DP Viewer"
-})
+}
+
+const baseMetadata = createMetadata(igDpMetadataOptions)
+// Emit the FAQPage / HowTo / WebApplication / DefinedTerm JSON-LD as <script>
+// tags via ToolPageLayout. createMetadata alone does NOT render these — the
+// page must build them and pass them through, or Google sees no tool schema.
+const schemas = buildSchemas(igDpMetadataOptions)
 
 export const metadata: Metadata = {
   ...baseMetadata,
@@ -126,7 +132,11 @@ export const metadata: Metadata = {
 
 export default function InstagramDpPage() {
   const toolContent = {
-    toolName: "Instagram DP Viewer — View & Download Full Size Profile Pictures",
+    // Short noun phrase — this feeds the body H2s ("What is …?", "How to Use …")
+    // and the quick-answer label. Keeping it short avoids the templated look of
+    // repeating the full em-dash H1 inside every heading. The descriptive H1
+    // itself lives in `header.title` below and is intentionally left unchanged.
+    toolName: "Instagram DP Viewer",
     quickAnswer: "Instagram displays profile pictures at just 110x110 pixels in the app with no way to zoom in. This free tool lets you view any profile picture in full HD resolution (up to 1080x1080) by entering a username. No login, no app install, no notifications sent to the profile owner.",
     keyTakeaways: [
       "Instagram stores profile pictures at up to 1080x1080 pixels but only displays them at 110x110 — this tool shows the full-size version",
@@ -414,6 +424,7 @@ export default function InstagramDpPage() {
         </div>
       }
       toolContent={toolContent}
+      schemas={schemas}
       expectedMetadata={{
         title: "Instagram DP Viewer — View & Download Full Size Profile Picture Free",
         description: "Free Instagram DP viewer and profile picture downloader. View any Insta DP in full size HD by username. InstaDp viewer online — anonymous, no login required. Works for public and private account profile photos.",
