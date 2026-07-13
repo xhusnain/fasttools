@@ -30,6 +30,17 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     alternates: {
       canonical: `/social-media-tools/instagram-dp/${slug}`,
     },
+    // Match the robots directives every createMetadata-based tool page emits.
+    // Without this the variants defaulted to a bare "index, follow" and lost
+    // max-image-preview:large — the directive that lets Google show large
+    // image thumbnails, which matters most for image tools like these.
+    robots: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large" as const,
+      "max-video-preview": -1,
+    },
   }
 }
 

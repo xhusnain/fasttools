@@ -81,7 +81,7 @@ export const dpVariants: Record<string, DpVariantConfig> = {
     metaTitle: "View Private Instagram Profile Picture — DP Viewer for Private Accounts",
     metaDescription:
       "View profile pictures of private Instagram accounts. Profile photos are publicly visible even on private accounts. No login required. Free.",
-    headerTitle: "Private Instagram Account DP Viewer",
+    headerTitle: "View a Private Instagram Profile Picture (DP)",
     headerDescription:
       "View profile photos for private Instagram accounts. Profile pictures remain visible even when posts are private.",
     overviewText:
