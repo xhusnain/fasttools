@@ -156,6 +156,14 @@ export async function fetchViaWebshare(
 
 const USER_AGENT =
   "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)";
+// A real browser UA for the web_profile_info JSON API. That endpoint is the
+// one the Instagram web app itself calls, so it expects a browser UA plus the
+// public web app id below — a Googlebot UA gets a login wall there.
+const BROWSER_USER_AGENT =
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
+// Instagram's public web app id, required by web_profile_info. Not a secret —
+// it is shipped in Instagram's own client-side JS on every logged-out page.
+const IG_WEB_APP_ID = "936619743392459";
 const ACCEPT =
   "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
 const ACCEPT_LANGUAGE = "en-US,en;q=0.9";
@@ -399,7 +407,91 @@ async function fetchProfilePage(
   );
 }
 
-async function fetchProfile(username: string): Promise<InstagramProfile> {
+// Primary source. web_profile_info returns the real profile_pic_url_hd (up to
+// 320x320 — the max the unauthenticated API exposes) as a field DISTINCT from
+// the 150x150 profile_pic_url, plus accurate stats and a true is_verified /
+// is_private boolean. This is what fixes the "HD" that was silently a 100x100
+// og:image thumbnail. Routed through the proxy because Instagram blocks
+// datacenter IPs on this endpoint the same way it does the HTML page.
+async function fetchProfileViaApi(username: string): Promise<InstagramProfile> {
+  const response = await fetchViaWebshare(
+    `https://i.instagram.com/api/v1/users/web_profile_info/?username=${encodeURIComponent(
+      username
+    )}`,
+    {
+      headers: {
+        "user-agent": BROWSER_USER_AGENT,
+        "x-ig-app-id": IG_WEB_APP_ID,
+        accept: "*/*",
+        "accept-language": ACCEPT_LANGUAGE,
+        // web_profile_info rejects requests without browser fetch-metadata
+        // headers ("SecFetch Policy violation", HTTP 400). These mimic the
+        // XHR the Instagram web app itself issues.
+        "x-requested-with": "XMLHttpRequest",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-dest": "empty",
+        referer: `https://www.instagram.com/${encodeURIComponent(username)}/`,
+      },
+      signal: AbortSignal.timeout(getTimeoutMs()),
+      redirect: "follow",
+    }
+  );
+
+  // A genuine "no such user" is the only definitive result. Every other
+  // failure (block, login wall, non-JSON, 429 that exhausted retries) is
+  // thrown as non-404 so the caller falls back to HTML scraping.
+  if (response.status === 404) {
+    await response.body?.cancel();
+    throw new ProfileFetchError("User not found", 404);
+  }
+  if (response.status !== 200) {
+    await response.body?.cancel();
+    throw new ProfileFetchError(`HTTP ${response.status}`, response.status);
+  }
+
+  let json: any;
+  try {
+    json = await response.json();
+  } catch {
+    throw new ProfileFetchError("Instagram API returned non-JSON", 502);
+  }
+
+  // Logged-out blocks come back as 200 with {require_login:true} and no user —
+  // treat as a soft failure (502) so we fall back rather than reporting 404.
+  const user = json?.data?.user;
+  if (!user) {
+    throw new ProfileFetchError("Instagram API returned no profile", 502);
+  }
+
+  const stdPic = isUsableProfilePic(user.profile_pic_url)
+    ? user.profile_pic_url
+    : "";
+  const hdPic = isUsableProfilePic(user.profile_pic_url_hd)
+    ? user.profile_pic_url_hd
+    : stdPic;
+
+  return {
+    username: user.username || username,
+    full_name: user.full_name || username,
+    biography: user.biography || "",
+    followers: user.edge_followed_by?.count ?? 0,
+    followees: user.edge_follow?.count ?? 0,
+    posts_count: user.edge_owner_to_timeline_media?.count ?? 0,
+    profile_pic_url: stdPic,
+    profile_pic_url_hd: hdPic,
+    is_verified: Boolean(user.is_verified),
+    is_private: Boolean(user.is_private),
+    external_url: user.external_url || null,
+  };
+}
+
+// Fallback source. Scrapes og:meta tags from the logged-out profile HTML. The
+// og:image here is only the 100x100 thumbnail, so this path serves a low-res
+// picture — acceptable as a last resort when the JSON API is blocked.
+async function fetchProfileFromHtml(
+  username: string
+): Promise<InstagramProfile> {
   const { status, body } = await fetchProfilePage(
     `/${encodeURIComponent(username)}/`
   );
@@ -412,6 +504,20 @@ async function fetchProfile(username: string): Promise<InstagramProfile> {
   }
 
   return parseProfileFromHtml(body, username);
+}
+
+async function fetchProfile(username: string): Promise<InstagramProfile> {
+  try {
+    return await fetchProfileViaApi(username);
+  } catch (error) {
+    // A definitive 404 means the account doesn't exist — no point scraping.
+    if (error instanceof ProfileFetchError && error.status === 404) {
+      throw error;
+    }
+    // Anything else: the API was blocked/rate-limited/unparseable. Fall back
+    // to HTML scraping so the tool still returns (a lower-res) result.
+    return await fetchProfileFromHtml(username);
+  }
 }
 
 function buildResponseData(profile: InstagramProfile) {

@@ -19,7 +19,10 @@ function isAllowedImageUrl(imageUrl: string): boolean {
       host === "cdninstagram.com" ||
       host.endsWith(".cdninstagram.com") ||
       host === "instagram.com" ||
-      host.endsWith(".instagram.com")
+      host.endsWith(".instagram.com") ||
+      // web_profile_info serves profile pictures from Meta's fbcdn.net CDN
+      // (e.g. instagram.flhe3-2.fna.fbcdn.net), not scontent.cdninstagram.com.
+      host.endsWith(".fbcdn.net")
     );
   } catch {
     return false;
