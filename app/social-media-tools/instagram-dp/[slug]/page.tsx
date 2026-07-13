@@ -131,7 +131,7 @@ export default async function InstagramDpVariantPage(props: Props) {
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-2">How It Works</h3>
             <p>
-              Enter a username and the tool requests the profile image directly from Instagram&apos;s servers, where the original is stored at up to 1080&times;1080 pixels — far larger than the small circle shown in the app. The full-size photo loads in your browser, where you can zoom in or save a copy. Nothing is installed and no Instagram login is involved.
+              Enter a username and the tool requests the profile image directly from Instagram&apos;s servers, where the full-size original is stored — far larger than the small circle shown in the app. The full-size photo loads in your browser, where you can zoom in or save a copy. Nothing is installed and no Instagram login is involved.
             </p>
           </div>
 

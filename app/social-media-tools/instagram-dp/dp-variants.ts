@@ -18,12 +18,12 @@ export const dpVariants: Record<string, DpVariantConfig> = {
     toolName: "Insta DP Download",
     metaTitle: "Insta DP Download — Save Instagram Profile Picture Full Size HD",
     metaDescription:
-      "Free insta DP download by username. Save any Instagram DP in full HD (up to 1080x1080) — no login needed, works on phone and PC.",
+      "Free insta DP download by username. Save any Instagram DP in full-size HD — no login needed, works on phone and PC.",
     headerTitle: "Insta DP Download — Full HD",
     headerDescription:
       "Download any Instagram DP in full HD by username. No login required — works on phone and PC.",
     overviewText:
-      "This insta DP download tool saves the full-resolution profile photo — up to 1080x1080 pixels — instead of the small thumbnail Instagram shows. Type the username or paste the profile link, preview the insta DP in HD, and download it with one click. No Instagram login is needed, and it works on any phone, tablet, or PC. You can even download the DP of a private account, since profile pictures stay publicly visible regardless of privacy settings.",
+      "This insta DP download tool saves the full-size profile photo — the largest version Instagram makes available — instead of the tiny thumbnail shown in the app. Type the username or paste the profile link, preview the insta DP in HD, and download it with one click. No Instagram login is needed, and it works on any phone, tablet, or PC. You can even download the DP of a private account, since profile pictures stay publicly visible regardless of privacy settings.",
     keywords: [
       "insta dp download",
       "instagram dp download",
@@ -35,13 +35,13 @@ export const dpVariants: Record<string, DpVariantConfig> = {
     ],
     howToSteps: [
       "Type the Instagram username, or paste the profile URL.",
-      "The tool fetches the full-resolution DP (up to 1080x1080).",
+      "The tool fetches the full-size DP — the largest version Instagram provides.",
       "Preview the profile picture in full HD.",
       "Tap or click the download button to save it to your phone or PC.",
     ],
     featureOverrides: [
       "Download any Instagram DP by username — no link needed",
-      "Full HD output up to 1080x1080 pixels",
+      "Full-size HD output — the largest version Instagram provides",
       "No login or Instagram account required",
       "Works for private accounts (DPs stay public)",
       "One-click save on phone, tablet, and PC",
@@ -54,9 +54,9 @@ export const dpVariants: Record<string, DpVariantConfig> = {
           "Type the username into the tool above and run the lookup — it fetches the profile picture and gives you a download button for the full-size image. You don't need the profile link, although pasting the full URL works too. The whole process takes a few seconds and requires no login.",
       },
       {
-        question: "Can I download an Instagram DP in HD (1080p)?",
+        question: "Can I download an Instagram DP in HD?",
         answer:
-          "Yes. This tool retrieves the largest version of the profile photo Instagram stores, which is up to 1080x1080 pixels. If the account owner uploaded a lower-resolution photo, you get the best quality available rather than an upscaled copy.",
+          "Yes. This tool retrieves the largest version of the profile photo Instagram makes publicly available and saves it at that full size — far larger and sharper than the tiny circle shown in the app. You always get the real image quality Instagram serves, never an upscaled or blurry copy.",
       },
       {
         question: "Can I download the DP of a private account?",
@@ -126,11 +126,11 @@ export const dpVariants: Record<string, DpVariantConfig> = {
   },
   "hd-1080p": {
     slug: "hd-1080p",
-    toolName: "Instagram DP Viewer HD 1080p",
-    metaTitle: "Instagram DP Viewer HD 1080p — Full Size Profile Picture",
+    toolName: "Instagram DP Viewer HD",
+    metaTitle: "Instagram DP Viewer HD — Full Size Profile Picture",
     metaDescription:
       "View full-size Instagram profile pictures in HD quality. Zoom and save high-resolution DPs. Free, no login required.",
-    headerTitle: "Instagram DP Viewer HD 1080p",
+    headerTitle: "Instagram DP Viewer HD — Full Size",
     headerDescription:
       "View full-size and high-quality Instagram profile pictures.",
     overviewText:

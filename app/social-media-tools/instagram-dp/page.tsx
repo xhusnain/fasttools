@@ -50,7 +50,7 @@ const igDpMetadataOptions = {
   faqs: [
     {
       question: "What is InstaDp?",
-      answer: "InstaDp (Insta DP) means Instagram Display Picture — the profile photo shown on an Instagram account. Instagram only displays it as a tiny 110x110 pixel circle in the app, with no way to enlarge it. This tool fetches the full-resolution version (up to 1080x1080) so you can view, zoom, and download it."
+      answer: "InstaDp (Insta DP) means Instagram Display Picture — the profile photo shown on an Instagram account. Instagram only displays it as a tiny 110x110 pixel circle in the app, with no way to enlarge it. This tool fetches the full-size version Instagram makes available so you can view, zoom, and download it."
     },
     {
       question: "How do I view an Instagram profile picture in full size?",
@@ -86,7 +86,7 @@ const igDpMetadataOptions = {
     },
     {
       question: "Can I zoom into an Instagram profile picture?",
-      answer: "Yes. Instagram doesn't allow zooming into profile pictures in its app. Our tool displays the profile picture in full size, allowing you to zoom in, inspect details, and see the image at its maximum stored resolution (up to 1080x1080 pixels)."
+      answer: "Yes. Instagram doesn't allow zooming into profile pictures in its app. Our tool displays the profile picture at full size, allowing you to zoom in and inspect details you can't see in the tiny app circle — the largest version Instagram makes available for that profile."
     },
     {
       question: "Is this Instagram DP viewer safe to use?",
@@ -137,7 +137,7 @@ export default function InstagramDpPage() {
     // repeating the full em-dash H1 inside every heading. The descriptive H1
     // itself lives in `header.title` below and is intentionally left unchanged.
     toolName: "Instagram DP Viewer",
-    quickAnswer: "Instagram displays profile pictures at just 110x110 pixels in the app with no way to zoom in. This free tool lets you view any profile picture in full HD resolution (up to 1080x1080) by entering a username. No login, no app install, no notifications sent to the profile owner.",
+    quickAnswer: "Instagram displays profile pictures at just 110x110 pixels in the app with no way to zoom in. This free tool lets you view any profile picture in full-size HD by entering a username — the largest version Instagram makes available. No login, no app install, no notifications sent to the profile owner.",
     keyTakeaways: [
       "Instagram stores profile pictures at up to 1080x1080 pixels but only displays them at 110x110 — this tool shows the full-size version",
       "Works for both public and private accounts — profile photos are always publicly visible regardless of account privacy settings",
@@ -146,7 +146,7 @@ export default function InstagramDpPage() {
       "100% free, no signup, no watermarks, no daily limits"
     ],
     overview:
-      "View and download Instagram profile pictures (Insta DP) in full HD resolution instantly. Instagram limits profile photo display to a tiny 110x110 pixel circle, with no built-in way to zoom or save. This tool fetches the full-resolution image (up to 1080x1080 pixels) stored on Instagram's servers, letting you view, zoom, and download any profile picture by username. Works for public accounts, private accounts, business accounts, and creator accounts. Shows profile metadata including post count, followers, following, verified badge, and account type. Anonymous viewing — no login required, no notifications sent, no data stored. Works on all devices and browsers.",
+      "View and download Instagram profile pictures (Insta DP) in full-size HD instantly. Instagram limits profile photo display to a tiny 110x110 pixel circle, with no built-in way to zoom or save. This tool fetches the full-size image Instagram makes available, letting you view, zoom, and download any profile picture by username. Works for public accounts, private accounts, business accounts, and creator accounts. Shows profile metadata including post count, followers, following, verified badge, and account type. Anonymous viewing — no login required, no notifications sent, no data stored. Works on all devices and browsers.",
     definition: "An Instagram DP viewer is a free online tool that lets you view and download any Instagram profile picture in full size HD resolution by username, without logging in to Instagram.",
     howToSteps: [
       {
@@ -155,7 +155,7 @@ export default function InstagramDpPage() {
       },
       {
         title: "View Full-Size DP",
-        description: "The tool fetches and displays the profile picture in the highest available resolution (up to 1080x1080)."
+        description: "The tool fetches and displays the profile picture at full size — the highest resolution Instagram returns for that username."
       },
       {
         title: "Check Profile Info",
@@ -168,8 +168,8 @@ export default function InstagramDpPage() {
     ],
     features: [
       {
-        title: "Full HD Profile Pictures",
-        description: "View Instagram DPs at up to 1080x1080 resolution — far beyond the 110x110 pixel display in the Instagram app.",
+        title: "Full-Size HD Profile Pictures",
+        description: "View Instagram DPs at full size — far beyond the tiny 110x110 pixel display in the Instagram app.",
         icon: "Image"
       },
       {
@@ -231,7 +231,7 @@ export default function InstagramDpPage() {
             DP stands for <strong>Display Picture</strong> — the profile photo shown on every Instagram account. It&apos;s also commonly called PFP (Profile Picture), profile photo, or avatar. Instagram displays this image as a small circle on your profile, in feeds, comments, stories, and DMs, and never lets you see it any larger.
           </p>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Instagram intentionally limits how profile pictures are displayed — showing them at just 110&times;110 pixels on mobile and 180&times;180 on desktop, with no native way to tap, zoom, or enlarge them. However, Instagram stores the original image at up to 1080&times;1080 pixels on their servers. This tool accesses that full-resolution version directly, letting you see details that are invisible in the app.
+            Instagram intentionally limits how profile pictures are displayed — showing them at just 110&times;110 pixels on mobile and 180&times;180 on desktop, with no native way to tap, zoom, or enlarge them. However, Instagram keeps a much larger copy on its servers. This tool accesses the full-size version Instagram makes available, letting you see details that are invisible in the app.
           </p>
         </article>
 
@@ -261,7 +261,7 @@ export default function InstagramDpPage() {
                 <tr>
                   <td className="p-3 font-semibold">Stored on Instagram Servers</td>
                   <td className="p-3">320 &times; 320 px (SD) / up to 1080 &times; 1080 px (HD)</td>
-                  <td className="p-3">Full-resolution version our tool retrieves</td>
+                  <td className="p-3">The full-size stored version our tool retrieves — no app crop</td>
                 </tr>
                 <tr>
                   <td className="p-3 font-semibold">Mobile App Display</td>
@@ -282,7 +282,7 @@ export default function InstagramDpPage() {
             </GTable>
           </div>
           <p className="text-base text-muted-foreground leading-relaxed">
-            The gap between the 1080px uploaded image and the 110px displayed version means you&apos;re only seeing ~1% of the original image quality in the Instagram app. The viewer above bridges that gap by showing you the full-resolution stored version.
+            The gap between the 1080px uploaded image and the 110px displayed version means you&apos;re only seeing ~1% of the original image quality in the Instagram app. The viewer above bridges much of that gap by showing you the far larger, full-size version Instagram makes available.
           </p>
         </article>
 
@@ -331,7 +331,7 @@ export default function InstagramDpPage() {
                 <tr>
                   <td className="p-3 font-semibold text-green-600">This Tool (FastTools)</td>
                   <td className="p-3 text-green-600 font-semibold">Very Easy — enter username, done</td>
-                  <td className="p-3 text-green-600 font-semibold">HD (up to 1080px)</td>
+                  <td className="p-3 text-green-600 font-semibold">HD — full size</td>
                   <td className="p-3 text-green-600">None — browser-based, no login</td>
                 </tr>
                 <tr>
@@ -371,7 +371,7 @@ export default function InstagramDpPage() {
     aboutToolText: "Enter any Instagram username to view and download its profile picture in full HD resolution. Profile pictures are stored at up to 1080x1080 pixels but Instagram only displays them at 110x110. Our tool retrieves the full-size version — free, anonymous, no login required.",
     proTip: "For best results, use the exact Instagram username (not display name). You can also paste a full Instagram profile URL. If the profile picture doesn't load, the account may have been recently deactivated or the username may be misspelled.",
     faqs: [
-      { question: "What is InstaDp?", answer: "InstaDp means Instagram Display Picture — the profile photo on an Instagram account. This tool shows that image in full HD resolution (up to 1080x1080) instead of the tiny 110x110 pixel version shown in the app." },
+      { question: "What is InstaDp?", answer: "InstaDp means Instagram Display Picture — the profile photo on an Instagram account. This tool shows that image at full-size HD — the largest version Instagram makes available — instead of the tiny 110x110 pixel version shown in the app." },
       { question: "How do I view an Instagram profile picture in full size?", answer: "Enter the username in the viewer above and click search. The tool fetches the full-resolution profile picture. You can then view it enlarged, zoom in, and download it. No login needed." },
       { question: "Can I view a private account's profile picture?", answer: "Yes. Profile pictures are publicly visible even on private accounts. Private settings only hide posts, reels, and stories — not the profile photo." },
       { question: "Does the owner get notified?", answer: "No. Instagram does not notify users when someone views their profile picture. Our tool accesses publicly available data without any account interaction." },
@@ -383,13 +383,13 @@ export default function InstagramDpPage() {
       { question: "Can I zoom into the profile picture?", answer: "Yes. Instagram doesn't allow zooming profile pictures in the app. Our tool shows the full-size image so you can zoom in and see all the details." },
       { question: "Is this safe to use?", answer: "Yes. We only access publicly available data, don't require your Instagram password, don't store any data, and don't track your activity." },
       { question: "What is the difference between DP and PFP?", answer: "Both mean the same thing — profile picture. 'DP' (Display Picture) is popular in South Asia, 'PFP' (Profile Picture) is popular with Gen Z globally. Either way it's the same image." },
-      { question: "Why can't I zoom Instagram profile pictures in the app?", answer: "Instagram intentionally displays profile pictures at 110x110 pixels with no zoom option. The full-resolution version (up to 1080px) exists on their servers but isn't exposed in the app. Our tool retrieves it." },
+      { question: "Why can't I zoom Instagram profile pictures in the app?", answer: "Instagram intentionally displays profile pictures at 110x110 pixels with no zoom option. A much larger, full-size version exists on their servers but isn't exposed in the app. Our tool retrieves the full-size version Instagram makes available so you can zoom in." },
       { question: "Does this work for business and creator accounts?", answer: "Yes. Works for all account types — personal, business, and creator. Also shows verified badge and public/private status." },
       { question: "Can I view my own profile picture?", answer: "Yes. Enter your own username to check image quality, verify the circular crop looks good, or download a backup of your own profile photo." }
     ],
     relatedTools: [
       { name: "Insta Zoom Profile Picture Viewer", href: "/social-media-tools/instagram-dp/zoom-profile-picture" },
-      { name: "Instagram DP Viewer HD 1080p", href: "/social-media-tools/instagram-dp/hd-1080p" },
+      { name: "Instagram DP Viewer HD — Full Size", href: "/social-media-tools/instagram-dp/hd-1080p" },
       { name: "Private Instagram DP Viewer", href: "/social-media-tools/instagram-dp/private-account" },
       { name: "Insta DP Download — Full Size HD", href: "/social-media-tools/instagram-dp/download" },
       { name: "Instagram DP Viewer for PC & Mac", href: "/social-media-tools/instagram-dp/pc-viewer" },
