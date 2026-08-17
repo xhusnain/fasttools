@@ -11,9 +11,9 @@ import { GTable } from "@/ui/gtable"
 import { Brain } from "lucide-react"
 
 const conceptionMetadataOptions = {
-  title: "Conception Date Calculator — From Due Date or LMP",
+  title: "Pregnancy Conception Calculator — From Due Date or LMP",
   description:
-    "Free conception calculator to estimate your conception date, fertile window, and pregnancy week from due date, last menstrual period, or ultrasound. Includes trimester guidance, nutrition tips, and milestone tracking.",
+    "Free pregnancy conception calculator to estimate your conception date, fertile window, and pregnancy week from due date, last menstrual period, or ultrasound. Includes trimester guidance, nutrition tips, and milestone tracking.",
   path: "/calculator/pregnancy-conception-calculator",
   breadcrumbs: [
     { label: "Calculator", href: "/calculator" },
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 
 export default function PregnancyConceptionCalculatorPage() {
   const toolContent = {
-    toolName: "Pregnancy Conception Calculator",
+    toolName: "Conception Calculator",
     definition:
       "A pregnancy conception calculator estimates the likely conception date or fertile window from a due date, last menstrual period, or ultrasound dating information.",
     quickAnswer:
@@ -135,8 +135,8 @@ export default function PregnancyConceptionCalculatorPage() {
               </tr>
               <tr>
                 <td className="p-3 font-semibold text-foreground">Full Term</td>
-                <td className="p-3">35 weeks after conception</td>
-                <td className="p-3 text-muted-foreground">Lungs and brain fully developed</td>
+                <td className="p-3">37 weeks after conception</td>
+                <td className="p-3 text-muted-foreground">Lungs and brain continue maturing in the final weeks (Week 39-40 LMP)</td>
               </tr>
             </tbody>
           </GTable>
@@ -145,12 +145,17 @@ export default function PregnancyConceptionCalculatorPage() {
         <div className="p-6 bg-gradient-to-r from-teal-50 to-emerald-50 dark:from-teal-950/30 dark:to-emerald-950/30 border-l-4 border-teal-500 rounded-lg my-8">
           <h4 className="flex items-center gap-2 font-bold text-teal-800 dark:text-teal-200 mb-2">
             <Brain className="h-5 w-5" />
-            Expert Insight: The Sperm Life Span Factor
+            Why There's a Date Range, Not One Exact Day
           </h4>
-          <p className="italic text-teal-700 dark:text-teal-300">
-            "It's important to differentiate between 'intercourse date' and 'conception date.' Sperm can survive inside the female reproductive tract for up to <strong>5 days</strong>. Conception (fertilization) only occurs when an egg is released during ovulation. This means you could have conceived up to 5 days after intercourse. Our calculator accounts for this window to give you the most accurate range possible."
+          <p className="text-teal-700 dark:text-teal-300">
+            Sperm can survive inside the female reproductive tract for up to <strong>5 days</strong>, and conception (fertilization) only occurs once an egg is released during ovulation — so intercourse and conception rarely fall on the same day. That's why the calculator returns a range rather than a single date.
           </p>
-          <p className="text-sm font-semibold text-teal-600 dark:text-teal-400 mt-2">— FastTools Biology & Research Team</p>
+          <p className="text-sm text-teal-600 dark:text-teal-400 mt-2">
+            Sources:{" "}
+            <a href="https://www.acog.org/womens-health/faqs/how-your-fetus-grows-during-pregnancy" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">ACOG</a>
+            {" "}·{" "}
+            <a href="https://www.mayoclinic.org/healthy-lifestyle/pregnancy-week-by-week/in-depth/pregnancy-week-by-week/art-20047208" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">Mayo Clinic — Pregnancy Week by Week</a>
+          </p>
         </div>
 
         <section>
@@ -294,8 +299,8 @@ export default function PregnancyConceptionCalculatorPage() {
   return (
     <ToolPageLayout
       header={{
-        title: "Conception Date Calculator — Find When You Conceived",
-        description: "Free conception calculator to reverse-calculate your probable conception date and fertile window from a known due date, LMP, or ultrasound measurement. Get personalized trimester guidance, nutrition recommendations, safe exercise tips, and week-by-week pregnancy milestone tracking.",
+        title: "Pregnancy Conception Calculator — Find When You Conceived",
+        description: "Our pregnancy conception calculator reverse-calculates your probable conception date and fertile window from a known due date, LMP, or ultrasound measurement. Get personalized trimester guidance, nutrition recommendations, safe exercise tips, and week-by-week pregnancy milestone tracking.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "pink"
@@ -312,9 +317,9 @@ export default function PregnancyConceptionCalculatorPage() {
       }
       toolContent={toolContent}
       expectedMetadata={{
-        title: "Conception Date Calculator — From Due Date or LMP",
+        title: "Pregnancy Conception Calculator — From Due Date or LMP",
         description:
-          "Free conception calculator to estimate your conception date, fertile window, and pregnancy week from due date, last menstrual period, or ultrasound. Includes trimester guidance, nutrition tips, and milestone tracking.",
+          "Free pregnancy conception calculator to estimate your conception date, fertile window, and pregnancy week from due date, last menstrual period, or ultrasound. Includes trimester guidance, nutrition tips, and milestone tracking.",
         path: "/calculator/pregnancy-conception-calculator"
       }}
     />

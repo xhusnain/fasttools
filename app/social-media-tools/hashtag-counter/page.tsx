@@ -34,7 +34,7 @@ const toolConfig = createToolConfig({
   schemaOptions: {
     applicationCategory: "UtilitiesApplication",
     description:
-      "Hashtag counter and extractor. Paste any social media caption to instantly count hashtags and extract the list. Platform-specific limit warnings for Instagram (30), TikTok (100 chars), X, LinkedIn, Facebook.",
+      "Hashtag counter and extractor. Paste any social media caption to instantly count hashtags and extract the list. Platform-specific limit warnings for Instagram (30), TikTok (4,000 chars), X, LinkedIn, Facebook.",
     alternateName: [
       "Tag Counter",
       "Hashtag Count Tool",
@@ -46,7 +46,7 @@ const toolConfig = createToolConfig({
       "Real-time hashtag counting as you type",
       "Extract list of all hashtags from caption",
       "Instagram 30-tag limit warning",
-      "TikTok 100-char limit warning",
+      "TikTok 4,000-char limit warning",
       "X / Twitter best-practice recommendations (1-2 tags)",
       "LinkedIn recommendations (3-5 tags)",
       "Duplicate hashtag detection",
@@ -65,7 +65,7 @@ const toolConfig = createToolConfig({
       "Instagram allows up to 30 hashtags per post (optimal: 3-5 for reach)",
       "LinkedIn recommends 3-5 hashtags per post",
       "X (Twitter) recommends 1-2 hashtags per tweet",
-      "TikTok allows up to 100 characters of hashtags in captions",
+      "TikTok allows a 4,000-character caption limit (hashtags count toward it)",
       "Paste any text — the tool auto-detects and counts all #tags",
       "One-click copy of extracted hashtag list",
     ],
@@ -120,7 +120,7 @@ const toolConfig = createToolConfig({
               <tbody className="divide-y divide-border">
                 <tr><td className="p-3 font-semibold">Instagram (feed)</td><td className="p-3">30 hashtags</td><td className="p-3">3–5</td><td className="p-3">Shadowban, hidden from hashtag search</td></tr>
                 <tr><td className="p-3 font-semibold">Instagram (Reels)</td><td className="p-3">30 hashtags</td><td className="p-3">3–5</td><td className="p-3">Reduced reach</td></tr>
-                <tr><td className="p-3 font-semibold">TikTok</td><td className="p-3">100 chars total caption</td><td className="p-3">3–5</td><td className="p-3">Caption truncation</td></tr>
+                <tr><td className="p-3 font-semibold">TikTok</td><td className="p-3">4,000 chars total caption</td><td className="p-3">3–5</td><td className="p-3">Caption truncation</td></tr>
                 <tr><td className="p-3 font-semibold">X (Twitter)</td><td className="p-3">no platform limit</td><td className="p-3">1–2</td><td className="p-3">~17% engagement drop above 2</td></tr>
                 <tr><td className="p-3 font-semibold">LinkedIn</td><td className="p-3">no platform limit</td><td className="p-3">3–5</td><td className="p-3">Looks spammy, lower reach</td></tr>
                 <tr><td className="p-3 font-semibold">Facebook</td><td className="p-3">no platform limit</td><td className="p-3">2–3</td><td className="p-3">Limited platform impact</td></tr>
@@ -141,31 +141,6 @@ const toolConfig = createToolConfig({
             <li><strong>Use platform-native search.</strong> When picking new tags, type them into the platform&apos;s search to see post volume and recency. Tags with no posts in the last 7 days are dead.</li>
             <li><strong>Match content language.</strong> Don&apos;t use English-only tags on a Spanish-language post — you&apos;re losing native-language reach.</li>
           </ul>
-        </article>
-
-        <article className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground">FastTools vs Other Hashtag Counters</h2>
-          <div className="overflow-x-auto">
-            <table className="min-w-full text-sm border border-border">
-              <thead className="bg-muted text-foreground font-semibold">
-                <tr>
-                  <th className="p-3 text-left border-b border-border">Feature</th>
-                  <th className="p-3 text-left border-b border-border text-green-600">FastTools</th>
-                  <th className="p-3 text-left border-b border-border">All-Hashtag.com</th>
-                  <th className="p-3 text-left border-b border-border">DisplayPurposes</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                <tr><td className="p-3 font-semibold">Real-time count as you type</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
-                <tr><td className="p-3 font-semibold">Extract from pasted caption</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3">partial</td></tr>
-                <tr><td className="p-3 font-semibold">Per-platform limit warnings</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
-                <tr><td className="p-3 font-semibold">Free, no signup</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
-                <tr><td className="p-3 font-semibold">One-click copy</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
-                <tr><td className="p-3 font-semibold">No ads in the tool itself</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">heavy ads</td><td className="p-3">partial</td></tr>
-                <tr><td className="p-3 font-semibold">Client-side (no upload)</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">server</td><td className="p-3 text-red-500">server</td></tr>
-              </tbody>
-            </table>
-          </div>
         </article>
 
       </div>

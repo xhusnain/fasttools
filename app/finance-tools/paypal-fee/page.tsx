@@ -12,11 +12,11 @@ import type { Metadata } from "next"
 
 const TOOL_TITLE = "PayPal Fee Calculator — Instant Fees & G&S"
 const TOOL_NAME = "PayPal Fee Calculator"
-const TOOL_DEFINITION = "A PayPal fee calculator estimates transaction fees, seller net amount, and the gross amount to ask for across PayPal Checkout, Goods and Services, cards, international payments, QR payments, and micropayments."
+const TOOL_DEFINITION = "Calculates PayPal transaction fees, the seller's net amount, and the gross amount to ask for — covering PayPal Checkout, Goods and Services, cards, international payments, and QR payments."
 
 const paypalMetadataOptions = {
   title: `PayPal Fee Calculator — Instant Fees & G&S`,
-  description: "Free PayPal fee calculator for sellers and freelancers. See the fee, your net payout, and the gross amount to invoice — covering Goods & Services, credit card, international, micropayment, and QR rates.",
+  description: "Free PayPal fee calculator for sellers and freelancers. See the fee, your net payout, and the gross amount to invoice — covering Goods & Services, credit card, international, and QR rates.",
   path: "/finance-tools/paypal-fee",
   toolName: TOOL_NAME,
   definition: TOOL_DEFINITION,
@@ -42,7 +42,6 @@ const paypalMetadataOptions = {
       "Country-specific fees",
       "Currency conversion fees",
       "Business vs personal fees",
-      "Micropayment pricing",
       "Nonprofit discounts",
       "Fee comparison tools"
     ]
@@ -60,7 +59,10 @@ export const metadata: Metadata = {
 
 export default function PayPalFeeCalculatorPage() {
   const toolContent = {
-    toolName: TOOL_NAME,
+    // Distinct from TOOL_NAME (used for breadcrumbs/schema) so the auto-generated
+    // section headings below ("What is X?", "How to Use X") don't all repeat
+    // the exact phrase "PayPal Fee Calculator".
+    toolName: "PayPal Fee Estimator",
     definition: TOOL_DEFINITION,
     quickAnswer: "Enter the payment amount, choose the PayPal payment type, and the calculator shows the fee, what you receive, and what to ask for if you want the buyer to cover the fee. For US domestic commercial payments, common rates include 3.49% + $0.49 for PayPal Checkout and 2.99% + $0.49 for standard credit/debit card payments; international commercial payments add 1.50%.",
     keyTakeaways: [
@@ -71,7 +73,7 @@ export default function PayPalFeeCalculatorPage() {
       "International commercial payments usually add a 1.50% cross-border fee plus any currency conversion spread",
       "Use the gross-up result when you need to receive an exact net amount after PayPal deducts fees",
     ],
-    overview: `Enter any amount and instantly see what PayPal deducts, what lands in your balance, and how much to invoice if you want the buyer to cover the cost. The calculator handles every transaction type — Goods & Services, credit and debit card payments, Friends & Family, micropayments, QR-code payments, and cross-border transfers with currency conversion — using the rates from PayPal's current merchant fee schedule. Built for sellers, freelancers, and small businesses that need to price work accurately instead of guessing.`,
+    overview: `Enter any amount and instantly see what PayPal deducts, what lands in your balance, and how much to invoice if you want the buyer to cover the cost. The calculator handles every transaction type — Goods & Services, credit and debit card payments, Friends & Family, QR-code payments, and cross-border transfers with currency conversion — using the rates from PayPal's current merchant fee schedule. Built for sellers, freelancers, and small businesses that need to price work accurately instead of guessing.`,
 
     howToSteps: [
       "Enter Transaction Amount: Input the total amount you are sending or receiving.",
@@ -91,7 +93,7 @@ export default function PayPalFeeCalculatorPage() {
     useCases: [
       "Domestic US sales: standard commercial rates vary by payment type — 3.49% + fixed fee for PayPal Checkout, 2.99% + fixed fee for standard credit/debit card payments.",
       "International sales: cross-border payments add a 1.5% surcharge, and currency conversion carries a 3-4% exchange-rate markup.",
-      "Special rate types: micropayments (4.99% + $0.09), charity/donation rates, and in-person QR payments (1.90% + $0.10).",
+      "Special rate types: charity/donation rates and in-person QR payments (2.29% + $0.09).",
       "Goods & Services vs Friends & Family: compare the commercial rate (with seller protection) against personal transfers (no protection).",
       "Freelancer invoicing: work out the gross amount to bill so you still receive your full rate after the deduction.",
       "Withdrawals: compare instant transfer (1.75%, max $25) against the free 1-3 day standard bank transfer.",
@@ -157,12 +159,8 @@ export default function PayPalFeeCalculatorPage() {
         answer: "UK PayPal fees use a different country-specific schedule from US fees. Select GBP and the UK seller location in the calculator for an estimate, then verify against PayPal's official UK fee page before using the result for invoices or pricing."
       },
       {
-        question: "What's the PayPal micropayment fee rate?",
-        answer: "PayPal offers a special micropayment rate for transactions under ~$10: 4.99% + $0.09 per transaction (replacing the standard 2.99% + $0.49). It's optimized for very small payments where the fixed $0.49 fee would eat a large chunk of revenue. You have to opt in to micropayments at the account level — it's not automatic, and you cannot mix-and-match per transaction."
-      },
-      {
         question: "Are PayPal QR code / in-person fees different?",
-        answer: "Yes. PayPal in-person QR-code payments are charged at 1.90% + $0.10 — significantly cheaper than the 2.99% + $0.49 online rate. This applies when a buyer scans a QR code at a physical location using the PayPal app. The calculator above supports this fee type if you're processing in-person sales."
+        answer: "Yes. PayPal in-person QR-code payments are charged at 2.29% + $0.09 — cheaper on both the percentage and the fixed fee than the 2.99%–3.49% + $0.49 online commercial rates. This applies when a buyer scans a QR code at a physical location using the PayPal app. The calculator above supports this fee type if you're processing in-person sales."
       },
       {
         question: "Do PayPal fees come out before or after I receive the money?",
@@ -173,8 +171,8 @@ export default function PayPalFeeCalculatorPage() {
         answer: "PayPal's standard merchant rate has been incrementally rising over the past few years (from 2.9% + $0.30 historically to 2.99% + $0.49, and 3.49% + $0.49 for some Checkout flows). Always check PayPal's official fee page for current rates before settling on a fee model for your business. Our calculator uses the latest published rates."
       },
       {
-        question: "How is this PayPal fee calculator different from PayPal's own?",
-        answer: "PayPal's own calculator (in their help center) only handles basic domestic G&S. Our tool covers G&S vs Friends & Family vs credit card vs micropayment vs QR-code, plus international cross-border, currency conversion, reverse gross-up, and multiple country fee schedules — all in one screen, free, with no PayPal login needed."
+        question: "How is this different from PayPal's own calculator?",
+        answer: "PayPal's own calculator (in their help center) only handles basic domestic G&S. Our tool covers G&S vs Friends & Family vs credit card vs QR-code, plus international cross-border, currency conversion, reverse gross-up, and multiple country fee schedules — all in one screen, free, with no PayPal login needed."
       }
     ],
 
@@ -217,9 +215,9 @@ export default function PayPalFeeCalculatorPage() {
             Most PayPal commercial transactions follow a percentage plus fixed-fee model. On PayPal&apos;s US merchant fee page, updated May 19, 2026, PayPal Checkout, Guest Checkout, and Pay with Venmo are listed at 3.49% + fixed fee; standard credit and debit card payments are 2.99% + fixed fee; and Send/Receive Money for Goods and Services is listed at 2.99%. International commercial payments add a 1.50% cross-border fee. The calculator separates these fee types so you can match the exact payment flow.
           </p>
 
-          <h3 className="text-xl font-bold text-foreground mt-6 mb-4">100% Accuracy for Freelancers and Merchants</h3>
+          <h3 className="text-xl font-bold text-foreground mt-6 mb-4">Matches PayPal&apos;s Published US Rates</h3>
           <p className="text-base text-muted-foreground leading-relaxed">
-            Whether you are a global seller or sending a one-time personal payment, transparency is key. Simply enter your transaction amount and select your region. Our algorithm does the rest, showing you the Total Fee, the Net Amount you will receive, and the Gross Amount you should request.
+            Whether you are a global seller or sending a one-time personal payment, transparency is key. Simply enter your transaction amount and select your region, and the calculator applies PayPal&apos;s published rate for that transaction type — showing you the Total Fee, the Net Amount you will receive, and the Gross Amount you should request. Rates change, so always confirm against PayPal&apos;s current fee page before finalizing an invoice.
           </p>
         </article>
 
@@ -320,9 +318,10 @@ export default function PayPalFeeCalculatorPage() {
           </h3>
           <div className="space-y-4">
             <div className="p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
-              <h4 className="font-bold text-yellow-600 dark:text-yellow-500 mb-2">IRS 1099-K Reporting Changes</h4>
+              <h4 className="font-bold text-yellow-600 dark:text-yellow-500 mb-2">IRS 1099-K Reporting Threshold</h4>
               <p className="text-sm text-foreground">
-                For the tax year, the IRS threshold for reporting goods and services transactions is significantly lower than in previous years. If you receive payments for goods or services over <strong>$600</strong> in a calendar year, PayPal is required to file Form 1099-K. This does <em>not</em> apply to personal Friends & Family payments.
+                The One Big Beautiful Bill Act, signed July 4, 2025, retroactively restored the federal Form 1099-K threshold to <strong>$20,000 and 200+ transactions</strong> in a calendar year, reversing the lower thresholds that had been phased in. Some states set their own, lower reporting thresholds regardless of the federal rule. This does <em>not</em> apply to personal Friends & Family payments. Always verify the current threshold on the{" "}
+                <a href="https://www.irs.gov/businesses/understanding-your-form-1099-k" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">IRS Form 1099-K page</a> before relying on it for tax planning.
               </p>
             </div>
             <div className="space-y-2">
@@ -432,7 +431,7 @@ export default function PayPalFeeCalculatorPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
-                <tr><td className="p-3 font-semibold">United States</td><td className="p-3">2.99% + $0.49 (3.49% + $0.49 for Checkout)</td><td className="p-3">+1.5%</td><td className="p-3">Micropayments: 4.99% + $0.09; QR: 1.90% + $0.10</td></tr>
+                <tr><td className="p-3 font-semibold">United States</td><td className="p-3">2.99% + $0.49 (3.49% + $0.49 for Checkout)</td><td className="p-3">+1.5%</td><td className="p-3">QR: 2.29% + $0.09</td></tr>
                 <tr><td className="p-3 font-semibold">United Kingdom</td><td className="p-3">Varies by PayPal UK fee schedule</td><td className="p-3">Varies by buyer location</td><td className="p-3">Verify current UK-specific rates before invoicing</td></tr>
                 <tr><td className="p-3 font-semibold">European Union</td><td className="p-3">2.49% + €0.35 (EEA)</td><td className="p-3">+1.29% (non-EEA only)</td><td className="p-3">No surcharge within EEA</td></tr>
                 <tr><td className="p-3 font-semibold">Australia</td><td className="p-3">2.6% + A$0.30</td><td className="p-3">+1.5% (international)</td><td className="p-3">Different rate for charity (1.1%)</td></tr>
@@ -449,7 +448,7 @@ export default function PayPalFeeCalculatorPage() {
         <article className="space-y-4">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Target className="h-6 w-6 text-primary" />
-            FastTools vs Other Free PayPal Fee Calculators
+            FastTools vs Other Free PayPal Calculators
           </h2>
           <div className="overflow-x-auto">
             <table className="min-w-full text-sm border border-border">
@@ -467,7 +466,7 @@ export default function PayPalFeeCalculatorPage() {
                 <tr><td className="p-3 font-semibold">International + currency conversion</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">partial</td><td className="p-3 text-red-500">✗</td></tr>
                 <tr><td className="p-3 font-semibold">G&amp;S vs Friends &amp; Family distinction</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
                 <tr><td className="p-3 font-semibold">Credit card vs PayPal balance</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
-                <tr><td className="p-3 font-semibold">Micropayments + QR rates</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
+                <tr><td className="p-3 font-semibold">In-person QR rates</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
                 <tr><td className="p-3 font-semibold">Reverse calc (gross-up)</td><td className="p-3 text-green-600">✓</td><td className="p-3">partial</td><td className="p-3">✓</td><td className="p-3 text-red-500">✗</td></tr>
                 <tr><td className="p-3 font-semibold">Multi-country (US/UK/EU/AU/CA/IN)</td><td className="p-3 text-green-600">✓</td><td className="p-3">50+ countries</td><td className="p-3">50+ countries</td><td className="p-3 text-red-500">✗ (one country at a time)</td></tr>
                 <tr><td className="p-3 font-semibold">No login, no upsell</td><td className="p-3 text-green-600">✓</td><td className="p-3">upsells Airwallex</td><td className="p-3">✓</td><td className="p-3 text-red-500">requires PayPal login</td></tr>
@@ -490,7 +489,7 @@ export default function PayPalFeeCalculatorPage() {
     <ToolPageLayout
       header={{
         title: `PayPal Fee Calculator — Calculate PayPal G&S, Credit Card & Processing Fees`,
-        description: "Enter an amount to see the fee, what you'll actually receive, and what to invoice so the buyer covers the cost. Handles Goods & Services, credit card, international, micropayment, and QR rates.",
+        description: "Enter an amount to see the fee, what you'll actually receive, and what to invoice so the buyer covers the cost. Handles Goods & Services, credit card, international, and QR rates.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"
@@ -508,7 +507,7 @@ export default function PayPalFeeCalculatorPage() {
       toolContent={toolContent}
       expectedMetadata={{
         title: TOOL_TITLE,
-        description: "Free PayPal fee calculator for sellers and freelancers. See the fee, your net payout, and the gross amount to invoice — covering Goods & Services, credit card, international, micropayment, and QR rates.",
+        description: "Free PayPal fee calculator for sellers and freelancers. See the fee, your net payout, and the gross amount to invoice — covering Goods & Services, credit card, international, and QR rates.",
         path: "/finance-tools/paypal-fee"
       }}
     />

@@ -8,14 +8,14 @@ const AnniversaryCalculator = dynamic(
   () => import("@/components/calculators/anniversary-calculator").then(mod => mod.AnniversaryCalculator),
   { loading: () => <ToolLoader /> }
 )
-import { Heart, Calendar, Clock, Gift, ArrowRight, CheckCircle, HelpCircle, Star, Briefcase, Sigma, GitCompare, BookOpen } from "lucide-react"
+import { Heart, Calendar, Clock, Gift, ArrowRight, CheckCircle, HelpCircle, Star, Briefcase, Sigma, BookOpen } from "lucide-react"
 import { GTable } from "@/ui/gtable"
 
 const toolConfig = createToolConfig({
   toolName: "Anniversary Calculator",
   description: "Free anniversary calculator. Calculate exactly how long you've been together in years, months, days, hours, minutes, and seconds.",
   metaTitle: "Anniversary Calculator — How Long Have We Been Together? (Free)",
-  metaDescription: "Free anniversary calculator — enter your relationship start date to see exactly how long you've been together in years, months, days, hours, and seconds. Tracks monthsaries, next anniversary, and milestones like silver and golden. Works for dating, wedding, friendship, and work anniversaries.",
+  metaDescription: "Free anniversary calculator — enter your start date to see how long you've been together in years, months, days, hours, and seconds, plus milestones.",
   path: "/fun-tools/anniversary",
 
 
@@ -353,36 +353,6 @@ const toolConfig = createToolConfig({
             <strong>Why total months matters for monthsaries:</strong> if your relationship is 3 years and 7 months, total_months = 43. That&apos;s the right number for celebrating &quot;our 43-month anniversary&quot; — much more sentimental than a years-only count.
           </p>
         </article>
-
-        <article className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
-            <GitCompare className="h-6 w-6 text-primary" />
-            FastTools vs Other Free Anniversary Calculators
-          </h2>
-          <div className="overflow-x-auto">
-            <GTable>
-              <thead className="bg-muted text-foreground font-semibold">
-                <tr>
-                  <th className="p-3 text-left">Feature</th>
-                  <th className="p-3 text-left text-green-600">FastTools</th>
-                  <th className="p-3 text-left">AnniversaryCalc.org</th>
-                  <th className="p-3 text-left">Omni Calculator</th>
-                  <th className="p-3 text-left">GigaCalculator</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border text-sm">
-                <tr><td className="p-3 font-semibold">Years + months + days output</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
-                <tr><td className="p-3 font-semibold">Hours / minutes / seconds output</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
-                <tr><td className="p-3 font-semibold">Monthsary total-months count</td><td className="p-3 text-green-600">✓</td><td className="p-3">partial</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
-                <tr><td className="p-3 font-semibold">Next-anniversary countdown</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">✓</td><td className="p-3 text-red-500">✗</td></tr>
-                <tr><td className="p-3 font-semibold">Traditional + modern gift list</td><td className="p-3 text-green-600">on this page</td><td className="p-3">✓</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
-                <tr><td className="p-3 font-semibold">Work-anniversary use case</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3">partial</td></tr>
-                <tr><td className="p-3 font-semibold">No signup, no save-account</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">save needs account</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
-              </tbody>
-            </GTable>
-          </div>
-        </article>
-
       </div>
     ),
 

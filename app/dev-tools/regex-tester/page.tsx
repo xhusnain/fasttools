@@ -13,9 +13,9 @@ const toolConfig = createToolConfig({
   toolName: "Regex Tester",
   description:
     "Test regular expressions against sample text with match highlights and capture-group inspection.",
-  metaTitle: "Regex Tester — Live JavaScript / Ruby / Python Regex Check Online",
+  metaTitle: "Regex Tester — Free Online JavaScript Regex Checker",
   metaDescription:
-    "Free regex tester with real-time match highlighting, capture group inspection, all JavaScript flags (g i m s u y), named groups, and replacement preview. Test JS / Ruby / Python regex syntax. 100% client-side, no signup.",
+    "Free regex tester with real-time match highlighting, capture group inspection, all JavaScript flags (g i m s u y), named groups, and replacement preview. 100% client-side, no signup.",
   path: "/dev-tools/regex-tester",
 
   header: {
@@ -53,7 +53,6 @@ const toolConfig = createToolConfig({
       "Lookahead `(?=...)` and lookbehind `(?<=...)` (ES2018+) supported",
       "Common pattern presets: email, URL, phone, IP, date, credit card, UUID",
       "Inline error messages for invalid patterns (e.g., unmatched parens, bad escapes)",
-      "Cross-flavor compatibility notes: warns when using JS-specific features",
       "100% client-side — patterns and test strings never sent to a server",
       "Free, no signup, no rate limit, no ads",
     ],
@@ -361,7 +360,7 @@ const toolConfig = createToolConfig({
       {
         question: "Is this a Ruby regex tester?",
         answer:
-          "It tests JavaScript regex by default (the regex engine that powers Node.js, web browsers, and most online editors). Ruby regex (Oniguruma engine) is mostly compatible — the same patterns for character classes, quantifiers, anchors, and alternation work in both. The main Ruby-specific extras the JS engine doesn't natively support are named captures with /(?<name>pattern)/ syntax (works in modern JS too), POSIX character classes [:alpha:], and Ruby-only flags like /m for multiline-anything (in Ruby /m means 'dot matches newline', in JS the same flag means 'multiline anchors'). For Ruby-exclusive features, test patterns in irb or rubular.com after prototyping here."
+          "No — this tool tests JavaScript regex (the regex engine that powers Node.js, web browsers, and most online editors), not Ruby's Oniguruma engine. Most standard patterns for character classes, quantifiers, anchors, and alternation are the same in both, so it's a useful starting point. The main Ruby-specific extras the JS engine doesn't natively support are POSIX character classes [:alpha:] and Ruby-only flags like /m for 'dot matches newline' (in JS the same flag means 'multiline anchors'). For Ruby-exclusive features, test patterns in irb or rubular.com after prototyping here."
       },
       {
         question: "What's the difference between JavaScript, Ruby, PCRE, and Python regex?",

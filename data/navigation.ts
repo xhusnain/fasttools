@@ -209,7 +209,6 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Hashtag Generator", href: "/social-media-tools/hashtag-counter", icon: Hash },
                     { title: "Channel Name Gen", href: "/social-media-tools/youtube-channel-name-generator", icon: Type },
                     { title: "Instagram DP Viewer", href: "/social-media-tools/instagram-dp", icon: Eye },
-                    { title: "Profile Pic Viewer", href: "/social-media-tools/instagram-profile-picture-viewer", icon: Eye },
                     { title: "Influencer Rate", href: "/social-media-tools/influencer-rate-calculator", icon: DollarSign },
                     { title: "TikTok Engagement", href: "/social-media-tools/tiktok-engagement-calculator", icon: TrendingUp },
                 ]

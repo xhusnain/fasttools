@@ -12,7 +12,6 @@ FastTools (https://fasttools.store) focuses on Instagram and YouTube utilities â
 - [Insta DP Download](https://fasttools.store/social-media-tools/instagram-dp/download): Save any profile picture in original resolution to phone or PC.
 - [Private Account DP Viewer](https://fasttools.store/social-media-tools/instagram-dp/private-account): Profile pictures stay publicly visible even on private accounts, so they can be viewed full size.
 - [Anonymous DP Viewer](https://fasttools.store/social-media-tools/instagram-dp/anonymous-viewer): View profile pictures without an Instagram account; the owner is never notified.
-- [Instagram Profile Picture Viewer](https://fasttools.store/social-media-tools/instagram-profile-picture-viewer): View, zoom, and save full-size Instagram profile photos.
 
 ## YouTube & Creator Tools
 

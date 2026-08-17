@@ -25,7 +25,7 @@ export function ToolLoader({ toolName, description }: ToolLoaderProps = {}) {
                         {toolName || "This tool"} requires JavaScript to run.
                     </p>
                     <p className="text-sm text-muted-foreground">
-                        Please enable JavaScript in your browser to use this free online tool. All processing happens locally in your browser for maximum privacy and speed.
+                        Please enable JavaScript in your browser to use this free online tool.
                     </p>
                 </div>
             </noscript>

@@ -46,12 +46,6 @@ const socialTools = [
     icon: User,
   },
   {
-    title: "Instagram Profile Picture Viewer",
-    description: "View, zoom, and save full-size Instagram profile pictures.",
-    href: "/social-media-tools/instagram-profile-picture-viewer",
-    icon: User,
-  },
-  {
     title: "Hashtag Counter",
     description: "Count and extract hashtags for cleaner social captions.",
     href: "/social-media-tools/hashtag-counter",

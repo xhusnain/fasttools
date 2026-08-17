@@ -42,7 +42,8 @@ export const sitemapPages = [
   // (commits 1cdb09a4, 1599f41b, 4c84a27c, c905f7ee, d75017eb). Fresh lastmod so
   // Google recrawls the fixed pages — the previous March/June dates told it "unchanged".
   { url: u("/social-media-tools/instagram-dp"), lastModified: new Date("2026-07-13"), changeFrequency: "weekly" as const, priority: 1.0 },
-  // instagram-profile-picture-viewer intentionally excluded: it canonicals to /instagram-dp (cannibalization fix)
+  // instagram-profile-picture-viewer removed 2026-08-17: cross-canonical wasn't honored
+  // (different title/H1/content, so Google kept indexing both) — now a hard 301 to /instagram-dp
   { url: u("/social-media-tools/instagram-dp/private-account"), lastModified: new Date("2026-07-13"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/social-media-tools/instagram-dp/hd-1080p"), lastModified: new Date("2026-07-13"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/social-media-tools/instagram-dp/pc-viewer"), lastModified: new Date("2026-07-13"), changeFrequency: "monthly" as const, priority: 0.9 },

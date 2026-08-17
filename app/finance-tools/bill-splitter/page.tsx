@@ -11,7 +11,7 @@ import type { Metadata } from "next"
 
 const TOOL_TITLE = "Bill Splitter — Split Restaurant & Group Bills Fairly"
 const TOOL_NAME = "Bill Splitter"
-const TOOL_META_DESC = "Free bill splitter for restaurants, groups, and shared expenses. Split evenly, by items, or by custom share. Auto-adds tip and tax. Generates a per-person total showing exactly who owes what. Perfect for dining, travel, roommates, and group trips."
+const TOOL_META_DESC = "Free bill splitter for restaurants, groups, and shared expenses. Enter the total, number of people, and tip percentage for an instant even split. Copy the per-person breakdown to share with your group. Perfect for dining, travel, roommates, and group trips."
 
 const baseMetadata = createMetadata({
   title: TOOL_TITLE,
@@ -22,7 +22,7 @@ const baseMetadata = createMetadata({
     { label: TOOL_NAME, href: "/finance-tools/bill-splitter" }
   ],
   schemaOptions: {
-    name: "Bill Splitter with Tip & Tax Math",
+    name: "Bill Splitter with Tip Calculator",
     alternateName: [
       "Split Bill Calculator",
       "Group Expense Calculator",
@@ -33,13 +33,9 @@ const baseMetadata = createMetadata({
     applicationCategory: "FinanceApplication",
     featureList: [
       "Even split across any number of people",
-      "Itemized split — each person pays only for what they ordered",
-      "Custom share weights for uneven splits",
-      "Auto tip calculation (15/18/20/25% or custom)",
-      "Auto tax inclusion / exclusion toggle",
-      "Per-person total breakdown",
-      "Round-up for clean per-person totals",
-      "Currency-agnostic — works in USD, EUR, GBP, etc.",
+      "Quick-select tip percentages (10/15/18/20%) or a custom rate",
+      "Per-person total including tip",
+      "Copyable results for sharing with your group",
       "100% client-side — no signup, no data uploaded",
       "Free, no usage limits",
     ],
@@ -56,42 +52,40 @@ export default function BillSplitterPage() {
   const toolContent = {
     toolName: TOOL_NAME,
     definition:
-      "A bill splitter divides a shared bill among people, including tax, tip, itemized shares, custom shares, and per-person totals.",
+      "A bill splitter divides a shared bill evenly among a group of people and adds a tip, showing exactly what each person owes.",
     quickAnswer:
-      "Enter the bill amount, number of people, tax, and tip to split a restaurant or shared expense fairly. Use equal split for simple groups or itemized/custom split when people ordered different things.",
+      "Enter the bill amount, number of people, and tip percentage to see an even per-person split, including each person's share of the tip.",
     keyTakeaways: [
-      "Equal split divides the full bill, tax, and tip by the number of people",
-      "Itemized split is fairer when people ordered different items",
-      "Tip and tax should be included before calculating each person's final share",
-      "Round-up mode makes cash or mobile-payment settlement easier",
-      "Use the shareable breakdown so everyone can see exactly who owes what",
+      "This calculator splits the bill and tip evenly across the number of people you enter",
+      "Tip is calculated on the bill total you enter, then divided equally among the group",
+      "Use a quick tip button (10/15/18/20%) or type a custom percentage",
+      "Copy the breakdown so everyone in the group sees the same per-person total",
+      "For itemized or unequal splits, calculate each person's share separately — this tool only supports an even split",
     ],
-    overview: "Split any shared bill in seconds — evenly, by the items each person ordered, or by custom weights. The calculator adds tip and tax before dividing, so nobody gets shortchanged, and produces a per-person breakdown you can paste into the group chat. Works for restaurant checks, rent and utilities, group trips, and any purchase where one card got charged and the rest of the group owes their share.",
+    overview: "Split any shared bill evenly in seconds. Enter the total and the number of people, pick a tip percentage, and the calculator shows what each person owes — then copy the breakdown to paste into the group chat. Works for restaurant checks, rent and utilities, group trips, and any purchase where one card got charged and the rest of the group owes an equal share.",
 
     howToSteps: [
-      "Enter Bill Details: Input the total bill amount, including any service charges or additional fees.",
-      "Select Split Method: Choose between equal split, itemized split, or percentage-based split depending on your group's preference.",
-      "Add Participants: Enter the number of people sharing the bill or add their names for personalized breakdowns.",
-      "Include Tip & Tax: Add tip percentage and tax rate to ensure the final calculation covers all costs.",
-      "Review & Share: View the detailed breakdown per person and share the results via text or email."
+      "Enter the Bill Total: Input the total amount from the receipt, including any charges already on it.",
+      "Enter Number of People: Input how many people are splitting the bill.",
+      "Set the Tip: Pick a quick tip percentage (10/15/18/20%) or enter a custom rate.",
+      "Split the Bill: See the tip amount, the total with tip, and the even per-person share.",
+      "Copy & Share: Use the Copy Results button to paste the breakdown into a group chat."
     ],
 
     features: [
-      "Three split methods: divide evenly, assign items to each person, or set custom share weights for uneven splits.",
-      "Tip handling: quick buttons for 15/18/20/25% or a custom rate, applied to the bill before the per-person division.",
-      "Tax support: enter a tax rate or dollar amount and it is distributed along with each person's share.",
-      "Per-person breakdown showing base amount, tip portion, tax portion, and final total for every participant.",
-      "Round-up option for clean amounts that are easy to settle in cash, Venmo, or other payment apps.",
-      "Copyable results you can paste into a group chat so everyone sees the same numbers."
+      "Even Split Calculation: Divide the total bill and tip evenly across any number of people.",
+      "Tip Calculator: Quick-select buttons for 10/15/18/20% tip, or enter a custom percentage.",
+      "Per-Person Breakdown: Shows the bill portion, tip portion, and total each person owes.",
+      "Copyable Results: Copy the full breakdown with one click to share in a group chat."
     ],
 
     useCases: [
-      "Restaurant dinners where some people ordered more than others — itemized mode keeps it fair.",
-      "Roommates dividing rent, utilities, and grocery runs by equal or custom shares.",
-      "Group trips: divide lodging evenly, but meals only among the people who attended.",
-      "Bar tabs and celebrations, including the divide-among-everyone-but-the-guest-of-honor convention.",
-      "Office lunches and team events where one person paid up front and needs to collect.",
-      "Any group purchase where a single card was charged and everyone else owes their part."
+      "Restaurant dinners split evenly among the whole table, tip included.",
+      "Roommates dividing rent, utilities, or a shared grocery run.",
+      "Group trips: split lodging or any shared cost evenly among everyone chipping in.",
+      "Bar tabs and celebrations split evenly among attendees.",
+      "Office lunches and team events where one person paid and needs to collect from the rest.",
+      "Any group purchase where a single card was charged and everyone owes an equal share."
     ],
 
     aboutTool: (
@@ -102,23 +96,23 @@ export default function BillSplitterPage() {
             How the Split Is Calculated
           </h3>
           <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-            An equal split is simple math: (subtotal + tax + tip) ÷ number of people. Where groups get into trouble is dividing before adding tip and tax — a $120 dinner for four is not $30 each once you add 8.5% tax and a 20% tip; it&apos;s about $38.75. This calculator always applies tip and tax to the full bill first, then divides, so the per-person figure is what each person actually owes.
+            An equal split is simple math: (bill + tip) ÷ number of people. Where people get tripped up is dividing before adding the tip — a $120 dinner for four is not $30 each once you add a 20% tip; it&apos;s $36 each. This calculator always adds the tip to the bill first, then divides evenly, so the per-person figure includes everyone&apos;s share of the tip.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Itemized mode works differently: each person&apos;s ordered items form their personal subtotal, and tax and tip are then allocated in proportion to that subtotal — not per head. If your items came to $40 of a $100 check, you cover 40% of the tax and tip too. That proportional allocation is what makes an itemized division genuinely fair when one person had the steak and another had a side salad. Custom-weight mode generalizes the same idea: assign each person a percentage or weight (say 2 shares for a couple, 1 for a single guest) and every component of the bill follows those weights.
+            This tool only supports an even split. If your group ordered very different amounts and wants to divide the bill by what each person actually had, total up each person&apos;s items separately and add their share of tip and tax by hand, or use a calculator built for itemized splitting.
           </p>
         </div>
 
         <div className="p-4 rounded-lg bg-card border border-border">
           <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
             <Receipt className="h-4 w-4 text-primary" />
-            Tip, Tax, and Rounding Edge Cases
+            Tip and Rounding Edge Cases
           </h3>
           <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-            In the US, the convention is to tip on the pre-tax subtotal, though many people simply tip on the total — the difference on a typical dinner is well under a dollar per person, so consistency matters more than the method. Watch for a service charge or &quot;large party gratuity&quot; (often 18% for groups of 6+) already printed on the check: if it&apos;s there, set tip to zero or you&apos;ll double-tip. Tax-inclusive menus, common outside the US, mean you should skip the tax field entirely.
+            This calculator applies the tip percentage you enter to the bill total you enter — so if the total you type in already includes tax, the tip is effectively calculated on the post-tax amount, which matches how many people tip anyway. Watch for a service charge or &quot;large party gratuity&quot; (often 18% for groups of 6+) already printed on the check: if it&apos;s there, set the tip to zero or you&apos;ll double-tip.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Division rarely comes out to whole cents. $100 among three people is $33.33 each, leaving a stray penny — standard practice is for the person who paid the check to absorb (or pocket) the remainder. The round-up option instead nudges each share to a clean figure like $34, which makes cash settlement painless and gives the payer a small buffer. Two other edge cases worth agreeing on before the check arrives: someone who left early or skipped the wine can be handled with itemized or custom weights, and if the group is treating a guest of honor, divide the whole bill by everyone except them.
+            Division rarely comes out to whole cents. $100 among three people is $33.33 each, leaving a stray penny — standard practice is for the person who paid the check to absorb (or pocket) the remainder. If someone left early, skipped a round, or the group is treating a guest of honor, adjust the number of people accordingly, or work out that person&apos;s share separately before splitting the rest evenly.
           </p>
         </div>
       </div>
@@ -126,24 +120,24 @@ export default function BillSplitterPage() {
 
     faqs: [
       {
-        question: "How do I split a bill fairly when people ordered different things?",
-        answer: "Use itemized mode: assign each dish or drink to the person who ordered it, and the calculator allocates tax and tip in proportion to each person's subtotal rather than per head. Someone who ordered $15 of a $100 check pays 15% of the tax and tip too — which is what makes the result fair without any awkward negotiation."
+        question: "Can this tool split a bill by what each person ordered (itemized)?",
+        answer: "No — this calculator only supports an even split, dividing the bill and tip equally across everyone you enter. If people ordered very different amounts and you want to charge each person only for what they had, total each person's items separately and split the tip and tax across those totals by hand, or use a calculator built for itemized splitting."
       },
       {
         question: "Should the tip be calculated before or after tax?",
-        answer: "US convention is to tip on the pre-tax subtotal, but tipping on the post-tax total is also common and the difference is small — usually under a dollar per person. Pick one approach and apply it consistently. Also check the receipt for an automatic service charge or large-party gratuity; if one is already included, set the tip to zero to avoid double-tipping."
+        answer: "US convention is to tip on the pre-tax subtotal, but tipping on the post-tax total is also common and the difference is small — usually under a dollar per person. This calculator applies the tip percentage to whatever total you enter, so enter the pre-tax subtotal or the full receipt total depending on which you want to tip on. Also check the receipt for an automatic service charge or large-party gratuity; if one is already included, set the tip to zero to avoid double-tipping."
       },
       {
         question: "Can I split a bill unequally?",
-        answer: "Yes. Use custom shares to assign each person a specific amount, percentage, or weight — useful when a couple counts as two shares, when someone only had a drink, or when one person agreed to cover more. Every part of the bill, including tip and tax, follows the weights you set."
+        answer: "Not with this calculator — it only supports an even split across the number of people you enter. To split unequally, work out each person's share separately before using this tool, or use a calculator built for custom or itemized splits."
       },
       {
         question: "What happens to leftover cents when the split isn't even?",
-        answer: "Splitting $100 three ways gives $33.33 each with a penny left over. By default the person who paid absorbs the remainder; with round-up mode enabled, each share is rounded to a cleaner amount instead, so settlement in cash or a payment app is simpler and the payer gets a small buffer rather than a shortfall."
+        answer: "Splitting $100 three ways gives $33.33 each with a penny left over. This calculator shows the exact per-person amount; in practice, the person who paid the check usually absorbs (or pockets) the leftover penny, or the group rounds up to a clean figure when settling in cash or a payment app."
       },
       {
         question: "How do I handle shared appetizers alongside individual mains?",
-        answer: "Mixed bills are common: divide shared items (appetizers, pitchers, dessert for the table) evenly among everyone who partook, and assign individual items to the person who ordered them. In itemized mode you can mark items as shared so the calculator does both allocations in one pass and combines them into each person's total."
+        answer: "This calculator only does an even split, so it won't separate shared appetizers from individual mains automatically. A simple workaround is to total the shared items and divide that portion evenly among however many people you enter, then handle individual mains as a separate calculation."
       },
       {
         question: "How many people can I split a bill between?",
@@ -151,7 +145,7 @@ export default function BillSplitterPage() {
       },
       {
         question: "Does it work with currencies other than dollars?",
-        answer: "Yes — the math is currency-agnostic. Enter amounts in EUR, GBP, INR, or anything else and the proportions work identically. Keep in mind that tipping norms differ: many European countries include service in the price, and Japan generally has no tipping at all, so adjust the tip field to local custom."
+        answer: "Yes — the math is currency-agnostic. Enter amounts in EUR, GBP, INR, or anything else and the split works identically. Keep in mind that tipping norms differ: many European countries include service in the price, and Japan generally has no tipping at all, so adjust the tip field to local custom."
       },
       {
         question: "Can I save or share the results?",
@@ -174,7 +168,7 @@ export default function BillSplitterPage() {
     <ToolPageLayout
       header={{
         title: "Bill Splitter — Split Restaurant & Group Bills Fairly",
-        description: "Split bills evenly, by items, or by custom share. Auto-adds tip and tax. Shows per-person total and who-owes-whom summary. Perfect for restaurants, roommates, travel groups, and shared expenses.",
+        description: "Enter the bill total, number of people, and tip percentage for an instant even split, plus a copyable per-person breakdown. Perfect for restaurants, roommates, travel groups, and shared expenses.",
         titleSize: "medium",
         descriptionSize: "small",
         color: "blue"

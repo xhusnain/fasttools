@@ -450,14 +450,6 @@ export const categories = [
                 badge: "Instagram",
                 badgeColor: "bg-pink-500/90",
             },
-            {
-                title: "Instagram Profile Picture Viewer",
-                description: "View, zoom, and save full-size Instagram profile pictures.",
-                href: "/social-media-tools/instagram-profile-picture-viewer",
-                icon: User,
-                badge: "Instagram",
-                badgeColor: "bg-pink-500/90",
-            },
         ],
     },
     {

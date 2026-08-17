@@ -8,11 +8,11 @@ const FutureAgePredictor = dynamic(
   () => import("@/components/calculators/future-age-predictor").then(mod => mod.FutureAgePredictor),
   { loading: () => <ToolLoader /> }
 )
-import { Calendar, Globe, Calculator, Star, Clock, Sigma, Table as TableIcon, GitCompare } from "lucide-react"
+import { Calendar, Globe, Calculator, Star, Clock, Sigma, Table as TableIcon } from "lucide-react"
 import { GTable } from "@/ui/gtable"
 
 const toolConfig = createToolConfig({
-  toolName: "Future Age Calculator",
+  toolName: "Future Age Tool",
   description: "Calculate exactly how old you'll be on any future date. Free future age calculation tool with years, months, days, and life milestones.",
   metaTitle: "Future Age Calculator — How Old Will I Be on Any Future Date?",
   metaDescription: "Free future age calculator. How old will I be in 2030, 2040, 2050, or on my retirement date? Calculate your exact future age in years, months, days from any birth date. Leap-year aware. 100% client-side.",
@@ -149,38 +149,6 @@ const toolConfig = createToolConfig({
 
         <article className="space-y-4">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
-            <GitCompare className="h-6 w-6 text-primary" />
-            FastTools vs Other Free Future Age Calculators
-          </h2>
-          <p className="text-base text-muted-foreground leading-relaxed">
-            How this tool compares to the most popular free future-age calculators on the web today:
-          </p>
-          <div className="overflow-x-auto">
-            <GTable>
-              <thead className="bg-muted text-foreground font-semibold">
-                <tr>
-                  <th className="p-3 text-left">Feature</th>
-                  <th className="p-3 text-left text-green-600">FastTools</th>
-                  <th className="p-3 text-left">EasyCalculation</th>
-                  <th className="p-3 text-left">Calculator.net</th>
-                  <th className="p-3 text-left">MyAgeCalculator</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border text-sm">
-                <tr><td className="p-3 font-semibold">Years + months + days output</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
-                <tr><td className="p-3 font-semibold">Leap-year accurate</td><td className="p-3 text-green-600">✓</td><td className="p-3">✓</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
-                <tr><td className="p-3 font-semibold">Total elapsed days/weeks/months</td><td className="p-3 text-green-600">✓</td><td className="p-3">partial</td><td className="p-3">✓</td><td className="p-3">✓</td></tr>
-                <tr><td className="p-3 font-semibold">100% client-side (private)</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td><td className="p-3 text-red-500">✗</td></tr>
-                <tr><td className="p-3 font-semibold">No signup, no ads in tool</td><td className="p-3 text-green-600">✓</td><td className="p-3">ads</td><td className="p-3">ads</td><td className="p-3">ads</td></tr>
-                <tr><td className="p-3 font-semibold">Formula explained on page</td><td className="p-3 text-green-600">✓</td><td className="p-3 text-red-500">✗</td><td className="p-3">partial</td><td className="p-3 text-red-500">✗</td></tr>
-                <tr><td className="p-3 font-semibold">Future year up to</td><td className="p-3 text-green-600">unlimited</td><td className="p-3">3000</td><td className="p-3">unlimited</td><td className="p-3">3000</td></tr>
-              </tbody>
-            </GTable>
-          </div>
-        </article>
-
-        <article className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Globe className="h-6 w-6 text-primary" />
             Why People Look Up Their Future Age
           </h2>
@@ -217,7 +185,7 @@ const toolConfig = createToolConfig({
       },
       {
         question: "How old will I be in 2050?",
-        answer: "Add 50 minus your current age, roughly. Precisely: 2050 − birth year, minus one if your birthday in 2050 hasn't happened yet by the target date. Someone born in 1990 will be 60 in 2050. Born in 2000 → 50. Born in 2010 → 40. Born in 2020 → 30. Use the calculator above for an exact answer including months and days."
+        answer: "Your age in 2050 = 2050 − your birth year, minus 1 if your birthday falls after the date being checked. Someone born in 1990 will be 60 in 2050. Born in 2000 → 50. Born in 2010 → 40. Born in 2020 → 30. Use the calculator above for an exact answer including months and days."
       },
       {
         question: "If I am 11 now, how old will I be in 2050?",
@@ -261,7 +229,7 @@ const toolConfig = createToolConfig({
       },
       {
         question: "How is this different from an age calculator?",
-        answer: "An age calculator typically shows how old you are today. A future age calculator lets you pick any target date — today, tomorrow, your retirement date, the year 2100 — and shows your age on that date. It's age math with a freely chosen second date. We have a dedicated current-age tool too (linked under Related Tools)."
+        answer: "An age calculator typically shows how old you are today. A future age calculator lets you pick any target date — today, tomorrow, your retirement date, the year 2100 — and shows your age on that date. It's age math with a freely chosen second date."
       },
       {
         question: "Can I calculate ages further than 100 years out?",

@@ -7,7 +7,7 @@ const IPSubnetCalculator = dynamic(() => import("@/components/dev-tools/ip-subne
   loading: () => <ToolLoader />
 })
 import { createMetadata } from "@/lib/metadata-base"
-import { Network, Globe, Shield, Info, Database, Zap, Target, CheckCircle, Users, Clock, ShieldCheck, FileText, Brain, BookOpen } from "lucide-react"
+import { Network, Globe, Shield, Database, Zap, Target, CheckCircle, Users, Clock, ShieldCheck, FileText, Brain, BookOpen } from "lucide-react"
 import { GTable } from "@/ui/gtable"
 import Image from "next/image"
 
@@ -141,7 +141,6 @@ export default function IPSubnetCalculatorPage() {
             <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 italic">
               "While often used interchangeably, CIDR and VLSM serve different purposes. CIDR (Classless Inter-Domain Routing) is primarily used for **route aggregation** on the public internet to keep backbone routing tables small. VLSM (Variable Length Subnet Masking), on the other hand, is used **internally** within an organization to allocate IP space efficiently by creating subnets of different sizes. Mastering both is essential for modern cloud architecture, where IP exhaustion is a constant risk even in private VPCs."
             </p>
-            <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 mt-2">— FastTools Network Engineering Team</p>
           </div>
         </article>
 
@@ -326,7 +325,7 @@ export default function IPSubnetCalculatorPage() {
         <article className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Zap className="h-6 w-6 text-primary" />
-            How to Use the IP Subnet Calculator: Step-by-Step Guide
+            Step-by-Step: Calculating a Subnet
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
             Follow these simple steps to calculate IP subnets accurately:
@@ -535,66 +534,19 @@ export default function IPSubnetCalculatorPage() {
               <span className="text-sm font-medium">Trusted by 50,000+ Engineers</span>
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
-              <CheckCircle className="h-5 w-5 text-blue-500" />
-              <span className="text-sm font-medium">CCNP Reviewed</span>
-            </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
               <Zap className="h-5 w-5 text-yellow-500" />
               <span className="text-sm font-medium">100% Free & No Ads</span>
             </div>
           </div>
 
           <div className="bg-muted/30 border border-border rounded-xl p-6 mb-8">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Users className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">Written by Network Engineering Team</p>
-                  <p className="text-xs text-muted-foreground">Reviewed by CCNP Certified Professionals</p>
-                </div>
+            <div className="flex flex-col items-start md:items-end gap-1">
+              <div className="flex items-center gap-1.5 text-xs text-muted-foreground bg-background px-2 py-1 rounded-md border border-border">
+                <Clock className="h-3 w-3" />
+                <span>Last Updated: <time dateTime="2026-08-17">August 17, 2026</time></span>
               </div>
-              <div className="flex flex-col items-start md:items-end gap-1">
-                <div className="flex items-center gap-1.5 text-xs text-muted-foreground bg-background px-2 py-1 rounded-md border border-border">
-                  <Clock className="h-3 w-3" />
-                  <span>Last Updated: <time dateTime={new Date().toISOString().split('T')[0]}>{new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time></span>
-                </div>
-                <p className="text-[10px] text-muted-foreground">Version.1.0 • IPv6 Ready</p>
-              </div>
+              <p className="text-[10px] text-muted-foreground">Version.1.0 • IPv6 Ready</p>
             </div>
-          </div>
-        </article>
-
-        <article className="space-y-6">
-          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
-            <Info className="h-6 w-6 text-primary" />
-            People Also Ask About Subnet Calculators
-          </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              {
-                q: "How do I manually calculate a subnet?",
-                a: "Convert IP and mask to binary, perform AND operation for network address. Count host bits: 2^n - 2 = usable hosts. Example: 192.168.1.0/24 has 2^8 - 2 = 254 hosts."
-              },
-              {
-                q: "What is a /24 subnet?",
-                a: "A /24 subnet has 24 network bits and 8 host bits, providing 254 usable IP addresses. Common in small networks, equivalent to subnet mask 255.255.255.0."
-              },
-              {
-                q: "How many IPs in a /28 subnet?",
-                a: "A /28 has 16 total IPs (2^4), with 14 usable hosts (16 - 2 for network and broadcast). Perfect for small departments or VLANs."
-              },
-              {
-                q: "Can I use 255.255.255.255 as subnet mask?",
-                a: "/32 mask (255.255.255.255) represents a single host route, used for specific host routing or loopback addresses, not for networks."
-              }
-            ].map(({ q, a }, i) => (
-              <div key={i} className="bg-card p-4 rounded-lg border border-border">
-                <h3 className="font-semibold text-sm text-foreground mb-2">{q}</h3>
-                <p className="text-xs text-muted-foreground">{a}</p>
-              </div>
-            ))}
           </div>
         </article>
       </div>
@@ -638,7 +590,7 @@ export default function IPSubnetCalculatorPage() {
         answer: "Simply enter your IP address and select the Subnet Mask (or CIDR prefix). The calculator will automatically compute the Network Address, Broadcast Address, IP Range, and Number of Hosts."
       },
       {
-        question: "What is an IP Subnet Calculator?",
+        question: "What does this tool actually calculate?",
         answer: "An IP Subnet Calculator is a tool that automates the complex binary math required for subnetting. It helps network engineers quickly plan and verify network configurations."
       },
       {
@@ -730,7 +682,7 @@ export default function IPSubnetCalculatorPage() {
         answer: "Class A uses /8 (255.0.0.0), Class B uses /16 (255.255.0.0), and Class C uses /24 (255.255.255.0) as default masks. However, with CIDR, you can subnet these classes into smaller networks. For example, a Class A network can be subnetted into multiple /24 subnets. Our calculator supports all network classes and shows how CIDR notation works with each class."
       },
       {
-        question: "Is subnet calculator free to use?",
+        question: "Is this tool free to use?",
         answer: "Yes, our subnet calculator is completely free with no charges, subscriptions, or registration required. You can perform unlimited subnet calculations, access all features (IPv4/IPv6, CIDR, VLSM, binary/hex conversion), and use the tool for personal, educational, commercial, or professional purposes without any cost. All features are available without limitations."
       },
       {

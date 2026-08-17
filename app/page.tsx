@@ -42,8 +42,9 @@ export default function Home() {
       name: "FastTools",
       url: "https://fasttools.store"
     },
-    datePublished: "2024-01-01",
-    dateModified: new Date().toISOString().split('T')[0],
+    // Real last-content-change date. Never stamp new Date() here: it told
+    // Google the homepage was "modified today" on every crawl (fake freshness).
+    dateModified: "2026-08-17",
     inLanguage: "en-US",
     isFamilyFriendly: true,
     copyrightYear: new Date().getFullYear().toString(),

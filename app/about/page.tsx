@@ -46,10 +46,7 @@ export default function AboutPage() {
       address: {
         "@type": "PostalAddress",
         addressCountry: "US"
-      },
-      sameAs: [
-        "https://github.com/AliHusnain-FastTools/fasttools"
-      ]
+      }
     },
     breadcrumb: {
       "@type": "BreadcrumbList",

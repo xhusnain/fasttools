@@ -36,7 +36,6 @@ const toolConfig = createToolConfig({
     description:
       "Link-in-bio page generator and Linktree alternative for creators, influencers, and businesses. Build a multi-link landing page from one bio URL with custom colors, button styles, and mobile-first layout.",
     alternateName: [
-      "Linktree Alternative",
       "Bio Link Generator",
       "Multi-Link Bio Maker",
       "Bio Page Creator",
@@ -57,7 +56,7 @@ const toolConfig = createToolConfig({
     definition:
       "A Link in Bio Generator is a free tool that creates a customizable landing page with multiple links — designed to be used as the single bio link on Instagram, TikTok, YouTube, and other social media profiles where you can only share one URL.",
     quickAnswer:
-      "Add your links, profile name, and short bio. Customize colors, button styles, and layout. Generate a shareable link-in-bio page instantly. Use the generated URL in your Instagram, TikTok, or YouTube bio to share multiple destinations from one link. No account or signup needed — a free alternative to Linktree.",
+      "Add your links, profile name, and short bio. Customize colors, button styles, and layout, then generate a self-contained link-in-bio page (HTML) you can copy or download. Host it on any service — GitHub Pages, Netlify, your own site — and put that URL in your Instagram, TikTok, or YouTube bio. No account or signup needed — a free alternative to Linktree.",
     keyTakeaways: [
       "Create a multi-link landing page for your social media bio in minutes",
       "Customizable colors, button styles, fonts, and layout to match your brand",
@@ -73,7 +72,7 @@ const toolConfig = createToolConfig({
       "Enter your profile name, photo, and a short bio description.",
       "Add your links with custom titles — website, social profiles, store, latest content, etc.",
       "Customize the design: choose colors, button styles, and layout to match your brand.",
-      "Generate your link-in-bio page and copy the URL to paste in your Instagram, TikTok, or YouTube bio.",
+      "Copy or download the generated HTML, host it on any service (GitHub Pages, Netlify, your own site), and paste that URL in your Instagram, TikTok, or YouTube bio.",
     ],
 
     features: [
@@ -113,7 +112,7 @@ const toolConfig = createToolConfig({
       {
         question: "Which social media platforms is this for?",
         answer:
-          "It works with any platform that has a bio link field — Instagram, TikTok, YouTube, X/Twitter, LinkedIn, Threads, Facebook, Pinterest, and more. Copy the generated URL and paste it in your bio.",
+          "It works with any platform that has a bio link field — Instagram, TikTok, YouTube, X/Twitter, LinkedIn, Threads, Facebook, Pinterest, and more. Host the generated HTML page anywhere, then paste that URL in your bio.",
       },
       {
         question: "How many links can I add?",

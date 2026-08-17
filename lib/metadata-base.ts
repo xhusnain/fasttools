@@ -105,9 +105,21 @@ function shouldIncludeSchema(path: string): boolean {
  * These must be rendered as <script type="application/ld+json"> tags in page components,
  * NOT via Next.js metadata.other (which renders as <meta> tags and is invisible to Google).
  */
+/**
+ * Truncate a meta description at a word boundary, never mid-word and never
+ * with an appended ellipsis — "credit car..." style snippets read as
+ * machine-generated in SERPs and depress CTR.
+ */
+function truncateDescription(raw: string | undefined): string | undefined {
+    if (!raw || raw.length <= 160) return raw
+    const cut = raw.slice(0, 157)
+    const lastSpace = cut.lastIndexOf(" ")
+    return (lastSpace > 100 ? cut.slice(0, lastSpace) : cut).replace(/[\s,;:.]+$/, "")
+}
+
 export function buildSchemas(options: MetadataOptions): any[] {
-    const { title, description: rawDescription, path, faqs, howToSteps, toolName, breadcrumbs } = options
-    const description = rawDescription ? (rawDescription.length > 160 ? rawDescription.slice(0, 157) + "..." : rawDescription) : rawDescription
+    const { title, description: rawDescription, path, breadcrumbs } = options
+    const description = truncateDescription(rawDescription)
     const includeSchema = options.includeSchema ?? shouldIncludeSchema(path)
     const cleanPath = path.startsWith("/") ? path : `/${path}`
 
@@ -131,66 +143,34 @@ export function buildSchemas(options: MetadataOptions): any[] {
         }))
     }
 
-    if (faqs && faqs.length > 0) {
-        schemas.push({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: faqs.map((faq) => ({
-                "@type": "Question",
-                name: faq.question,
-                acceptedAnswer: {
-                    "@type": "Answer",
-                    text: faq.answer,
-                },
-            })),
-        })
-    }
-
-    if (howToSteps && howToSteps.length > 0) {
-        schemas.push({
-            "@context": "https://schema.org",
-            "@type": "HowTo",
-            name: `How to use ${toolName || title}`,
-            step: howToSteps.map((step, index) => ({
-                "@type": "HowToStep",
-                position: index + 1,
-                text: step,
-            })),
-        })
-    }
+    // FAQPage and HowTo JSON-LD are intentionally NOT emitted, even though
+    // pages still pass faqs/howToSteps (they drive visible page content):
+    // FAQ rich results are restricted to government/health authority sites
+    // (Aug 2023) and HowTo rich results were removed entirely (Sep 2023).
+    // Emitting them earns nothing and replicates an identical schema stack
+    // across every tool page — a scaled-content footprint.
 
     if (breadcrumbs && breadcrumbs.length > 0) {
         schemas.push(createBreadcrumbSchema(breadcrumbs, cleanPath))
     }
 
     if (options.video) {
-        schemas.push(createVideoObjectSchema(options.video, fullTitle, description))
+        schemas.push(createVideoObjectSchema(options.video, fullTitle, description ?? ""))
     }
 
     if (options.itemList) {
         schemas.push(createItemListSchema(options.itemList))
     }
 
-    if (options.definition && toolName) {
-        schemas.push({
-            "@context": "https://schema.org",
-            "@type": "DefinedTerm",
-            "name": toolName,
-            "description": options.definition,
-            "inDefinedTermSet": {
-                "@type": "DefinedTermSet",
-                "name": "Online Tools",
-                "url": BASE_URL
-            }
-        })
-    }
+    // DefinedTerm/DefinedTermSet dropped for the same reason: no rich-result
+    // value, identical on every page, pure schema bloat.
 
     return schemas
 }
 
 export function createMetadata(options: MetadataOptions): Metadata {
     const { title, description: rawDescription, path, ogImageAlt, ogImage, noIndex, ogTitle, ogDescription, twitterTitle, twitterDescription, twitterCreator } = options
-    const description = rawDescription ? (rawDescription.length > 160 ? rawDescription.slice(0, 157) + "..." : rawDescription) : rawDescription
+    const description = truncateDescription(rawDescription)
     const keywords = normalizeMetadataKeywords(options.keywords)
 
     const cleanPath = path.startsWith("/") ? path : `/${path}`
@@ -235,8 +215,18 @@ export function createMetadata(options: MetadataOptions): Metadata {
                 alt: ogImage.alt || ogImageAlt || title,
             }]
         }
+    } else {
+        // Explicit default: live tool pages were shipping with NO og:image at
+        // all (the root app/opengraph-image.tsx was only applied to "/"), so
+        // every share/discover surface got a bare link. Point at the root OG
+        // image route deterministically.
+        openGraphConfig.images = [{
+            url: `${BASE_URL}/opengraph-image`,
+            width: 1200,
+            height: 630,
+            alt: ogImageAlt || fullTitle,
+        }]
     }
-    // If no ogImage provided, Next.js auto-discovers app/opengraph-image.tsx (1200×630)
 
     return {
         title: fullTitle,
@@ -358,6 +348,10 @@ export interface SoftwareAppSchemaOptions {
     softwareVersion?: string
     softwareRequirements?: string
     screenshot?: string
+    /** Real content-change date (YYYY-MM-DD). Emitted only when provided. */
+    dateModified?: string
+    /** Real publication date (YYYY-MM-DD). Emitted only when provided. */
+    datePublished?: string
 }
 
 export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
@@ -374,12 +368,13 @@ export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
         featureList,
         version = "2.0",
         softwareRequirements,
-        screenshot
+        screenshot,
+        dateModified,
+        datePublished
     } = options
 
     const appName = name || (title ? extractToolName(title) : "")
     const appUrl = path ? getCanonicalUrl(path) : BASE_URL
-    const currentDate = new Date().toISOString().split('T')[0]
 
     const schema: any = {
         "@context": "https://schema.org",
@@ -409,8 +404,14 @@ export function createSoftwareAppSchema(options: SoftwareAppSchemaOptions) {
             "name": SITE_NAME,
             "url": BASE_URL
         },
-        "datePublished": "2024-01-01",
-        "dateModified": currentDate,
+        // datePublished/dateModified are emitted ONLY when a real date is
+        // passed in. The previous behavior — fabricated datePublished
+        // "2024-01-01" plus dateModified stamped with new Date() at render
+        // time — told Google every page was "modified today" on every crawl
+        // while the sitemap said otherwise: a machine-detectable fake
+        // freshness signal on all ~100 tool pages.
+        ...(datePublished ? { "datePublished": datePublished } : {}),
+        ...(dateModified ? { "dateModified": dateModified } : {}),
         "version": version,
         "softwareVersion": version,
         "downloadUrl": appUrl,

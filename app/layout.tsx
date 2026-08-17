@@ -61,9 +61,8 @@ export default function RootLayout({
         url: "https://fasttools.store",
         description: "FastTools is a free online tools platform. Calculators, converters, crypto, PDF, developer tools — all free, no signup required.",
         foundingDate: "2024-01-01",
-        sameAs: [
-            "https://github.com/AliHusnain-FastTools/fasttools",
-        ],
+        // sameAs removed: the only entry was a GitHub repo that 404s — a dead
+        // "open source" trust link on every page is worse than none.
         contactPoint: {
             "@type": "ContactPoint",
             contactType: "customer service",

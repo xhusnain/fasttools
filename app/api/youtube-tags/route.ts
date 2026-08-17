@@ -137,31 +137,29 @@ export async function POST(request: NextRequest) {
       if (initialDataMatch) {
         try {
           const initialData = JSON.parse(initialDataMatch[1])
-          // Navigate through the complex structure to find keywords
-          const findKeywords = (obj: any): string[] => {
-            if (typeof obj === 'string' && obj.includes(',')) {
+          // Navigate through the complex structure to find keywords.
+          // Only treat a string/array as the tag list once we've descended
+          // through a key that actually matched "keyword"/"tag" - otherwise
+          // this would grab the first comma-containing string anywhere in
+          // ytInitialData (e.g. a locale-formatted view/comment count like
+          // "405,110,819 views"), splitting it into bogus numeric "tags".
+          const findKeywords = (obj: any, matched: boolean): string[] => {
+            if (matched && typeof obj === 'string' && obj.includes(',')) {
               return obj.split(',').map((k: string) => k.trim()).filter((k: string) => k.length > 0 && k.length < 100)
+            }
+            if (matched && Array.isArray(obj)) {
+              return obj.filter((k: any) => typeof k === 'string' && k.length > 0 && k.length < 100)
             }
             if (typeof obj === 'object' && obj !== null) {
               for (const key in obj) {
-                if (key.toLowerCase().includes('keyword') || key.toLowerCase().includes('tag')) {
-                  const result = findKeywords(obj[key])
-                  if (result.length > 0) return result
-                }
-                if (Array.isArray(obj[key])) {
-                  for (const item of obj[key]) {
-                    const result = findKeywords(item)
-                    if (result.length > 0) return result
-                  }
-                } else {
-                  const result = findKeywords(obj[key])
-                  if (result.length > 0) return result
-                }
+                const isKeywordKey = key.toLowerCase().includes('keyword') || key.toLowerCase().includes('tag')
+                const result = findKeywords(obj[key], matched || isKeywordKey)
+                if (result.length > 0) return result
               }
             }
             return []
           }
-          const foundKeywords = findKeywords(initialData)
+          const foundKeywords = findKeywords(initialData, false)
           tags.push(...foundKeywords)
         } catch (e) {
           // Continue if JSON parsing fails
@@ -173,13 +171,18 @@ export async function POST(request: NextRequest) {
         .filter(tag => {
           // Filter out common non-tag content
           const lowerTag = tag.toLowerCase()
-          return !lowerTag.includes('youtube') && 
-                 !lowerTag.includes('video') && 
+          return !lowerTag.includes('youtube') &&
+                 !lowerTag.includes('video') &&
                  !lowerTag.includes('watch') &&
                  !lowerTag.includes('http') &&
                  !lowerTag.includes('www') &&
                  tag.length > 1 &&
-                 tag.length < 100
+                 tag.length < 100 &&
+                 // Defensive filter: drop purely-numeric fragments and
+                 // view/like/subscriber-count artifacts (e.g. "234" or
+                 // "1,234 views") that can leak in from mis-parsed stats
+                 !/^[\d,.\s]+$/.test(tag) &&
+                 !/^[\d,.\s]+\s*(views?|likes?|subscribers?|comments?)$/i.test(tag)
         })
         .slice(0, 50) // Limit to 50 tags max
 

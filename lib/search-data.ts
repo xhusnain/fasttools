@@ -92,7 +92,6 @@ export const searchItems: SearchItem[] = [
   { name: "YouTube Channel Name Generator", description: "Generate catchy, unique names for your YouTube channel with AI", path: "/social-media-tools/youtube-channel-name-generator", category: "Social Media" },
   { name: "Hashtag Counter", description: "Count and extract hashtags from posts", path: "/social-media-tools/hashtag-counter", category: "Social Media" },
   { name: "Instagram DP Viewer", description: "View and download Instagram profile pictures in full size HD", path: "/social-media-tools/instagram-dp", category: "Social Media" },
-  { name: "Instagram Profile Picture Viewer", description: "View, zoom, and save full-size Instagram profile pictures", path: "/social-media-tools/instagram-profile-picture-viewer", category: "Social Media" },
   { name: "Influencer Rate Calculator", description: "Estimate creator rates from followers, engagement, platform, and campaign type", path: "/social-media-tools/influencer-rate-calculator", category: "Social Media" },
   { name: "TikTok Engagement Calculator", description: "Calculate TikTok engagement rate from views, likes, comments, shares, and followers", path: "/social-media-tools/tiktok-engagement-calculator", category: "Social Media" },
 
