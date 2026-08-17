@@ -35,8 +35,27 @@ function stripMarkdownCodeFence(text: string): string {
 
 function extractJsonArrayText(text: string): string {
     const cleaned = stripMarkdownCodeFence(text)
-    const jsonMatch = cleaned.match(/\[[\s\S]*?\]/)
-    return jsonMatch ? jsonMatch[0] : cleaned
+    // Balanced-bracket scan instead of a non-greedy regex: /\[[\s\S]*?\]/
+    // stopped at the FIRST "]", so any bracket inside a caption string
+    // truncated the array mid-JSON and the parse threw on every request.
+    const start = cleaned.indexOf("[")
+    if (start === -1) return cleaned
+    let depth = 0
+    let inString = false
+    let escaped = false
+    for (let i = start; i < cleaned.length; i++) {
+        const ch = cleaned[i]
+        if (escaped) { escaped = false; continue }
+        if (ch === "\\") { escaped = true; continue }
+        if (ch === '"') { inString = !inString; continue }
+        if (inString) continue
+        if (ch === "[") depth++
+        else if (ch === "]") {
+            depth--
+            if (depth === 0) return cleaned.slice(start, i + 1)
+        }
+    }
+    return cleaned.slice(start)
 }
 
 function extractJsonObjectText(text: string): string {
@@ -105,6 +124,23 @@ export async function generateCaptionsService(data: CaptionsRequest) {
     } catch (parseError) {
         console.error("Failed to parse AI response:", parseError)
         console.error("Raw response:", getGeneratedText(result))
+        // The model produced text but not clean JSON — salvage captions from
+        // plain lines rather than failing the whole request.
+        const salvaged = getGeneratedText(result)
+            .split("\n")
+            .map((line) => line
+                .replace(/^\s*(?:[-*•]|\d+[.)])\s*/, "")
+                .trim()
+                .replace(/^["'“]+|["'”],?$/g, ""))
+            .filter((line) => line.length > 8 && !/^(here (are|is)|sure|okay|of course)/i.test(line) && !/^[\[\]{}",]*$/.test(line))
+            .slice(0, 5)
+        if (salvaged.length > 0) {
+            return {
+                success: true,
+                data: { captions: salvaged },
+                statusCode: 200
+            }
+        }
         return {
             success: false,
             error: "Failed to process AI response. Please try again.",
@@ -375,10 +411,12 @@ export async function generatePetNamesService(data: PetNameRequest) {
     const contextString = petContext.join("\n")
     const prompt = PROMPTS.petNames(contextString, gender, petType, color, personality, breed, age)
 
+    // 40 names ≈ 1,400 output tokens. The previous 100-name/4000-token ask
+    // took longer than Netlify's ~30s function limit and 502'd on every call.
     const result = await aiTextGenerator.generateText({
         prompt,
         temperature: 0.9,
-        maxTokens: 4000,
+        maxTokens: 1800,
     })
 
     const petNamesText = getGeneratedText(result)

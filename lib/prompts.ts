@@ -43,12 +43,12 @@ For dog content specifically, include trending pet hashtags like #dogsofinstagra
 
 Example format: #hashtag1 #hashtag2 #hashtag3 #hashtag4`,
 
-  petNames: (contextString: string, gender: string, petType: string, color?: string, personality?: string, breed?: string, age?: string) => `You are an expert pet naming consultant with deep knowledge of names from various cultures, languages, and traditions. Generate 100 unique and perfect pet names based on the following pet characteristics:
+  petNames: (contextString: string, gender: string, petType: string, color?: string, personality?: string, breed?: string, age?: string) => `You are an expert pet naming consultant with deep knowledge of names from various cultures, languages, and traditions. Generate 40 unique and perfect pet names based on the following pet characteristics:
 
 ${contextString}
 
 IMPORTANT INSTRUCTIONS:
-1. Generate EXACTLY 100 names total, distributed across 8 categories
+1. Generate EXACTLY 40 names total, distributed across 8 categories
 2. Each name MUST include: name, meaning, and origin
 3. Make names appropriate for the pet type and characteristics
 4. Consider the pet's gender, color, personality, and other traits
@@ -57,15 +57,15 @@ IMPORTANT INSTRUCTIONS:
 7. Include both popular and unique options
 8. Make meanings accurate and relevant
 
-CATEGORY DISTRIBUTION (Generate approximately these amounts):
-- Traditional Names: 15 names (classic, timeless names)
-- Modern Names: 15 names (contemporary, trendy names)
-- Unique Names: 15 names (rare, creative, one-of-a-kind)
-- Nature Names: 15 names (inspired by nature, elements, plants, animals)
-- Cultural Names: 15 names (from various cultures: Japanese, Greek, Latin, Celtic, etc.)
-- Celebrity Names: 10 names (inspired by famous people, characters, pop culture)
-- Food Names: 10 names (cute food-inspired names)
-- Mythological Names: 15 names (from mythology, legends, folklore)
+CATEGORY DISTRIBUTION (Generate EXACTLY 5 names per category):
+- Traditional Names: 5 names (classic, timeless names)
+- Modern Names: 5 names (contemporary, trendy names)
+- Unique Names: 5 names (rare, creative, one-of-a-kind)
+- Nature Names: 5 names (inspired by nature, elements, plants, animals)
+- Cultural Names: 5 names (from various cultures: Japanese, Greek, Latin, Celtic, etc.)
+- Celebrity Names: 5 names (inspired by famous people, characters, pop culture)
+- Food Names: 5 names (cute food-inspired names)
+- Mythological Names: 5 names (from mythology, legends, folklore)
 
 RESPONSE FORMAT (CRITICAL - Follow exactly):
 Return ONLY a valid JSON object with this exact structure:
@@ -102,7 +102,7 @@ QUALITY STANDARDS:
 - Include a mix of short (1-2 syllables) and longer names
 - Ensure cultural sensitivity and authenticity
 
-Generate the 100 names now as a valid JSON object:`,
+Generate the 40 names now as a valid JSON object:`,
 
   channelNames: (topic: string, keywords?: string, tone?: string, targetAudience?: string) => `Act as a creative branding expert. Generate 50 unique and catchy YouTube channel name suggestions based on the following details:
   
