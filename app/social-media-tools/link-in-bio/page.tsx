@@ -69,7 +69,7 @@ const toolConfig = createToolConfig({
       "Create your link-in-bio page for free with this online generator. Social media platforms like Instagram and TikTok only allow one link in your profile bio — this tool solves that by creating a landing page with all your important links. Add links to your website, online store, other social profiles, latest content, music, merch, and more. Customize the look with your brand colors, choose button styles, and arrange links in priority order. The generated bio page is mobile-first and loads fast for visitors tapping through from social apps. No signup, no monthly subscription, no ads.",
 
     howToSteps: [
-      "Enter your profile name, photo, and a short bio description.",
+      "Enter your profile name and a short bio description.",
       "Add your links with custom titles — website, social profiles, store, latest content, etc.",
       "Customize the design: choose colors, button styles, and layout to match your brand.",
       "Copy or download the generated HTML, host it on any service (GitHub Pages, Netlify, your own site), and paste that URL in your Instagram, TikTok, or YouTube bio.",
@@ -79,7 +79,6 @@ const toolConfig = createToolConfig({
       "Create unlimited-link bio pages with custom titles for each link",
       "Full visual customization: colors, button styles, fonts, and backgrounds",
       "Mobile-first responsive design optimized for social media traffic",
-      "Drag-and-drop link reordering for priority management",
       "No account signup, subscription, or payment required",
       "Works with Instagram, TikTok, YouTube, X, LinkedIn, and any platform",
     ],
@@ -93,7 +92,7 @@ const toolConfig = createToolConfig({
     ],
 
     aboutTool:
-      "Instagram, TikTok, and most social platforms only allow one clickable link in your profile bio. Services like Linktree solve this by creating a landing page with multiple links — but they charge for customization and analytics. This free generator creates the same type of bio page without requiring an account, subscription, or payment. Customize the design to match your brand, add unlimited links with custom titles, and reorder them based on priority. The output is a mobile-optimized landing page that loads quickly for visitors tapping your bio link from social media apps.",
+      "Instagram, TikTok, and most social platforms only allow one clickable link in your profile bio. Services like Linktree solve this by creating a landing page with multiple links — but they charge for customization and analytics. This free generator creates the same type of bio page without requiring an account, subscription, or payment. Customize the design to match your brand and add unlimited links with custom titles. The output is a mobile-optimized landing page that loads quickly for visitors tapping your bio link from social media apps.",
 
     proTip:
       "Put your highest-priority link at the top (latest content, active campaign, or product launch). Update your bio page monthly to keep links fresh and relevant. Use descriptive link titles like 'Shop My Favorites' instead of generic 'Click Here' to improve click-through rates.",
@@ -122,7 +121,7 @@ const toolConfig = createToolConfig({
       {
         question: "Can I update my links after creating the page?",
         answer:
-          "Yes. You can edit, reorder, add, or remove links anytime and regenerate your bio page with the updates.",
+          "Yes. You can edit, add, or remove links anytime and regenerate your bio page with the updates.",
       },
       {
         question: "Is this link-in-bio generator free?",

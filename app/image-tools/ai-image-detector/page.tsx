@@ -201,7 +201,7 @@ const toolConfig = createToolConfig({
       {
         question: "How accurate is this AI image detector?",
         answer:
-          "Accuracy is approximately 85-90% across major generators. It is highest on original uncompressed files and lower on heavily compressed, screenshotted, or social-media re-uploaded images. The multi-signal approach outperforms single-method detectors because each forensic test catches a different type of artifact.",
+          "There is no formally measured accuracy figure — this is a heuristic analysis, not a trained classifier. Signals are most reliable on original uncompressed files and weaker on heavily compressed, screenshotted, or social-media re-uploaded images. Treat results as indicative, and combine multiple signals rather than relying on any single one.",
       },
       {
         question: "How can I tell if an image is AI-generated?",
@@ -251,7 +251,7 @@ const toolConfig = createToolConfig({
       {
         question: "How does this compare to other AI image detectors?",
         answer:
-          "Most online AI image detectors use a single machine learning model that requires uploading your image to their server. This detector is different: it uses 5 forensic signals analyzed entirely in your browser (no upload), provides transparent explanations for each signal rather than a black-box verdict, handles edge cases like screenshots and social media re-uploads with smart adjustments, and is completely free with no signup. The tradeoff is slightly lower accuracy (~85-90%) compared to large ML models (~95%), but with full privacy and transparency.",
+          "Most online AI image detectors use a single machine learning model that requires uploading your image to their server. This detector is different: it uses 5 forensic signals analyzed entirely in your browser (no upload), provides transparent explanations for each signal rather than a black-box verdict, handles edge cases like screenshots and social media re-uploads with smart adjustments, and is completely free with no signup. The tradeoff is lower accuracy than large server-side ML detectors, in exchange for full privacy and transparency.",
       },
       {
         question: "How long does AI image detection take?",
