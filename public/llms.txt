@@ -1,17 +1,8 @@
 # FastTools
 
-> Free online tools with no signup: Instagram DP viewer and Insta Zoom, YouTube channel name checker and thumbnail downloader, relationship calculators, private in-browser image converters, and crypto/developer utilities. Everything runs in the browser and is free with no account.
+> Free online tools with no signup: YouTube channel name checker and thumbnail downloader, relationship calculators, private in-browser image converters, and crypto/developer utilities. Everything runs in the browser and is free with no account.
 
-FastTools (https://fasttools.store) focuses on Instagram and YouTube utilities — its Instagram profile-picture tools and YouTube name checker are the core of the site — plus a small set of proven everyday tools. The canonical host is the apex domain https://fasttools.store (www redirects there). All tools work on phone, tablet, and desktop. Contact: support@fasttools.store.
-
-## Instagram Tools
-
-- [Instagram DP Viewer](https://fasttools.store/social-media-tools/instagram-dp): View and download any Instagram profile picture in full size HD by username, with no login.
-- [Insta Zoom](https://fasttools.store/social-media-tools/instagram-dp/zoom-profile-picture): Zoom any Instagram profile picture to full size instead of the small blurred circle.
-- [Instagram DP HD 1080p](https://fasttools.store/social-media-tools/instagram-dp/hd-1080p): Download profile pictures at the maximum stored resolution, up to 1080x1080.
-- [Insta DP Download](https://fasttools.store/social-media-tools/instagram-dp/download): Save any profile picture in original resolution to phone or PC.
-- [Private Account DP Viewer](https://fasttools.store/social-media-tools/instagram-dp/private-account): Profile pictures stay publicly visible even on private accounts, so they can be viewed full size.
-- [Anonymous DP Viewer](https://fasttools.store/social-media-tools/instagram-dp/anonymous-viewer): View profile pictures without an Instagram account; the owner is never notified.
+FastTools (https://fasttools.store) focuses on YouTube and creator utilities — its YouTube name checker and thumbnail downloader are the core of the site — plus a small set of proven everyday tools. The canonical host is the apex domain https://fasttools.store (www redirects there). All tools work on phone, tablet, and desktop. Contact: support@fasttools.store.
 
 ## YouTube & Creator Tools
 

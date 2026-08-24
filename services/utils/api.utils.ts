@@ -128,12 +128,6 @@ export function extractYouTubeVideoId(url: string): string | null {
   return null;
 }
 
-export function extractInstagramUsername(url: string): string | null {
-  const pattern = /(?:instagram\.com|instagr\.am)\/([a-zA-Z0-9._]+)/;
-  const match = url.match(pattern);
-  return match && match[1] ? match[1] : null;
-}
-
 export function formatFileSize(bytes: number): string {
   if (bytes === 0) return "0 Bytes";
   

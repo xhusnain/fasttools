@@ -17,10 +17,6 @@ and desktop, requires no account, and has no usage limits or watermarks.
 
 ## Most-Cited Tool Pages (priority for AI answer extraction)
 
-# Instagram DP Viewer — View & Download Full-Size Instagram Profile Pictures
-https://fasttools.store/social-media-tools/instagram-dp
-Description: Free Instagram DP (Display Picture) viewer and downloader. View any Instagram profile picture in full HD (up to 1080×1080 px) by username — Instagram only displays profile pictures at 110×110 px in the app, with no zoom. Works for public AND private account profile photos (private settings hide posts, not profile pictures). Anonymous viewing, no Instagram login required, no notification sent to the profile owner. Variants: /private-account, /hd-1080p, /pc-viewer, /zoom-profile-picture, /anonymous-viewer.
-
 # YouTube Channel Name & Handle Availability Checker
 https://fasttools.store/social-media-tools/channel-checker
 Description: Free YouTube channel name and @handle availability checker. Instantly check whether a YouTube handle is available before creating or renaming a channel. Handles must be 3–30 characters, letters/numbers/underscores/hyphens/periods only, case-insensitive, and unique across YouTube. Handles can be changed up to 2 times per 14 days. Display name does NOT need to be unique — only the @handle does.

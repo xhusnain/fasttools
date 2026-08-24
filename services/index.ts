@@ -17,7 +17,6 @@ export {
   objectToFormData,
   isValidUrl,
   extractYouTubeVideoId,
-  extractInstagramUsername,
   formatFileSize,
   debounce,
   throttle,

@@ -378,7 +378,6 @@ const toolConfig = createToolConfig({
       { name: "YouTube Thumbnail Downloader", href: "/social-media-tools/youtube-thumbnail" },
       { name: "Hashtag Counter", href: "/social-media-tools/hashtag-counter" },
       { name: "Link in Bio Generator", href: "/social-media-tools/link-in-bio" },
-      { name: "Instagram DP Viewer", href: "/social-media-tools/instagram-dp" },
       { name: "TikTok Engagement Calculator", href: "/social-media-tools/tiktok-engagement-calculator" },
       // Cross-category: push authority to creator-relevant finance/calculator tools
       { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },

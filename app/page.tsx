@@ -16,8 +16,8 @@ const HomeCategories = dynamic(() => import('@/components/common/home-categories
 const HomeRichContent = dynamic(() => import('@/components/common/home-rich-content').then(mod => ({ default: mod.HomeRichContent })))
 
 export const metadata: Metadata = createMetadata({
-  title: "FastTools — Free Instagram DP Viewer, YouTube Tools & Online Utilities",
-  description: "Free online tools with no signup: Instagram DP viewer & Insta Zoom, YouTube channel name checker, thumbnail downloader, image converters, regex testers & more. Private, fast, unlimited.",
+  title: "FastTools — Free YouTube Tools, Image Converters & Online Utilities",
+  description: "Free online tools with no signup: YouTube channel name checker, thumbnail downloader, HEIC/PNG/WebP image converters, regex testers & more. Private, fast, unlimited.",
   path: "/",
   includeSchema: false,
 })
@@ -28,14 +28,14 @@ export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "FastTools — Free Instagram DP Viewer, YouTube Tools & Online Utilities",
-    description: "Free online tools with no signup: Instagram DP viewer & Insta Zoom, YouTube channel name checker, thumbnail downloader, image converters & more. Everything runs in your browser.",
+    name: "FastTools — Free YouTube Tools, Image Converters & Online Utilities",
+    description: "Free online tools with no signup: YouTube channel name checker, thumbnail downloader, image converters & more. Everything runs in your browser.",
     url: "https://fasttools.store",
     author: {
       "@type": "Organization",
       name: "FastTools",
       url: "https://fasttools.store",
-      description: "Free online tools platform focused on Instagram and YouTube utilities, image converters, and developer tools. All tools run locally in your browser."
+      description: "Free online tools platform focused on YouTube utilities, image converters, and developer tools. All tools run locally in your browser."
     },
     publisher: {
       "@type": "Organization",
@@ -44,7 +44,7 @@ export default function Home() {
     },
     // Real last-content-change date. Never stamp new Date() here: it told
     // Google the homepage was "modified today" on every crawl (fake freshness).
-    dateModified: "2026-08-17",
+    dateModified: "2026-08-24",
     inLanguage: "en-US",
     isFamilyFriendly: true,
     copyrightYear: new Date().getFullYear().toString(),
@@ -75,7 +75,7 @@ export default function Home() {
     about: {
       "@type": "Thing",
       name: "Free Online Tools",
-      description: "Free browser-based tools: Instagram DP viewer and Insta Zoom, YouTube channel checker and thumbnail downloader, image format converters, crypto generators, and regex testers."
+      description: "Free browser-based tools: YouTube channel checker and thumbnail downloader, image format converters, crypto generators, and regex testers."
     },
     isPartOf: {
       "@type": "WebSite",
@@ -90,7 +90,7 @@ export default function Home() {
           name: "Are all FastTools really free?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes, every tool on FastTools is 100% free with no hidden costs, no \"Pro\" tier, and no credit card required. Every tool — including the Instagram DP viewer, YouTube name checker, and image converters — is completely free to use with no usage limits."
+            text: "Yes, every tool on FastTools is 100% free with no hidden costs, no \"Pro\" tier, and no credit card required. Every tool — including the YouTube name checker, thumbnail downloader, and image converters — is completely free to use with no usage limits."
           }
         },
         {
@@ -114,7 +114,7 @@ export default function Home() {
           name: "What types of tools does FastTools offer?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "FastTools focuses on Social Media Tools (Instagram DP viewer, Insta Zoom, YouTube channel name checker, thumbnail downloader), Relationship Calculators (anniversary, future age, birthday countdown), Image Tools (AI image detector, background remover, HEIC/PNG/WebP/JPG converters), Crypto Tools (BIP39, OTP, RSA, UUID, bcrypt), Developer Tools (regex tester, MIME types, JWT decoder), a PayPal fee calculator, and a PDF signature checker."
+            text: "FastTools focuses on Social Media Tools (YouTube channel name checker, thumbnail downloader, hashtag counter), Relationship Calculators (anniversary, future age, birthday countdown), Image Tools (AI image detector, background remover, HEIC/PNG/WebP/JPG converters), Crypto Tools (BIP39, OTP, RSA, UUID, bcrypt), Developer Tools (regex tester, MIME types, JWT decoder), a PayPal fee calculator, and a PDF signature checker."
           }
         },
         {
@@ -155,13 +155,13 @@ export default function Home() {
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-foreground leading-[1.1] tracking-tight mb-8">
             <span className="block mb-2">Free Online Tools</span>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-500 to-sky-500">
-              Instagram, YouTube & More
+              YouTube, Images & More
             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed mb-12 px-4">
-            Instagram DP viewer, YouTube name checker, image converters, crypto & developer utilities.
+            YouTube name checker, thumbnail downloader, image converters, crypto & developer utilities.
             <strong className="text-foreground"> 100% free, private & instant</strong> — everything runs in your browser, nothing uploaded.
           </p>
 

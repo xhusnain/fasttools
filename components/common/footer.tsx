@@ -54,7 +54,6 @@ export function Footer() {
             <ul className="space-y-2">
               <li><Link href="/fun-tools/anniversary" className="text-sm text-muted-foreground hover:text-primary transition-colors">Anniversary Calculator</Link></li>
               <li><Link href="/ai-tools/qr-generator" className="text-sm text-muted-foreground hover:text-primary transition-colors">AI QR Generator</Link></li>
-              <li><Link href="/social-media-tools/instagram-dp" className="text-sm text-muted-foreground hover:text-primary transition-colors">Instagram DP Viewer</Link></li>
               <li><Link href="/image-tools/heic-to-jpg" className="text-sm text-muted-foreground hover:text-primary transition-colors">HEIC to JPG</Link></li>
               <li><Link href="/social-media-tools/youtube-thumbnail" className="text-sm text-muted-foreground hover:text-primary transition-colors">YouTube Thumbnail</Link></li>
               <li><Link href="/image-tools/ai-image-detector" className="text-sm text-muted-foreground hover:text-primary transition-colors">AI Image Detector</Link></li>

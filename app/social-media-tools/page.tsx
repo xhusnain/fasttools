@@ -9,7 +9,6 @@ import {
   Link2,
   Search,
   Tags,
-  User,
   Zap,
   DollarSign,
 } from "lucide-react"
@@ -38,12 +37,6 @@ const socialTools = [
     description: "Generate YouTube channel naming ideas by niche and tone.",
     href: "/social-media-tools/youtube-channel-name-generator",
     icon: AtSign,
-  },
-  {
-    title: "Instagram DP Viewer",
-    description: "Lookup and view profile-picture output from usernames.",
-    href: "/social-media-tools/instagram-dp",
-    icon: User,
   },
   {
     title: "Hashtag Counter",

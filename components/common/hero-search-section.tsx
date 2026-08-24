@@ -30,7 +30,6 @@ export function HeroSearchSection() {
             >
                 <span className="text-sm font-medium text-muted-foreground mr-2 py-1.5">Popular:</span>
                 {[
-                    { name: 'Instagram DP Viewer', path: '/social-media-tools/instagram-dp' },
                     { name: 'Channel Name Checker', path: '/social-media-tools/channel-checker' },
                     { name: 'Anniversary Calculator', path: '/fun-tools/anniversary' },
                     { name: 'Hashtag Counter', path: '/social-media-tools/hashtag-counter' },

@@ -1,6 +1,6 @@
 // Keyword-cluster variant pages for the YouTube Thumbnail Downloader.
 //
-// This mirrors the proven instagram-dp/[slug] strategy: one underlying tool,
+// Variant-page strategy: one underlying tool,
 // multiple intent-specific landing pages that each rank for a distinct, lower
 // competition long-tail cluster (4k, hd/1080p, shorts, grabber, maxresdefault,
 // mobile) instead of fighting the saturated "youtube thumbnail downloader" head

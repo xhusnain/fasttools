@@ -93,29 +93,6 @@ export interface YouTubeVideoInfo {
   publishedAt: string;
 }
 
-export interface InstagramProfileData {
-  username: string;
-  full_name: string;
-  biography: string;
-  followers: number;
-  followees: number;
-  posts_count: number;
-  profile_pic_url: string;
-  profile_pic_url_hd: string;
-  is_verified: boolean;
-  is_private: boolean;
-  external_url: string | null;
-}
-
-export interface InstagramProfileResponse {
-  platform: "Instagram";
-  data: InstagramProfileData;
-}
-
-export interface InstagramProfileErrorResponse {
-  error: string;
-}
-
 export interface AIGenerateRequest {
   prompt: string;
   model?: "gpt-4" | "gpt-3.5-turbo" | "gemini-pro";

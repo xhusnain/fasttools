@@ -38,18 +38,8 @@ export const sitemapPages = [
   { url: u("/pdf-tools"), lastModified: new Date("2026-06-02"), changeFrequency: "monthly" as const, priority: 0.9 },
 
   // ─── Social Media Tools ──────────────────────────────────────────────
-  // IG DP cluster: tool + copy + schema + interlink all reworked 2026-07-11..13
-  // (commits 1cdb09a4, 1599f41b, 4c84a27c, c905f7ee, d75017eb). Fresh lastmod so
-  // Google recrawls the fixed pages — the previous March/June dates told it "unchanged".
-  { url: u("/social-media-tools/instagram-dp"), lastModified: new Date("2026-07-13"), changeFrequency: "weekly" as const, priority: 1.0 },
-  // instagram-profile-picture-viewer removed 2026-08-17: cross-canonical wasn't honored
-  // (different title/H1/content, so Google kept indexing both) — now a hard 301 to /instagram-dp
-  { url: u("/social-media-tools/instagram-dp/private-account"), lastModified: new Date("2026-07-13"), changeFrequency: "monthly" as const, priority: 0.9 },
-  { url: u("/social-media-tools/instagram-dp/hd-1080p"), lastModified: new Date("2026-07-13"), changeFrequency: "monthly" as const, priority: 0.9 },
-  { url: u("/social-media-tools/instagram-dp/pc-viewer"), lastModified: new Date("2026-07-13"), changeFrequency: "monthly" as const, priority: 0.9 },
-  { url: u("/social-media-tools/instagram-dp/zoom-profile-picture"), lastModified: new Date("2026-07-13"), changeFrequency: "monthly" as const, priority: 0.9 },
-  { url: u("/social-media-tools/instagram-dp/anonymous-viewer"), lastModified: new Date("2026-07-13"), changeFrequency: "monthly" as const, priority: 0.9 },
-  { url: u("/social-media-tools/instagram-dp/download"), lastModified: new Date("2026-07-13"), changeFrequency: "monthly" as const, priority: 0.9 },
+  // instagram-dp cluster (tool + 6 variant pages) removed entirely 2026-08-24 —
+  // all URLs now 301 to /social-media-tools (see lib/redirects.mjs).
   { url: u("/social-media-tools/channel-checker"), lastModified: new Date("2026-03-23"), changeFrequency: "daily" as const, priority: 1.0 },
   { url: u("/social-media-tools/channel-checker/handle-availability-2026"), lastModified: new Date("2026-03-05"), changeFrequency: "weekly" as const, priority: 0.9 },
   { url: u("/social-media-tools/channel-checker/channel-name-checker"), lastModified: new Date("2026-03-05"), changeFrequency: "weekly" as const, priority: 0.9 },

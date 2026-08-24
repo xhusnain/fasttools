@@ -2,7 +2,7 @@ import Link from "next/link"
 import { GButton } from "@/ui/gbutton"
 import { GToolCard } from "@/ui/gtool-card"
 
-import { Calculator, Home, Search, User, Download, Heart } from "lucide-react"
+import { Calculator, Home, Search, Image, Download, Heart } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -45,10 +45,10 @@ export default function NotFound() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <GToolCard
-                title="Instagram DP Viewer"
-                description="View and download any Instagram profile picture in full size HD — just enter a username, no login required"
-                href="/social-media-tools/instagram-dp"
-                icon={User}
+                title="HEIC to JPG Converter"
+                description="Convert iPhone HEIC photos to JPG right in your browser — private, batch up to 100, no upload"
+                href="/image-tools/heic-to-jpg"
+                icon={Image}
                 badge="Popular"
                 badgeColor="bg-pink-500/90"
               />

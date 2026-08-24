@@ -144,7 +144,6 @@ const toolConfig = createToolConfig({
       { name: "Hashtag Counter", href: "/social-media-tools/hashtag-counter" },
       { name: "YouTube Channel Name Generator", href: "/social-media-tools/youtube-channel-name-generator" },
       { name: "YouTube Channel Checker", href: "/social-media-tools/channel-checker" },
-      { name: "Instagram DP Viewer", href: "/social-media-tools/instagram-dp" },
       { name: "TikTok Engagement Calculator", href: "/social-media-tools/tiktok-engagement-calculator" },
       { name: "Influencer Rate Calculator", href: "/social-media-tools/influencer-rate-calculator" },
       { name: "AI QR Code Generator", href: "/ai-tools/qr-generator" },
