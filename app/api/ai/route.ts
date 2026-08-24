@@ -71,6 +71,10 @@ export async function POST(request: NextRequest) {
                 result = await generateChannelNamesService(data)
                 break
 
+            case "generate-prompt":
+                result = await import("@/lib/ai-services").then(mod => mod.generatePromptService(data))
+                break
+
             case "generate-agent-skill":
                 result = await import("@/lib/ai-services").then(mod => mod.generateAgentSkillService(data))
                 break

@@ -5,7 +5,8 @@ import {
     HashtagsRequest,
     LyricsRequest,
     PetNameRequest,
-    ChannelNameRequest
+    ChannelNameRequest,
+    PromptGeneratorRequest
 } from "@/types/ai.types"
 
 function getGeneratedText(result: { text?: unknown }): string {
@@ -713,5 +714,115 @@ ${text}`
         success: true,
         data: { summary: getGeneratedText(result).trim() },
         statusCode: 200,
+    }
+}
+
+const PROMPT_TARGET_MODELS: Record<string, { name: string; guidance: string }> = {
+    sora: {
+        name: "Sora 2 (OpenAI video generation)",
+        guidance: `- Describe one continuous shot or a short sequence: subject, action, setting, time of day
+- Specify camera work in film language: shot size, angle, movement (e.g. slow dolly-in, handheld tracking)
+- Describe lighting and color palette concretely (e.g. golden-hour backlight, neon reflections on wet asphalt)
+- Include physical detail that grounds realism: materials, weather, motion physics
+- Audio is generated too — mention ambient sound or a short line of dialogue in quotes when it helps
+- Keep each prompt 60-120 words of flowing prose, not a keyword list`,
+    },
+    veo: {
+        name: "Veo 3 (Google video generation with native audio)",
+        guidance: `- Structure: subject + action + scene + camera style + audio cues
+- Veo 3 generates synchronized audio: describe ambient sound, effects, and put any spoken dialogue in quotes
+- Specify camera behavior explicitly (aerial, POV, static tripod, slow pan) and shot composition
+- Describe the visual style (cinematic, documentary, film grain) and lighting mood
+- Prompts render as ~8 second clips, so scope the action to fit one beat
+- Keep each prompt 60-120 words of flowing prose`,
+    },
+    midjourney: {
+        name: "Midjourney (image generation)",
+        guidance: `- Lead with the core subject and scene in concrete visual nouns, then style, lighting, composition, mood
+- Comma-separated descriptive phrases work better than full sentences
+- Name a medium or aesthetic when useful (35mm photo, oil painting, isometric 3D render)
+- Specify lighting precisely (rim light, overcast softbox, harsh noon sun) and a color palette
+- End each prompt with sensible parameters like --ar 16:9 --stylize 200 (vary aspect ratio to fit the concept)
+- Avoid vague quality words like "beautiful, 4k, masterpiece" — describe what is actually in frame`,
+    },
+    "nano-banana": {
+        name: "Nano Banana (Gemini image generation and editing)",
+        guidance: `- Write conversational, specific instructions in full sentences — this model follows natural language, not keyword soup
+- Describe the scene like a photographer: subject, pose, environment, lens feel, lighting
+- For edits, state precisely what to change AND what must stay the same (faces, outfits, background)
+- It excels at character consistency — reference "the same person/character" explicitly when relevant
+- Mention text to render in the image inside quotes; it handles typography well
+- Keep each prompt 40-100 words`,
+    },
+    general: {
+        name: "modern AI models (ChatGPT, Claude, Gemini)",
+        guidance: `- State the role, the task, the context, and the desired output format explicitly
+- Include concrete constraints (length, tone, audience, structure) instead of vague adjectives
+- Add one short example of the expected output shape when it helps
+- Tell the model what to avoid as well as what to do
+- Keep each prompt self-contained so it can be pasted as-is`,
+    },
+}
+
+export async function generatePromptService(data: PromptGeneratorRequest) {
+    const { idea, targetModel } = data
+
+    if (!idea?.trim()) {
+        return {
+            success: false,
+            error: "Describe your idea first",
+            statusCode: 400
+        }
+    }
+
+    const target = PROMPT_TARGET_MODELS[targetModel] || PROMPT_TARGET_MODELS.general
+    const prompt = PROMPTS.promptGenerator(idea.trim().slice(0, 600), target.name, target.guidance)
+
+    const result = await aiTextGenerator.generateText({
+        prompt,
+        maxTokens: 1500,
+        temperature: 0.85,
+    })
+
+    if (!result.success) {
+        return {
+            success: false,
+            error: result.error || "Failed to generate prompts. Please try again.",
+            statusCode: 500
+        }
+    }
+
+    try {
+        const rawText = getGeneratedText(result)
+        const prompts = JSON.parse(extractJsonArrayText(rawText))
+
+        if (!Array.isArray(prompts) || prompts.length === 0) {
+            throw new Error("Invalid response format")
+        }
+
+        return {
+            success: true,
+            data: { prompts: prompts.filter((item) => typeof item === "string" && item.trim()).slice(0, 3) },
+            statusCode: 200
+        }
+    } catch (parseError) {
+        console.error("Failed to parse prompt generator response:", parseError)
+        const salvaged = getGeneratedText(result)
+            .split(/\n{2,}/)
+            .map((block) => block.replace(/^\s*(?:[-*•]|\d+[.)])\s*/, "").trim().replace(/^["'“]+|["'”],?$/g, ""))
+            .filter((block) => block.length > 40)
+            .slice(0, 3)
+        if (salvaged.length > 0) {
+            return {
+                success: true,
+                data: { prompts: salvaged },
+                statusCode: 200
+            }
+        }
+        return {
+            success: false,
+            error: "Failed to process AI response. Please try again.",
+            statusCode: 500
+        }
     }
 }

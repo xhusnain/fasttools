@@ -51,3 +51,8 @@ export interface AgentSkillRequest {
     description: string
 }
 
+export interface PromptGeneratorRequest {
+    idea: string
+    targetModel: string
+}
+

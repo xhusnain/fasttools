@@ -52,6 +52,7 @@ export function Footer() {
           <div>
             <div className="text-sm font-semibold text-foreground mb-4">Trending</div>
             <ul className="space-y-2">
+              <li><Link href="/ai-tools/prompt-generator" className="text-sm text-muted-foreground hover:text-primary transition-colors">AI Prompt Generator</Link></li>
               <li><Link href="/fun-tools/anniversary" className="text-sm text-muted-foreground hover:text-primary transition-colors">Anniversary Calculator</Link></li>
               <li><Link href="/ai-tools/qr-generator" className="text-sm text-muted-foreground hover:text-primary transition-colors">AI QR Generator</Link></li>
               <li><Link href="/image-tools/heic-to-jpg" className="text-sm text-muted-foreground hover:text-primary transition-colors">HEIC to JPG</Link></li>

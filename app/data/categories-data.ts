@@ -28,6 +28,9 @@ import {
     Shield,
     Fingerprint,
     Scissors,
+    Binary,
+    Cpu,
+    Eraser,
 } from "lucide-react"
 
 export const categories = [
@@ -43,6 +46,38 @@ export const categories = [
         iconColor: "text-foreground",
         glowColor: "hover:shadow-purple-500/20",
         tools: [
+            {
+                title: "AI Prompt Generator",
+                description: "Turn rough ideas into detailed prompts for Sora, Veo, Midjourney, and ChatGPT",
+                href: "/ai-tools/prompt-generator",
+                icon: Sparkles,
+                badge: "New",
+                badgeColor: "bg-violet-600",
+            },
+            {
+                title: "LLM Token Counter",
+                description: "Exact GPT token counts plus Claude and Gemini estimates with context fit",
+                href: "/ai-tools/token-counter",
+                icon: Binary,
+                badge: "New",
+                badgeColor: "bg-violet-600",
+            },
+            {
+                title: "LLM VRAM Calculator",
+                description: "Check which local AI models your GPU can run at each quantization",
+                href: "/ai-tools/llm-vram-calculator",
+                icon: Cpu,
+                badge: "New",
+                badgeColor: "bg-violet-600",
+            },
+            {
+                title: "AI Text Cleaner",
+                description: "Strip em dashes, smart quotes, markdown, and hidden characters from AI text",
+                href: "/ai-tools/ai-text-cleaner",
+                icon: Eraser,
+                badge: "New",
+                badgeColor: "bg-violet-600",
+            },
             {
                 title: "QR Code Generator",
                 description: "Create QR codes for URL, WiFi, contact, and messaging workflows",

@@ -311,6 +311,8 @@ monthly_cost = per_request_cost × requests_per_month`}</code>
     ],
 
     relatedTools: [
+      { name: "LLM Token Counter", href: "/ai-tools/token-counter" },
+      { name: "LLM VRAM Calculator", href: "/ai-tools/llm-vram-calculator" },
       { name: "AI Code Detector", href: "/ai-tools/ai-code-detector" },
       { name: "AI Text Detector", href: "/ai-tools/ai-text-detector" },
       { name: "AI Readability Analyzer", href: "/ai-tools/ai-readability-analyzer" },

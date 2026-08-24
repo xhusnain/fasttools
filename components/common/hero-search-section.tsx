@@ -30,6 +30,7 @@ export function HeroSearchSection() {
             >
                 <span className="text-sm font-medium text-muted-foreground mr-2 py-1.5">Popular:</span>
                 {[
+                    { name: 'AI Prompt Generator', path: '/ai-tools/prompt-generator' },
                     { name: 'Channel Name Checker', path: '/social-media-tools/channel-checker' },
                     { name: 'Anniversary Calculator', path: '/fun-tools/anniversary' },
                     { name: 'Hashtag Counter', path: '/social-media-tools/hashtag-counter' },

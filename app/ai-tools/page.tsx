@@ -2,9 +2,37 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
-import { BookOpen, Code2, FileSearch, Heart, ImageIcon, Music, QrCode, Wand2 } from "lucide-react"
+import { Binary, BookOpen, Code2, Cpu, Eraser, FileSearch, Heart, ImageIcon, Music, QrCode, Sparkles, Wand2 } from "lucide-react"
 
 const aiTools = [
+  {
+    title: "AI Prompt Generator",
+    description:
+      "Turn a rough idea into detailed prompts for Sora 2, Veo 3, Midjourney, Nano Banana, or ChatGPT.",
+    href: "/ai-tools/prompt-generator",
+    icon: Sparkles,
+  },
+  {
+    title: "LLM Token Counter",
+    description:
+      "Exact GPT-5/GPT-4o token counts with real tokenizers, plus Claude and Gemini estimates.",
+    href: "/ai-tools/token-counter",
+    icon: Binary,
+  },
+  {
+    title: "LLM VRAM Calculator",
+    description:
+      "See how much GPU memory Llama, Qwen, Mistral, or Gemma needs — and whether your card can run it.",
+    href: "/ai-tools/llm-vram-calculator",
+    icon: Cpu,
+  },
+  {
+    title: "AI Text Cleaner",
+    description:
+      "Strip em dashes, smart quotes, markdown leftovers, and hidden characters from AI-generated text.",
+    href: "/ai-tools/ai-text-cleaner",
+    icon: Eraser,
+  },
   {
     title: "QR Code Generator",
     description:

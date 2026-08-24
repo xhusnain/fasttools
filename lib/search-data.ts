@@ -32,6 +32,13 @@ export const searchItems: SearchItem[] = [
   { name: "AI Code Detector", description: "Free AI code detector to check if code was written by GitHub Copilot, ChatGPT, Claude, or AI. Analyzes complexity, naming, error handling patterns", path: "/ai-tools/ai-code-detector", category: "AI" },
   { name: "AI Readability Analyzer", description: "Free readability analyzer with 7 algorithms: Flesch-Kincaid, Gunning Fog, Coleman-Liau, SMOG, ARI, Dale-Chall. Grade level, audience match, reading time", path: "/ai-tools/ai-readability-analyzer", category: "AI" },
   { name: "AI API Cost Calculator", description: "Estimate OpenAI, Claude, Gemini, and LLM API costs from token usage", path: "/ai-tools/ai-api-cost-calculator", category: "AI" },
+  { name: "AI Prompt Generator", description: "Turn a rough idea into detailed prompts for Sora 2, Veo 3, Midjourney, Nano Banana, or ChatGPT", path: "/ai-tools/prompt-generator", category: "AI" },
+  { name: "Sora Prompt Generator", description: "Generate detailed Sora 2 video prompts with camera work, lighting, and audio cues", path: "/ai-tools/prompt-generator/sora", category: "AI" },
+  { name: "Midjourney Prompt Generator", description: "Generate detailed Midjourney prompts with style, lighting, and --parameters", path: "/ai-tools/prompt-generator/midjourney", category: "AI" },
+  { name: "LLM Token Counter", description: "Count tokens for GPT-5, GPT-4o, Claude, and Gemini with exact tiktoken counts", path: "/ai-tools/token-counter", category: "AI" },
+  { name: "LLM VRAM Calculator", description: "Check how much GPU memory you need to run Llama, Qwen, or Mistral locally", path: "/ai-tools/llm-vram-calculator", category: "AI" },
+  { name: "AI Text Cleaner", description: "Remove ChatGPT formatting: em dashes, smart quotes, markdown, and hidden characters", path: "/ai-tools/ai-text-cleaner", category: "AI" },
+  { name: "Em Dash Remover", description: "Replace or remove em dashes from AI-generated text in one click", path: "/ai-tools/ai-text-cleaner/em-dash-remover", category: "AI" },
 
   // Converter Tools
   { name: "File Size Converter", description: "Convert between bytes, KB, MB, GB, TB", path: "/converters/file-size", category: "Converter" },

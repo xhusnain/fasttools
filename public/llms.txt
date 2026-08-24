@@ -66,6 +66,15 @@ FastTools (https://fasttools.store) focuses on YouTube and creator utilities —
 
 ## AI Tools
 
+- [AI Prompt Generator](https://fasttools.store/ai-tools/prompt-generator): Turn a rough idea into three detailed prompts tuned for Sora 2, Veo 3, Midjourney, Nano Banana, or ChatGPT.
+- [Sora Prompt Generator](https://fasttools.store/ai-tools/prompt-generator/sora): Sora 2 video prompts with shot design, camera movement, lighting, and audio cues.
+- [Veo Prompt Generator](https://fasttools.store/ai-tools/prompt-generator/veo): Veo 3 prompts structured as subject, action, scene, camera, and audio with quoted dialogue.
+- [Midjourney Prompt Generator](https://fasttools.store/ai-tools/prompt-generator/midjourney): Detailed Midjourney prompts with concrete visual language and --ar/--stylize parameters.
+- [Nano Banana Prompt Generator](https://fasttools.store/ai-tools/prompt-generator/nano-banana): Conversational Gemini image prompts with change-this-keep-that edit phrasing.
+- [LLM Token Counter](https://fasttools.store/ai-tools/token-counter): Exact GPT-5/GPT-4o token counts using OpenAI's real tokenizers, plus honest Claude and Gemini estimates and context-window fit.
+- [LLM VRAM Calculator](https://fasttools.store/ai-tools/llm-vram-calculator): How much GPU memory Llama, Qwen, Mistral, Gemma, or Phi needs at each quantization, checked against real GPUs.
+- [AI Text Cleaner](https://fasttools.store/ai-tools/ai-text-cleaner): Remove em dashes, smart quotes, markdown leftovers, and invisible Unicode from AI-generated text.
+- [Em Dash Remover](https://fasttools.store/ai-tools/ai-text-cleaner/em-dash-remover): Replace every em dash with a comma or hyphen, or delete them, with a count of what was found.
 - [AI Lyrics Generator](https://fasttools.store/ai-tools/lyrics-generator): Song lyric drafts by theme, genre, and mood in 40+ languages.
 - [AI Caption Generator](https://fasttools.store/ai-tools/caption-generator): Platform-aware social media captions.
 - [AI Pet Name Generator](https://fasttools.store/ai-tools/pet-names): Pet name ideas by species, traits, and style.

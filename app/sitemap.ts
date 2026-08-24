@@ -80,6 +80,20 @@ export const sitemapPages = [
   { url: u("/ai-tools/ai-readability-analyzer"), lastModified: new Date("2026-03-10"), changeFrequency: "weekly" as const, priority: 0.9 },
   { url: u("/ai-tools/ai-paraphraser"), lastModified: new Date("2026-03-27"), changeFrequency: "weekly" as const, priority: 0.9 },
   { url: u("/ai-tools/ai-api-cost-calculator"), lastModified: new Date("2026-05-14"), changeFrequency: "weekly" as const, priority: 1.0 },
+  // ─── 2026-08-24 revenue-tools batch: prompt-generator, token-counter,
+  // vram-calculator, text-cleaner clusters (see docs/superpowers/specs) ───
+  { url: u("/ai-tools/prompt-generator"), lastModified: new Date("2026-08-24"), changeFrequency: "weekly" as const, priority: 1.0 },
+  { url: u("/ai-tools/prompt-generator/sora"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/ai-tools/prompt-generator/veo"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/ai-tools/prompt-generator/midjourney"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/ai-tools/prompt-generator/nano-banana"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/ai-tools/token-counter"), lastModified: new Date("2026-08-24"), changeFrequency: "weekly" as const, priority: 1.0 },
+  { url: u("/ai-tools/token-counter/chatgpt"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/ai-tools/token-counter/claude"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/ai-tools/token-counter/gemini"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/ai-tools/llm-vram-calculator"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/ai-tools/ai-text-cleaner"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/ai-tools/ai-text-cleaner/em-dash-remover"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly" as const, priority: 0.9 },
 
   // ─── Converters ──────────────────────────────────────────────────────
   { url: u("/converters/file-size"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },

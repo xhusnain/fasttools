@@ -154,11 +154,20 @@ export const navigationConfig: MegaMenuSection[] = [
             {
                 title: "Content Generation",
                 items: [
+                    { title: "AI Prompt Generator", href: "/ai-tools/prompt-generator", icon: Sparkles },
                     { title: "AI QR Generator", href: "/ai-tools/qr-generator", icon: QrCode },
                     { title: "AI API Cost", href: "/ai-tools/ai-api-cost-calculator", icon: Calculator },
                     { title: "Caption Generator", href: "/ai-tools/caption-generator", icon: Type },
                     { title: "Lyrics Generator", href: "/ai-tools/lyrics-generator", icon: Music },
                     { title: "Pet Name Generator", href: "/ai-tools/pet-names", icon: Smile },
+                ]
+            },
+            {
+                title: "LLM Utilities",
+                items: [
+                    { title: "Token Counter", href: "/ai-tools/token-counter", icon: Binary },
+                    { title: "VRAM Calculator", href: "/ai-tools/llm-vram-calculator", icon: HardDrive },
+                    { title: "AI Text Cleaner", href: "/ai-tools/ai-text-cleaner", icon: PenTool },
                 ]
             }
         ]
