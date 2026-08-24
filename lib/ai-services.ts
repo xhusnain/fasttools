@@ -792,37 +792,71 @@ export async function generatePromptService(data: PromptGeneratorRequest) {
         }
     }
 
-    try {
-        const rawText = getGeneratedText(result)
-        const prompts = JSON.parse(extractJsonArrayText(rawText))
+    const rawText = stripMarkdownCodeFence(getGeneratedText(result))
 
-        if (!Array.isArray(prompts) || prompts.length === 0) {
-            throw new Error("Invalid response format")
-        }
+    const cleanPromptBlock = (block: string) =>
+        block
+            .trim()
+            .replace(/^(?:prompt\s*\d+\s*[:.)-]?\s*)/i, "")
+            .replace(/^["'“]+|["'”]+$/g, "")
+            .trim()
 
+    // Primary format: prompts separated by ### delimiter lines (splitting on
+    // any #-heading line also absorbs "### Prompt 1"-style labels the model
+    // sometimes adds despite instructions).
+    const delimited = rawText
+        .split(/^\s*#{2,}.*$/m)
+        .map(cleanPromptBlock)
+        .filter((block) => block.length > 40)
+        .slice(0, 3)
+
+    if (delimited.length >= 2) {
         return {
             success: true,
-            data: { prompts: prompts.filter((item) => typeof item === "string" && item.trim()).slice(0, 3) },
+            data: { prompts: delimited },
             statusCode: 200
         }
-    } catch (parseError) {
-        console.error("Failed to parse prompt generator response:", parseError)
-        const salvaged = getGeneratedText(result)
-            .split(/\n{2,}/)
-            .map((block) => block.replace(/^\s*(?:[-*•]|\d+[.)])\s*/, "").trim().replace(/^["'“]+|["'”],?$/g, ""))
-            .filter((block) => block.length > 40)
-            .slice(0, 3)
-        if (salvaged.length > 0) {
-            return {
-                success: true,
-                data: { prompts: salvaged },
-                statusCode: 200
+    }
+
+    // Fallback: the model returned a JSON array anyway.
+    try {
+        const parsed = JSON.parse(extractJsonArrayText(rawText))
+        if (Array.isArray(parsed)) {
+            const prompts = parsed
+                .filter((item) => typeof item === "string")
+                .map(cleanPromptBlock)
+                .filter((item) => item.length > 40)
+                .slice(0, 3)
+            if (prompts.length > 0) {
+                return {
+                    success: true,
+                    data: { prompts },
+                    statusCode: 200
+                }
             }
         }
+    } catch {
+        // fall through to blank-line salvage
+    }
+
+    const salvaged = rawText
+        .split(/\n{2,}/)
+        .map((block) => cleanPromptBlock(block.replace(/^\s*(?:[-*•]|\d+[.)])\s*/, "")))
+        .filter((block) => block.length > 40)
+        .slice(0, 3)
+
+    if (salvaged.length > 0) {
         return {
-            success: false,
-            error: "Failed to process AI response. Please try again.",
-            statusCode: 500
+            success: true,
+            data: { prompts: salvaged },
+            statusCode: 200
         }
+    }
+
+    console.error("Failed to parse prompt generator response:", rawText.slice(0, 300))
+    return {
+        success: false,
+        error: "Failed to process AI response. Please try again.",
+        statusCode: 500
     }
 }

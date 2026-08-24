@@ -178,9 +178,12 @@ The user's rough idea: "${idea}"
 Model-specific requirements for ${modelName}:
 ${modelGuidance}
 
-Write 3 distinct, ready-to-paste prompts that turn the user's idea into the kind of detailed prompt ${modelName} responds best to. Each prompt should take a different creative angle (e.g. different mood, composition, or treatment) while staying faithful to the idea. Do not number them, do not explain them, do not add labels.
+Write EXACTLY 3 distinct, ready-to-paste prompts that turn the user's idea into the kind of detailed prompt ${modelName} responds best to. Each prompt must take a different creative angle (e.g. different mood, composition, or treatment) while staying faithful to the idea.
 
-IMPORTANT: Return ONLY a valid JSON array of 3 strings. No markdown, no code fences, no extra text. Format: ["prompt 1", "prompt 2", "prompt 3"]`,
+OUTPUT FORMAT (follow exactly):
+- Output the 3 prompts as plain text, separated by a line containing only ###
+- No numbering, no labels, no titles, no introduction, no closing remarks, no quotes around the prompts
+- Just: first prompt, a ### line, second prompt, a ### line, third prompt`,
 
   agentSkill: (skillName: string, description: string) => `You are an expert Google Antigravity Agent Skill developer. Your task is to generate a valid SKILL.md file content based on the user's requirement.
 
