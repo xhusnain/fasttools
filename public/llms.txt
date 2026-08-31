@@ -75,6 +75,9 @@ FastTools (https://fasttools.store) focuses on YouTube and creator utilities —
 - [LLM VRAM Calculator](https://fasttools.store/ai-tools/llm-vram-calculator): How much GPU memory Llama, Qwen, Mistral, Gemma, or Phi needs at each quantization, checked against real GPUs.
 - [AI Text Cleaner](https://fasttools.store/ai-tools/ai-text-cleaner): Remove em dashes, smart quotes, markdown leftovers, and invisible Unicode from AI-generated text.
 - [Em Dash Remover](https://fasttools.store/ai-tools/ai-text-cleaner/em-dash-remover): Replace every em dash with a comma or hyphen, or delete them, with a count of what was found.
+- [Markdown to Word Converter](https://fasttools.store/ai-tools/markdown-to-word): Convert Markdown from ChatGPT, Claude, Notion, or GitHub into a formatted .docx with real heading styles, lists, tables, and code blocks — in the browser, no upload.
+- [Word to Markdown Converter](https://fasttools.store/ai-tools/word-to-markdown): Convert a .docx file to clean GitHub-flavored Markdown for ChatGPT, GitHub, Notion, or Obsidian — in the browser, no upload.
+- [ChatGPT to PDF](https://fasttools.store/ai-tools/chatgpt-to-pdf): Paste a ChatGPT, Claude, or Gemini conversation and save it as a clean PDF with speaker turns, rendered Markdown, code blocks, and tables.
 - [AI Lyrics Generator](https://fasttools.store/ai-tools/lyrics-generator): Song lyric drafts by theme, genre, and mood in 40+ languages.
 - [AI Caption Generator](https://fasttools.store/ai-tools/caption-generator): Platform-aware social media captions.
 - [AI Pet Name Generator](https://fasttools.store/ai-tools/pet-names): Pet name ideas by species, traits, and style.

@@ -64,3 +64,25 @@ chatgpt formatting", "em dash remover" — high-frequency everyday intents.
 Markdown→Word converter, ChatGPT-conversation→PDF, more prompt-generator
 variants (Flux, Grok Imagine), more counter variants — only after the first
 batch shows impressions.
+
+## Batch 2 (built 2026-08-24, same day — user chose not to wait for the indexing gate)
+
+Three standalone AI-output-workflow tools, all client-side, zero marginal cost:
+
+- `/ai-tools/markdown-to-word` — Markdown → native .docx (marked lexer →
+  `docx` library; real heading styles, nested lists, tables, code, links).
+  Targets "markdown to word", "markdown to docx", "convert chatgpt to word".
+- `/ai-tools/word-to-markdown` — .docx → GitHub-flavored Markdown
+  (`mammoth` → HTML → `turndown` + gfm). Targets "docx to markdown",
+  "word to markdown" — people feeding documents into ChatGPT/Claude.
+- `/ai-tools/chatgpt-to-pdf` — paste a copied conversation → speaker-turn
+  detection ("You said:" / "ChatGPT said:" etc.) → rendered Markdown in a
+  print-ready layout → browser Save-as-PDF (zero deps, nothing uploaded).
+  Targets "chatgpt to pdf", "save chatgpt conversation as pdf".
+
+Previews render in `sandbox` iframes with scripts disabled, so no HTML
+sanitizer dependency is needed. Heavy libraries are dynamically imported on
+action only. Same 6-week test window and kill criteria as batch 1.
+
+Still held back pending impressions evidence: additional prompt-generator
+variants (Flux, Grok Imagine) and further token-counter variants.

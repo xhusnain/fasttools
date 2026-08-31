@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { ToolPageLayout } from "@/components/common/tool-page-layout"
 import { createToolConfig } from "@/lib/create-tool-config"
 import { GToolCard } from "@/ui/gtool-card"
-import { Binary, BookOpen, Code2, Cpu, Eraser, FileSearch, Heart, ImageIcon, Music, QrCode, Sparkles, Wand2 } from "lucide-react"
+import { Binary, BookOpen, Code2, Cpu, Eraser, FileCode2, FileSearch, FileText, Heart, ImageIcon, Music, Printer, QrCode, Sparkles, Wand2 } from "lucide-react"
 
 const aiTools = [
   {
@@ -32,6 +32,27 @@ const aiTools = [
       "Strip em dashes, smart quotes, markdown leftovers, and hidden characters from AI-generated text.",
     href: "/ai-tools/ai-text-cleaner",
     icon: Eraser,
+  },
+  {
+    title: "Markdown to Word Converter",
+    description:
+      "Turn Markdown from ChatGPT, Notion, or GitHub into a real .docx with heading styles, lists, and tables.",
+    href: "/ai-tools/markdown-to-word",
+    icon: FileText,
+  },
+  {
+    title: "Word to Markdown Converter",
+    description:
+      "Drop a .docx file and get clean Markdown ready for ChatGPT, GitHub, Notion, or Obsidian.",
+    href: "/ai-tools/word-to-markdown",
+    icon: FileCode2,
+  },
+  {
+    title: "ChatGPT to PDF",
+    description:
+      "Paste a ChatGPT, Claude, or Gemini conversation and save it as a clean PDF with rendered code and tables.",
+    href: "/ai-tools/chatgpt-to-pdf",
+    icon: Printer,
   },
   {
     title: "QR Code Generator",

@@ -39,6 +39,9 @@ export const searchItems: SearchItem[] = [
   { name: "LLM VRAM Calculator", description: "Check how much GPU memory you need to run Llama, Qwen, or Mistral locally", path: "/ai-tools/llm-vram-calculator", category: "AI" },
   { name: "AI Text Cleaner", description: "Remove ChatGPT formatting: em dashes, smart quotes, markdown, and hidden characters", path: "/ai-tools/ai-text-cleaner", category: "AI" },
   { name: "Em Dash Remover", description: "Replace or remove em dashes from AI-generated text in one click", path: "/ai-tools/ai-text-cleaner/em-dash-remover", category: "AI" },
+  { name: "Markdown to Word Converter", description: "Convert Markdown from ChatGPT, Notion, or GitHub into a formatted Word .docx file", path: "/ai-tools/markdown-to-word", category: "AI" },
+  { name: "Word to Markdown Converter", description: "Convert a Word .docx file to clean Markdown for ChatGPT, GitHub, or Notion", path: "/ai-tools/word-to-markdown", category: "AI" },
+  { name: "ChatGPT to PDF", description: "Save a ChatGPT, Claude, or Gemini conversation as a clean formatted PDF", path: "/ai-tools/chatgpt-to-pdf", category: "AI" },
 
   // Converter Tools
   { name: "File Size Converter", description: "Convert between bytes, KB, MB, GB, TB", path: "/converters/file-size", category: "Converter" },

@@ -94,6 +94,9 @@ export const sitemapPages = [
   { url: u("/ai-tools/llm-vram-calculator"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/ai-tools/ai-text-cleaner"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly" as const, priority: 0.9 },
   { url: u("/ai-tools/ai-text-cleaner/em-dash-remover"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/ai-tools/markdown-to-word"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/ai-tools/word-to-markdown"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: u("/ai-tools/chatgpt-to-pdf"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly" as const, priority: 0.9 },
 
   // ─── Converters ──────────────────────────────────────────────────────
   { url: u("/converters/file-size"), lastModified: new Date("2026-03-23"), changeFrequency: "monthly" as const, priority: 0.8 },

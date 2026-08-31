@@ -143,6 +143,7 @@ const toolConfig = createToolConfig({
 
     relatedTools: [
       { name: "Em Dash Remover", href: "/ai-tools/ai-text-cleaner/em-dash-remover" },
+      { name: "Markdown to Word Converter", href: "/ai-tools/markdown-to-word" },
       { name: "AI Paraphraser", href: "/ai-tools/ai-paraphraser" },
       { name: "AI Text Detector", href: "/ai-tools/ai-text-detector" },
       { name: "Text Case Converter", href: "/converters/text-case" },

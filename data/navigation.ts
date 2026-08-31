@@ -168,6 +168,9 @@ export const navigationConfig: MegaMenuSection[] = [
                     { title: "Token Counter", href: "/ai-tools/token-counter", icon: Binary },
                     { title: "VRAM Calculator", href: "/ai-tools/llm-vram-calculator", icon: HardDrive },
                     { title: "AI Text Cleaner", href: "/ai-tools/ai-text-cleaner", icon: PenTool },
+                    { title: "Markdown to Word", href: "/ai-tools/markdown-to-word", icon: FileText },
+                    { title: "Word to Markdown", href: "/ai-tools/word-to-markdown", icon: FileCode },
+                    { title: "ChatGPT to PDF", href: "/ai-tools/chatgpt-to-pdf", icon: Box },
                 ]
             }
         ]
