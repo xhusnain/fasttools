@@ -51,3 +51,9 @@ npm start
 - Modern, responsive UI
 - Dark/Light theme support
 - SEO optimized
+
+## License
+
+FastTools is open source under the [MIT License](LICENSE). You are free to use, copy, modify, rename, and redistribute it, including in commercial projects. Just keep the copyright notice in the `LICENSE` file.
+
+If FastTools helps you, please give the repo a ⭐ on GitHub and link back to [fasttools.store](https://fasttools.store). It's not required, but it's much appreciated!
